@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, imageMask } from '@/lib/motion';
+import editorialPortrait from '@/assets/images/sushill-waddhwa-editorial-portrait.png';
 
 export const PrincipalHero = () => {
   return (
     <section className="pt-36 sm:pt-44 pb-20 sm:pb-28 bg-bone text-ink hairline-b">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Headline Column */}
+          {/* Headline & Narrative Column */}
           <div className="lg:col-span-7 space-y-6">
             <motion.div
               variants={fadeIn('down', 0.1)}
@@ -41,32 +42,53 @@ export const PrincipalHero = () => {
               animate="animate"
               className="text-base sm:text-lg text-stone-dark max-w-xl font-light leading-relaxed"
             >
-              An enduring career navigating international hospitality, confidential sovereign partnerships, and high-value asset positioning.
+              An enduring career navigating international hospitality, confidential sovereign partnerships, high-value asset positioning, and bespoke boutique hotel development.
             </motion.p>
+
+            <motion.div
+              variants={fadeIn('up', 0.4)}
+              initial="initial"
+              animate="animate"
+              className="pt-4 border-t border-stone/20 flex flex-wrap items-center gap-6 text-xs font-mono text-stone-dark"
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
+                <span>Platinum World Group</span>
+              </div>
+              <span className="text-stone/40">·</span>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
+                <span>Artoso Hospitality Corp.</span>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Portrait Framed Column */}
+          {/* Large Vertical Editorial Portrait Column */}
           <motion.div
             variants={imageMask}
             initial="initial"
             animate="animate"
-            className="lg:col-span-5"
+            className="lg:col-span-5 relative"
           >
-            <div className="relative aspect-[4/5] bg-ink-soft overflow-hidden border border-stone/30 shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
-                alt="Sushill Waddhwa — Portrait"
-                className="w-full h-full object-cover filter grayscale contrast-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-[10px] tracking-super-wide text-bronze uppercase block">
-                  Sushill Waddhwa
-                </span>
-                <span className="font-serif text-bone text-lg font-light">
-                  Founder & Global Hospitality Leader
-                </span>
+            {/* Subtle dark-charcoal frame with thin bronze edge */}
+            <div className="relative border border-ink/20 p-2 sm:p-2.5 bg-ink/5">
+              <div className="relative aspect-[2/3] overflow-hidden bg-stone/10 border border-bronze/30">
+                <img
+                  src={editorialPortrait}
+                  alt="Sushill Waddhwa, Global Hospitality Leader and Founder"
+                  className="w-full h-full object-cover object-top filter contrast-[1.02]"
+                />
               </div>
+
+              {/* Minimalist corner registration mark */}
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-bronze pointer-events-none" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-bronze pointer-events-none" />
+            </div>
+
+            {/* Discreet caption pill */}
+            <div className="mt-3 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono text-stone-dark">
+              <span>Sushill Waddhwa</span>
+              <span className="text-bronze">Founder & Principal</span>
             </div>
           </motion.div>
 
