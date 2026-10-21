@@ -16,7 +16,7 @@ const verifiedMilestones = [
   {
     label: "Global Reach",
     title: "Cross-Border Corridors",
-    detail: "Structuring private buyouts, celebrations, and hospitality advisory across India, UAE, Europe, and beyond.",
+    detail: "Structuring hotel buyouts, celebrations, and hospitality advisory across India, UAE, Europe, and beyond.",
   },
   {
     label: "Multi-Platform",

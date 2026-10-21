@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/Button';
 import { fadeIn } from '@/lib/motion';
 
 export const EnquiryCTA = ({
-  headline = "The most valuable opportunities are rarely public.",
-  subtext = "Whether structuring an exclusive resort buyout for a royal wedding, acquiring prime residential real estate off-market, or chartering private aviation, our desk operates with absolute discretion.",
-  buttonText = "Start a Private Conversation",
+  headline = "Building a world worth experiencing.",
+  subtext = "Sushill Waddhwa collaborates with luxury hospitality brands, tourism authorities, investment partners, and cultural creators on landmark initiatives worldwide.",
+  buttonText = "Connect with the Executive Office",
   to = "/contact"
 }) => {
   return (
@@ -25,7 +25,7 @@ export const EnquiryCTA = ({
           <div className="inline-flex items-center gap-3">
             <span className="w-8 h-[1px] bg-bronze" />
             <span className="text-[11px] uppercase tracking-super-wide text-bronze font-medium">
-              Private Representation
+              Executive Dialogue · Strategic Partnerships
             </span>
             <span className="w-8 h-[1px] bg-bronze" />
           </div>
@@ -42,8 +42,8 @@ export const EnquiryCTA = ({
             <Button to={to} variant="dark" size="lg">
               {buttonText}
             </Button>
-            <Button to="/private-access" variant="darkOutline" size="lg" icon={false}>
-              Explore Capabilities
+            <Button to="/collaborate" variant="darkOutline" size="lg" icon={false}>
+              Collaboration Frameworks
             </Button>
           </div>
         </motion.div>
@@ -51,3 +51,5 @@ export const EnquiryCTA = ({
     </section>
   );
 };
+
+export default EnquiryCTA;

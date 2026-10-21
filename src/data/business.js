@@ -5,14 +5,14 @@ export const businessEntities = [
     descriptor: "Global Hospitality · Hotel Buyouts · Curated Experiences",
     role: "Founder & CMD",
     since: "Established 1989",
-    summary: "For over 35 years, Platinum World Grroup has stood as a vanguard in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across the globe.",
+    summary: "For over 35 years, Platinum World Grroup has stood as a trusted institution in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across premier destinations worldwide.",
     capabilities: [
-      "Total hotel & private island buyouts for grand gatherings and sovereign delegations",
+      "Complete luxury hotel and resort buyouts for landmark celebrations and corporate leadership summits",
       "Bespoke international group travel management and luxury incentive movements",
-      "Confidential hospitality contract negotiation directly with global asset owners",
-      "End-to-end luxury logistics spanning aviation, private transfers, and curated excursions"
+      "Direct hospitality contract negotiation with global luxury property owners",
+      "End-to-end event logistics spanning seamless arrivals, premium transport, and curated destination experiences"
     ],
-    highlight: "Trusted by Fortune 500 corporations, sovereign family offices, and leading event directors across 60+ countries.",
+    highlight: "A respected legacy built over decades of direct collaboration with leading global hotel brands and international event directors.",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85",
   },
   {
@@ -28,7 +28,7 @@ export const businessEntities = [
       "Branded luxury residences advisory and high-end residential integration",
       "Owner representation and strategic operator alignment with global hospitality brands"
     ],
-    highlight: "Bridging the gap between historic regional soul and sustainable commercial longevity.",
+    highlight: "Bridging the gap between regional architectural character and sustainable commercial longevity.",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85",
   },
   {
@@ -39,7 +39,7 @@ export const businessEntities = [
     since: "Active Portfolio",
     summary: "Sushill’s investment philosophy aligns capital with visionaries transforming how modern travellers discover, stay, and connect with destinations of distinction.",
     capabilities: [
-      "Co-investments in signature boutique hospitality and eco-luxury retreat developments",
+      "Selective co-investments in signature boutique hospitality and eco-luxury retreat developments",
       "Seed and growth backing for experiential hospitality tech and specialized concierge platforms",
       "Advisory equity in cultural content platforms and destination celebration forums",
       "Synergistic partnerships accelerating private real estate and branded lifestyle ventures"

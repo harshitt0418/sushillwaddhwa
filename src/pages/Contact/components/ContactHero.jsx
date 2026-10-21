@@ -15,7 +15,7 @@ export const ContactHero = () => {
           >
             <span className="w-8 h-[1px] bg-bronze" />
             <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
-              Confidential Dialogue
+              Executive Dialogue
             </span>
           </motion.div>
 
@@ -34,10 +34,12 @@ export const ContactHero = () => {
             animate="animate"
             className="text-base sm:text-lg text-stone-dark max-w-2xl font-light leading-relaxed pt-2"
           >
-            Share the nature of your requirement. Every enquiry is approached with discretion, diligence, and direct oversight from the Principal.
+            Share the nature of your initiative. Every enquiry is approached with professionalism, prompt attention, and direct executive oversight.
           </motion.p>
         </div>
       </div>
     </section>
   );
 };
+
+export default ContactHero;

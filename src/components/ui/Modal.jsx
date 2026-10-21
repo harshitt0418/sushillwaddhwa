@@ -63,7 +63,7 @@ export const Modal = ({ isOpen, onClose, title, message, referenceId, children }
             </h3>
 
             <p className="text-stone text-sm leading-relaxed mb-6 font-light">
-              {message || "Thank you for reaching out to the private desk of Sushill Waddhwa. Given the confidential nature of our relationships, your requirement will be evaluated with complete discretion. A senior representative will reach out via your preferred channel."}
+              {message || "Thank you for reaching out to the executive office of Sushill Waddhwa. Your requirement will be evaluated with complete discretion. An executive representative will reach out via your preferred channel."}
             </p>
 
             {referenceId && (

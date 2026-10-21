@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 
@@ -16,11 +16,27 @@ import { Lifestyle } from '@/pages/Lifestyle';
 import { Media } from '@/pages/Media';
 import { Collaborate } from '@/pages/Collaborate';
 import { Contact } from '@/pages/Contact';
-import { PrivateAccess } from '@/pages/PrivateAccess';
+
+const pageTitles = {
+  '/': 'Sushill Waddhwa — Global Hospitality Entrepreneur · Investor · Luxury Lifestyle',
+  '/about': 'About Sushill Waddhwa — Founder & CMD, Platinum World Grroup | Since 1989',
+  '/business': 'Business & Ventures — Sushill Waddhwa | Platinum World Grroup & Artoso Hospitality',
+  '/hospitality': 'Hospitality Leadership — Sushill Waddhwa | Luxury Hotels & Buyouts',
+  '/lifestyle': 'Curated Lifestyle — Sushill Waddhwa | Travel, Culture & Wellbeing',
+  '/media': 'Media & Keynotes — Sushill Waddhwa | Speaking, WedTalks & Screen Storytelling',
+  '/collaborate': 'Selective Collaborations — Sushill Waddhwa | Luxury Brand Partnerships',
+  '/contact': 'Contact Executive Office — Sushill Waddhwa | Inquiries & Strategic Dialogue',
+};
 
 export const App = () => {
   const location = useLocation();
   const [isPreloaderActive, setIsPreloaderActive] = React.useState(true);
+
+  // Dynamic route-based title updates for SEO
+  useEffect(() => {
+    const title = pageTitles[location.pathname] || 'Sushill Waddhwa — Global Hospitality Entrepreneur';
+    document.title = title;
+  }, [location.pathname]);
 
   useEffect(() => {
     // Check user preference for reduced motion
@@ -73,8 +89,8 @@ export const App = () => {
             <Route path="/media" element={<Media />} />
             <Route path="/collaborate" element={<Collaborate />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/private-access" element={<PrivateAccess />} />
-            <Route path="*" element={<Home />} />
+            <Route path="/private-access" element={<Navigate to="/hospitality" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
       </main>

@@ -42,7 +42,7 @@ export const PrincipalHero = () => {
               animate="animate"
               className="text-base sm:text-lg text-stone-dark max-w-xl font-light leading-relaxed"
             >
-              An enduring career navigating international hospitality, confidential sovereign partnerships, high-value asset positioning, and bespoke boutique hotel development.
+              An enduring career navigating international hospitality, destination partnerships, hotel advisory, and boutique hospitality development.
             </motion.p>
 
             <motion.div
@@ -53,7 +53,7 @@ export const PrincipalHero = () => {
             >
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
-                <span>Platinum World Group</span>
+                <span>Platinum World Grroup</span>
               </div>
               <span className="text-stone/40">·</span>
               <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export const PrincipalHero = () => {
             {/* Discreet caption pill */}
             <div className="mt-3 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono text-stone-dark">
               <span>Sushill Waddhwa</span>
-              <span className="text-bronze">Founder & Principal</span>
+              <span className="text-bronze">Founder & CMD</span>
             </div>
           </motion.div>
 

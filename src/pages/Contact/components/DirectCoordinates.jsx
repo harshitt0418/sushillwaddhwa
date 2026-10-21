@@ -28,7 +28,7 @@ export const DirectCoordinates = () => {
             Official Channels
           </span>
           <h3 className="font-serif text-2xl text-ink font-normal">
-            Private Executive Desk
+            Executive Office Channels
           </h3>
         </div>
 
@@ -142,7 +142,7 @@ export const DirectCoordinates = () => {
       {/* Discretion statement card */}
       <div className="p-6 bg-ink text-bone border border-white/10 space-y-3">
         <span className="text-[10px] uppercase tracking-super-wide text-bronze block">
-          Non-Disclosure Guarantee
+          Professional Discretion Guarantee
         </span>
         <p className="text-xs text-stone font-light leading-relaxed">
           {siteConfig.contact.confidentialityClause}

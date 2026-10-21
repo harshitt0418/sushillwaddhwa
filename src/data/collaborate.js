@@ -12,8 +12,8 @@ export const collaborationCategories = [
     icon: "Compass",
   },
   {
-    name: "Travel & Aviation",
-    description: "Curated private aviation campaigns, superyacht lifestyle voyages, and luxury rail & cruise expedition partnerships.",
+    name: "Travel & Hospitality Experiences",
+    description: "Curated expedition partnerships, luxury rail journeys, and experiential destination travel campaigns.",
     icon: "Plane",
   },
   {

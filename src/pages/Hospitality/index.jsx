@@ -47,7 +47,7 @@ export const Hospitality = () => {
               animate="animate"
               className="text-base sm:text-lg text-stone-dark max-w-2xl font-light leading-relaxed pt-2"
             >
-              Sushill Waddhwa has built his reputation as an indispensable bridge in global hospitality — uniting luxury hoteliers, sovereign tourism boards, and elite celebration designers to realize gatherings of rare scale and distinction.
+              Sushill Waddhwa has built his reputation as an indispensable bridge in global hospitality — uniting luxury hoteliers, destination tourism authorities, and premier celebration designers to realize gatherings of rare scale and distinction.
             </motion.p>
           </div>
         </div>
@@ -198,7 +198,7 @@ export const Hospitality = () => {
               Primary destination corridors across the globe.
             </h2>
             <p className="mt-4 text-xs sm:text-sm text-stone font-light">
-              Centering on countries and luxury regions where Sushill maintains longstanding relationships with hotel ownership, sovereign bodies, and event architects.
+              Centering on destinations and luxury regions where Sushill maintains longstanding relationships with hotel ownership, destination leaders, and event architects.
             </p>
           </div>
 

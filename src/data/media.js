@@ -5,7 +5,7 @@ export const mediaFeatures = [
     description: "An articulate, engaging speaker sharing firsthand insights on hotel buyouts, luxury wedding tourism, destination marketing, and the evolving expectations of global travellers.",
     topics: [
       "The Billion-Dollar Destination Wedding Economy: Strategy, Challenges & Returns",
-      "From Standard Rooms to Sovereign Buyouts: The Future of High-Yield Hospitality",
+      "From Standard Keys to Total Hotel Buyouts: The Future of High-Yield Hospitality",
       "Building Cross-Border Alliances: How Tourism Boards Win the Luxury Traveler",
       "35 Years of Entrepreneurship: Sustaining Relationships Across Decades"
     ],
@@ -15,7 +15,7 @@ export const mediaFeatures = [
     title: "Curating Intellectual Discourse in Luxury Celebrations",
     description: "Conceived and spearheaded by Sushill Waddhwa, WedTalks serves as the premier thought-leadership platform uniting tourism boards, luxury hotel executives, destination planners, and media architects.",
     topics: [
-      "Fostering collaboration between government tourism bodies and private planners",
+      "Fostering collaboration between destination tourism boards and event creators",
       "Standardizing contracts and operational protocols for multi-day palace buyouts",
       "Sustainable luxury: Managing environmental footprints during massive private celebrations"
     ],
