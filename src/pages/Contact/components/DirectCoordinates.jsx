@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, ArrowUpRight, Mail, Phone, MapPin, Copy, Check } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { fadeIn } from '@/lib/motion';
 
 export const DirectCoordinates = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(siteConfig.contact.executiveDesk);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <motion.div
       variants={fadeIn('up', 0.3)}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="space-y-12"
+      className="space-y-8"
     >
       {/* Editorial Direct Channels */}
       <div className="bg-bone-light p-8 sm:p-10 border border-stone/30 space-y-8">
@@ -26,18 +34,37 @@ export const DirectCoordinates = () => {
 
         <div className="space-y-6 text-sm">
           {/* Email */}
-          <div className="flex items-start gap-4">
-            <div className="w-8 h-8 rounded-none bg-bone-dim flex items-center justify-center text-bronze flex-shrink-0">
-              <Mail className="w-4 h-4" />
+          <div className="flex items-start justify-between gap-4 group">
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-none bg-bone-dim flex items-center justify-center text-bronze flex-shrink-0">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
+                  Executive Desk
+                </span>
+                <a
+                  href={`mailto:${siteConfig.contact.executiveDesk}`}
+                  className="font-mono text-xs text-ink mt-0.5 hover:text-bronze transition-colors block"
+                >
+                  {siteConfig.contact.executiveDesk}
+                </a>
+              </div>
             </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
-                Confidential Inquiries
-              </span>
-              <p className="font-mono text-xs text-ink mt-0.5">
-                {siteConfig.contactPlaceholders.privateDeskEmail}
-              </p>
-            </div>
+            <button
+              onClick={handleCopyEmail}
+              className="text-stone-dark hover:text-bronze transition-colors p-1 text-[11px] flex items-center gap-1 font-mono"
+              title="Copy email to clipboard"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-bronze" />
+                  <span className="text-[10px] text-bronze">Copied</span>
+                </>
+              ) : (
+                <Copy className="w-3.5 h-3.5" />
+              )}
+            </button>
           </div>
 
           {/* Telephone */}
@@ -49,9 +76,12 @@ export const DirectCoordinates = () => {
               <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
                 Direct Line
               </span>
-              <p className="font-mono text-xs text-ink mt-0.5">
-                {siteConfig.contactPlaceholders.directPhone}
-              </p>
+              <a
+                href={`tel:${siteConfig.contact.directPhone.replace(/\s+/g, '')}`}
+                className="font-mono text-xs text-ink mt-0.5 hover:text-bronze transition-colors block"
+              >
+                {siteConfig.contact.directPhone}
+              </a>
             </div>
           </div>
 
@@ -64,8 +94,8 @@ export const DirectCoordinates = () => {
               <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
                 Primary Corridors
               </span>
-              <p className="text-xs text-ink mt-0.5">
-                {siteConfig.contactPlaceholders.headquarters}
+              <p className="text-xs text-ink mt-0.5 font-medium">
+                {siteConfig.contact.hubs}
               </p>
             </div>
           </div>
@@ -115,9 +145,11 @@ export const DirectCoordinates = () => {
           Non-Disclosure Guarantee
         </span>
         <p className="text-xs text-stone font-light leading-relaxed">
-          {siteConfig.contactPlaceholders.confidentialityClause}
+          {siteConfig.contact.confidentialityClause}
         </p>
       </div>
     </motion.div>
   );
 };
+
+export default DirectCoordinates;

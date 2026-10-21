@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
-import { Lock, ShieldCheck, Mail } from 'lucide-react';
+import { Lock, ShieldCheck, Mail, ChevronDown, Copy, Check } from 'lucide-react';
+import { siteConfig } from '@/data/siteConfig';
 import { fadeIn } from '@/lib/motion';
 
 const areasOfInterest = [
@@ -38,6 +39,7 @@ export const EnquiryForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [referenceId, setReferenceId] = useState("");
+  const [briefCopied, setBriefCopied] = useState(false);
 
   useEffect(() => {
     if (initialInterest) {
@@ -59,14 +61,46 @@ export const EnquiryForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Prepare enquiry reference
     setTimeout(() => {
       setIsSubmitting(false);
       const randomCode = `SW-${Math.floor(100000 + Math.random() * 900000)}`;
       setReferenceId(randomCode);
       setIsModalOpen(true);
-    }, 500);
+    }, 450);
   };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setBriefCopied(false);
+    setFormData({
+      name: "",
+      organisation: "",
+      email: "",
+      phone: "",
+      interest: "",
+      details: "",
+      preferredMethod: "Executive Email",
+    });
+  };
+
+  const fullBriefText = `ENQUIRY DOSSIER [Ref: ${referenceId}]
+Principal: ${formData.name}
+Organisation: ${formData.organisation || 'N/A'}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Area of Interest: ${formData.interest || 'General'}
+Preferred Protocol: ${formData.preferredMethod}
+
+Brief:
+${formData.details}`;
+
+  const handleCopyBrief = () => {
+    navigator.clipboard.writeText(fullBriefText);
+    setBriefCopied(true);
+    setTimeout(() => setBriefCopied(false), 2500);
+  };
+
+  const mailtoLink = `mailto:${siteConfig.contact.executiveDesk}?subject=${encodeURIComponent(`Enquiry: ${formData.interest || 'Partnership'} [Ref: ${referenceId}]`)}&body=${encodeURIComponent(fullBriefText)}`;
 
   return (
     <>
@@ -164,38 +198,44 @@ export const EnquiryForm = () => {
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
                 Area of Interest <span className="text-bronze">*</span>
               </label>
-              <select
-                name="interest"
-                required
-                value={formData.interest}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base focus:outline-none focus:border-bronze transition-colors cursor-pointer"
-              >
-                <option value="" disabled className="bg-bone text-stone-dark">Select Category</option>
-                {areasOfInterest.map((opt) => (
-                  <option key={opt} value={opt} className="bg-bone text-ink">
-                    {opt}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  name="interest"
+                  required
+                  value={formData.interest}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-stone/40 py-3 pr-8 text-ink text-sm sm:text-base focus:outline-none focus:border-bronze transition-colors cursor-pointer appearance-none"
+                >
+                  <option value="" disabled className="bg-bone text-stone-dark">Select Category</option>
+                  {areasOfInterest.map((opt) => (
+                    <option key={opt} value={opt} className="bg-bone text-ink">
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="w-4 h-4 text-stone-dark absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
                 Preferred Contact Protocol
               </label>
-              <select
-                name="preferredMethod"
-                value={formData.preferredMethod}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base focus:outline-none focus:border-bronze transition-colors cursor-pointer"
-              >
-                {contactMethods.map((method) => (
-                  <option key={method} value={method} className="bg-bone text-ink">
-                    {method}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  name="preferredMethod"
+                  value={formData.preferredMethod}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-stone/40 py-3 pr-8 text-ink text-sm sm:text-base focus:outline-none focus:border-bronze transition-colors cursor-pointer appearance-none"
+                >
+                  {contactMethods.map((method) => (
+                    <option key={method} value={method} className="bg-bone text-ink">
+                      {method}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="w-4 h-4 text-stone-dark absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
             </div>
           </div>
 
@@ -239,21 +279,50 @@ export const EnquiryForm = () => {
       {/* Confirmation Modal */}
       <Modal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title="Thank you. Your enquiry is ready for transmission."
-        message={`Your enquiry dossier (${formData.interest || 'General'}) has been prepared with reference code ${referenceId}. In this web preview mode prior to live SMTP integration, please email directly or dispatch via the link below.`}
+        onClose={handleCloseModal}
+        title="Enquiry Prepared for Dispatch"
+        message={`Your enquiry dossier (${formData.interest || 'General'}) has been structured under reference code ${referenceId}. You can dispatch directly via your email client or copy the dossier below.`}
         referenceId={referenceId}
       >
-        <div className="mt-4 pt-4 border-t border-stone/20 flex flex-col sm:flex-row gap-3">
-          <a
-            href={`mailto:office@sushillwaddhwa.com?subject=Enquiry: ${encodeURIComponent(formData.interest || 'Partnership')} [Ref: ${referenceId}]&body=Name: ${encodeURIComponent(formData.name)}%0ACompany: ${encodeURIComponent(formData.organisation)}%0APhone: ${encodeURIComponent(formData.phone)}%0APreferred Method: ${encodeURIComponent(formData.preferredMethod)}%0A%0ADetails:%0A${encodeURIComponent(formData.details)}`}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-ink text-bone text-xs uppercase tracking-widest hover:bg-bronze transition-colors"
-          >
-            <Mail className="w-3.5 h-3.5" />
-            <span>Open in Mail Client</span>
-          </a>
+        <div className="space-y-4">
+          <div className="p-3 bg-white/5 border border-white/10 text-xs font-mono text-stone space-y-1 max-h-36 overflow-y-auto">
+            <div><strong className="text-bone">Principal:</strong> {formData.name}</div>
+            {formData.organisation && <div><strong className="text-bone">Company:</strong> {formData.organisation}</div>}
+            <div><strong className="text-bone">Category:</strong> {formData.interest}</div>
+            <div><strong className="text-bone">Channel:</strong> {formData.preferredMethod}</div>
+          </div>
+
+          <div className="pt-2 flex flex-col sm:flex-row gap-3">
+            <a
+              href={mailtoLink}
+              className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-bronze text-white text-xs uppercase tracking-widest hover:bg-bronze-dark transition-colors font-medium"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Send via Email Client</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={handleCopyBrief}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white/10 text-bone text-xs uppercase tracking-widest hover:bg-white/20 transition-colors font-medium border border-white/15"
+            >
+              {briefCopied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-bronze" />
+                  <span>Brief Copied</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3.5 h-3.5" />
+                  <span>Copy Brief</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </Modal>
     </>
   );
 };
+
+export default EnquiryForm;

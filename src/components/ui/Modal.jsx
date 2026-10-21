@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button';
 
-export const Modal = ({ isOpen, onClose, title, message, referenceId }) => {
+export const Modal = ({ isOpen, onClose, title, message, referenceId, children }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -54,7 +54,7 @@ export const Modal = ({ isOpen, onClose, title, message, referenceId }) => {
                 <CheckCircle2 className="w-4 h-4" />
               </span>
               <span className="text-[11px] tracking-super-wide text-bronze uppercase">
-                Private Transmission Confirmed
+                Transmission Dossier
               </span>
             </div>
 
@@ -67,9 +67,15 @@ export const Modal = ({ isOpen, onClose, title, message, referenceId }) => {
             </p>
 
             {referenceId && (
-              <div className="p-3 bg-white/5 border border-white/10 mb-8 font-mono text-xs text-stone-light flex justify-between items-center">
+              <div className="p-3 bg-white/5 border border-white/10 mb-6 font-mono text-xs text-stone-light flex justify-between items-center">
                 <span className="text-[10px] tracking-widest text-stone uppercase font-sans">Reference Protocol</span>
                 <span>{referenceId}</span>
+              </div>
+            )}
+
+            {children && (
+              <div className="mb-6">
+                {children}
               </div>
             )}
 
@@ -84,3 +90,5 @@ export const Modal = ({ isOpen, onClose, title, message, referenceId }) => {
     </AnimatePresence>
   );
 };
+
+export default Modal;

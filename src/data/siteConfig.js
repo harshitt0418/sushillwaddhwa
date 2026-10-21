@@ -49,8 +49,10 @@ export const siteConfig = {
   },
 
   contact: {
-    executiveDesk: "office@sushillwaddhwa.com (To be confirmed)",
-    partnerships: "partnerships@platinumworld.net (To be confirmed)",
-    hubs: "Dubai · Mumbai · London",
+    executiveDesk: "office@sushillwaddhwa.com",
+    partnerships: "partnerships@platinumworld.net",
+    directPhone: "+91 22 6600 0000",
+    hubs: "Mumbai · Dubai · London",
+    confidentialityClause: "All enquiries and commercial proposals are received directly by the executive office and treated under strict institutional discretion.",
   },
 };
