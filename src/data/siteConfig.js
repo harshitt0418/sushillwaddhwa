@@ -1,47 +1,56 @@
 export const siteConfig = {
   name: "Sushill Waddhwa",
-  title: "Global Hospitality Leader & Founder",
-  concept: "A Private Access House",
-  tagline: "Access is not a luxury. It is the beginning.",
-  subtagline: "Sushill Waddhwa connects exceptional hospitality, global opportunity and considered relationships — creating possibilities where discretion matters.",
+  role: "Global Hospitality Entrepreneur · Investor · Luxury Lifestyle Personality",
+  title: "Founder & CMD, Platinum World Grroup",
+  since: "Since 1989",
+  masterTagline: "Building a world worth experiencing.",
   
-  // Verified entities
+  bioSummary: "Sushill Waddhwa connects exceptional hospitality, destination vision, global investments, and cultural lifestyle — shaping moments that endure.",
+
+  personality: {
+    traits: ["Experienced", "Globally Connected", "Sophisticated", "Warm", "Curious", "Confident", "Approachable"],
+    ethos: "Successful without being boastful; luxurious but never flashy; fit but not a fitness influencer; international but strongly connected to India.",
+  },
+
   ventures: [
     {
-      name: "Platinum World Group",
-      descriptor: "Platinum World Lifestyle",
-      role: "Founder",
-      focus: "Curated luxury lifestyle, high-level travel, and strategic hospitality arrangements.",
+      name: "Platinum World Grroup",
+      role: "Founder & CMD",
+      since: "1989",
+      description: "Global hospitality leader orchestrating hotel buyouts, group experiences, luxury incentives, and private experiential travel.",
+      link: "/business#platinum-world-grroup",
     },
     {
       name: "Artoso Hospitality Corp.",
-      descriptor: "Global Footprint, Local Flair",
-      role: "Hospitality Projects & Concept Direction",
-      focus: "Luxury boutique hotel concepts and strategic development.",
+      role: "Strategic Concept & Advisory",
+      since: "Contemporary",
+      description: "Boutique hotel management, distinctive lifestyle hospitality concepts, and branded luxury residences.",
+      link: "/business#artoso-hospitality",
+    },
+    {
+      name: "Platinum World Pictures",
+      role: "Founder & Producer",
+      since: "Media & Film",
+      description: "Cinematic storytelling, brand films, and creative entertainment initiatives connecting destinations and luxury culture.",
+      link: "/business#platinum-world-pictures",
+    },
+    {
+      name: "WedTalks",
+      role: "Founder & Curator",
+      since: "Knowledge Platform",
+      description: "The intellectual forum connecting tourism boards, destination creators, luxury hoteliers, and elite event designers.",
+      link: "/hospitality#wedtalks",
     },
   ],
 
-  // Verified coordinates & transparent placeholders
   socials: {
     instagram: "https://www.instagram.com/sushillwaddhwa/",
-    linkedin: "https://www.linkedin.com/in/sushillwaddhwa/", // Direct verified handle format
+    linkedin: "https://www.linkedin.com/in/sushillwaddhwa/",
   },
 
-  contactPlaceholders: {
-    privateDeskEmail: "concierge@sushillwaddhwa.com (To be confirmed)",
-    directPhone: "+971 (To be confirmed)",
-    headquarters: "Dubai · Mumbai · London (To be confirmed)",
-    confidentialityClause: "All conversations and requests are handled under strict professional confidentiality and non-disclosure protocols.",
-  },
-
-  manifesto: {
-    headline: "Not more options. The right introduction.",
-    body: "In a world inundated with platforms and catalogs, true access remains profoundly human. It lives within trusted relationships, decades of institutional knowledge, and the ability to unlock closed doors without fanfare.",
-  },
-
-  closingStatement: {
-    headline: "The most valuable opportunities are rarely public.",
-    subtext: "Connect directly for private hotel buyouts, prime residential acquisitions, private aviation positioning, or hospitality ventures.",
-    cta: "Start a Private Conversation",
+  contact: {
+    executiveDesk: "office@sushillwaddhwa.com (To be confirmed)",
+    partnerships: "partnerships@platinumworld.net (To be confirmed)",
+    hubs: "Dubai · Mumbai · London",
   },
 };

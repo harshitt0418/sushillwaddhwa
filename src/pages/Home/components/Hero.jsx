@@ -6,22 +6,22 @@ import { fadeIn, transitions } from '@/lib/motion';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-ink text-bone overflow-hidden pt-24 pb-16">
+    <section className="relative min-h-screen flex items-center justify-center bg-ink text-bone overflow-hidden pt-28 pb-16">
       {/* Background Architectural Image Layer with subtle cinematic treatment */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85"
-          alt="Architectural luxury interior"
-          className="w-full h-full object-cover object-center filter brightness-[0.38] contrast-[1.08] scale-105 animate-pulseSlow"
+          alt="Architectural luxury hospitality interior"
+          className="w-full h-full object-cover object-center filter brightness-[0.35] contrast-[1.08] scale-105 animate-pulseSlow"
         />
         {/* Editorial monochromatic gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-transparent to-ink/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-transparent to-ink/75" />
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
-        {/* Eyebrow */}
+        {/* Eyebrow: Identity & Heritage */}
         <motion.div
           variants={fadeIn('down', 0.1)}
           initial="initial"
@@ -30,31 +30,31 @@ export const Hero = () => {
         >
           <span className="w-8 h-[1px] bg-bronze" />
           <span className="text-[10px] sm:text-[11px] uppercase tracking-super-wide text-stone-light font-medium">
-            Global Hospitality · Private Access · Strategic Partnerships
+            Founder & CMD, Platinum World Grroup · Since 1989
           </span>
           <span className="w-8 h-[1px] bg-bronze" />
         </motion.div>
 
-        {/* Main Headline */}
+        {/* Master Tagline as Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: transitions.luxuryEase, delay: 0.2 }}
           className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-bone leading-[1.05] tracking-tight max-w-5xl text-balance"
         >
-          Access is not a luxury.
+          Building a world
           <br />
-          <span className="italic font-light text-stone-light">It is the beginning.</span>
+          <span className="italic font-light text-stone-light">worth experiencing.</span>
         </motion.h1>
 
-        {/* Supporting Narrative */}
+        {/* Subtitle / Positioning */}
         <motion.p
           variants={fadeIn('up', 0.4)}
           initial="initial"
           animate="animate"
           className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-stone max-w-2xl font-light leading-relaxed text-balance"
         >
-          Sushill Waddhwa connects exceptional hospitality, global opportunity and considered relationships — creating possibilities where discretion matters.
+          Sushill Waddhwa connects exceptional hospitality, destination vision, global investments, and cultural lifestyle — shaping moments that endure.
         </motion.p>
 
         {/* Action Buttons */}
@@ -64,8 +64,8 @@ export const Hero = () => {
           animate="animate"
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
         >
-          <Button to="/private-access" variant="dark" size="lg">
-            Explore Private Access
+          <Button to="/business" variant="dark" size="lg">
+            Explore Ventures
           </Button>
           <Button to="/contact" variant="darkOutline" size="lg">
             Begin a Conversation

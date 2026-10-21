@@ -1,0 +1,66 @@
+export const businessEntities = [
+  {
+    id: "platinum-world-grroup",
+    name: "Platinum World Grroup",
+    descriptor: "Global Hospitality · Hotel Buyouts · Curated Experiences",
+    role: "Founder & CMD",
+    since: "Established 1989",
+    summary: "For over 35 years, Platinum World Grroup has stood as a vanguard in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across the globe.",
+    capabilities: [
+      "Total hotel & private island buyouts for grand gatherings and sovereign delegations",
+      "Bespoke international group travel management and luxury incentive movements",
+      "Confidential hospitality contract negotiation directly with global asset owners",
+      "End-to-end luxury logistics spanning aviation, private transfers, and curated excursions"
+    ],
+    highlight: "Trusted by Fortune 500 corporations, sovereign family offices, and leading event directors across 60+ countries.",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85",
+  },
+  {
+    id: "artoso-hospitality",
+    name: "Artoso Hospitality Corp.",
+    descriptor: "Hotel Management · Boutique Concepts · Branded Residences",
+    role: "Strategic Concept & Advisory",
+    since: "Contemporary Platform",
+    summary: "Artoso Hospitality represents the contemporary evolution of boutique hotel living, pairing localized cultural vernacular with disciplined operational governance and design-led luxury.",
+    capabilities: [
+      "Full-scope hotel management and operational positioning for independent luxury assets",
+      "Concept creation and architectural brief formulation for boutique hotel developments",
+      "Branded luxury residences advisory and high-end residential integration",
+      "Owner representation and strategic operator alignment with global hospitality brands"
+    ],
+    highlight: "Bridging the gap between historic regional soul and sustainable commercial longevity.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85",
+  },
+  {
+    id: "strategic-investments",
+    name: "Strategic Investments",
+    descriptor: "Hospitality Assets · Experiential Platforms · Lifestyle Innovation",
+    role: "Principal Investor & Strategic Ally",
+    since: "Active Portfolio",
+    summary: "Sushill’s investment philosophy aligns capital with visionaries transforming how modern travellers discover, stay, and connect with destinations of distinction.",
+    capabilities: [
+      "Co-investments in signature boutique hospitality and eco-luxury retreat developments",
+      "Seed and growth backing for experiential hospitality tech and specialized concierge platforms",
+      "Advisory equity in cultural content platforms and destination celebration forums",
+      "Synergistic partnerships accelerating private real estate and branded lifestyle ventures"
+    ],
+    highlight: "Disciplined capital deployment guided by 35+ years of operational industry insight.",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+  },
+  {
+    id: "platinum-world-pictures",
+    name: "Platinum World Pictures",
+    descriptor: "Cinematic Media · Brand Films · Destination Storytelling",
+    role: "Founder & Producer",
+    since: "Media Division",
+    summary: "Platinum World Pictures merges cinematic artistry with the allure of global destinations, producing high-concept brand films, cultural documentaries, and visual narratives.",
+    capabilities: [
+      "Bespoke destination showcase films in partnership with global tourism authorities",
+      "Cinematic brand campaigns for heritage watchmakers, luxury automotive, and iconic hotels",
+      "Documentary storytelling spotlighting international culinary and architectural heritage",
+      "Cross-platform visual content connecting discerning global audiences with luxury brands"
+    ],
+    highlight: "Transforming brand narratives into emotionally resonant cinematic experiences.",
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85",
+  },
+];

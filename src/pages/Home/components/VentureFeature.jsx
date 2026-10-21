@@ -19,9 +19,9 @@ export const VentureFeature = () => {
               className="space-y-4"
             >
               <div className="flex items-center gap-3">
-                <span className="w-6 h-[1px] bg-bronze" />
+                <span className="w-8 h-[1px] bg-bronze" />
                 <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
-                  Featured Venture
+                  Hospitality Platform Spotlight
                 </span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl font-normal text-ink leading-tight">
@@ -41,10 +41,10 @@ export const VentureFeature = () => {
               className="space-y-4 text-stone-dark text-sm sm:text-base leading-relaxed font-light"
             >
               <p>
-                Hospitality is evolving beyond standardized luxury toward rare, culturally resonant micro-environments. Through <strong className="text-ink font-medium">Artoso Hospitality Corp.</strong>, Sushill Waddhwa directs the conceptualization and development of luxury boutique hotel models that respect localized vernacular while upholding world-class service choreography.
+                Hospitality is evolving beyond standardized luxury toward character-rich, culturally resonant micro-environments. Through <strong className="text-ink font-medium">Artoso Hospitality Corp.</strong>, Sushill Waddhwa guides the conceptualization and development of luxury boutique hotel models that respect localized vernacular while upholding world-class service standards.
               </p>
               <p>
-                From idyllic coastal sanatoria in Sri Lanka to intimate private retreats across Europe and the Middle East, Artoso establishes a dialogue between architectural authenticity and commercial sustainability.
+                In synergy with <strong className="text-ink font-medium">Platinum World Grroup</strong>'s global group hospitality reach since 1989, Artoso establishes a dialogue between architectural authenticity, guest intimacy, and commercial sustainability.
               </p>
             </motion.div>
 
@@ -55,11 +55,11 @@ export const VentureFeature = () => {
               viewport={{ once: true }}
               className="pt-4 flex flex-wrap items-center gap-4"
             >
-              <Button to="/private-access#boutique-hotel-development" variant="outline" size="md">
-                Explore Hotel Concepts
+              <Button to="/business#artoso-hospitality" variant="outline" size="md">
+                Explore Hospitality Concepts
               </Button>
-              <Button to="/contact" variant="ghost" size="md">
-                Discuss Development
+              <Button to="/collaborate" variant="ghost" size="md">
+                Partner with Sushill
               </Button>
             </motion.div>
           </div>
@@ -72,20 +72,21 @@ export const VentureFeature = () => {
             viewport={{ once: true }}
             className="lg:col-span-6 order-1 lg:order-2"
           >
-            <div className="relative aspect-[16/11] overflow-hidden bg-ink/10 border border-stone/30 shadow-2xl">
+            <div className="relative aspect-[16/11] overflow-hidden bg-ink/10 border border-stone/30 shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=85"
                 alt="Artoso Hospitality boutique architectural concept"
                 className="w-full h-full object-cover filter brightness-95 contrast-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-ink/20 mix-blend-multiply" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-ink/80 backdrop-blur-md border border-white/10 text-bone">
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-ink/90 backdrop-blur-md border border-white/10 text-bone">
                 <span className="text-[10px] uppercase tracking-super-wide text-bronze block">
-                  Artoso Hospitality Corp.
+                  Artoso Hospitality Corp. · Boutique Hotel Concepts
                 </span>
                 <p className="font-serif text-sm sm:text-base text-bone-light mt-0.5">
-                  Concept direction for next-generation boutique sanctuaries.
+                  Concept direction and owner advisory for distinctive luxury sanctuaries.
                 </p>
               </div>
             </div>

@@ -19,25 +19,29 @@ export const NarrativeBio = () => {
           >
             <div>
               <span className="text-[10px] uppercase tracking-super-wide text-bronze-dim block mb-1">
-                The Standard
+                The Heritage
               </span>
               <h3 className="font-serif text-2xl text-ink font-normal">
-                Discretion as an art form.
+                35+ Years of Trust & Discretion
               </h3>
             </div>
 
             <p className="text-xs text-stone-dark leading-relaxed font-light">
-              True leadership in global luxury hospitality is not conducted in the spotlight. It requires an intuitive mastery of international protocol, deep respect for privacy, and instantaneous problem solving.
+              True leadership in global luxury hospitality is rooted in long-term trust, cultural empathy, and an uncompromising standard of execution.
             </p>
 
             <div className="pt-4 border-t border-stone/20 text-xs font-mono text-stone-dark space-y-2">
               <div className="flex justify-between">
-                <span>Core Discipline:</span>
-                <span className="text-ink font-sans">Hospitality & Buyouts</span>
+                <span>Founded:</span>
+                <span className="text-ink font-sans">1989</span>
               </div>
               <div className="flex justify-between">
-                <span>Geography:</span>
-                <span className="text-ink font-sans">UAE · India · Europe</span>
+                <span>Core Venture:</span>
+                <span className="text-ink font-sans">Platinum World Grroup</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Headquarters:</span>
+                <span className="text-ink font-sans">Dubai · Mumbai · London</span>
               </div>
             </div>
           </motion.div>
@@ -63,20 +67,20 @@ export const NarrativeBio = () => {
             <div className="pt-6">
               <div className="p-6 bg-bone border border-stone/30">
                 <span className="text-[10px] uppercase tracking-widest text-bronze font-mono block mb-2">
-                  Operating Principles
+                  Guiding Principles
                 </span>
                 <ul className="text-xs sm:text-sm text-ink space-y-2.5 font-normal">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
-                    Absolute non-disclosure and personal discretion on all client briefs.
+                    Relationship-first approach: honor commitments and nurture alliances across decades.
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
-                    Direct engagement with principal decision-makers and hotel general managers.
+                    Bridge artistic and emotional vision with rigorous commercial and operational discipline.
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
-                    Zero mass-market compromises — bespoke curation only.
+                    Celebrate authentic Indian warmth while delivering seamless international standards.
                   </li>
                 </ul>
               </div>

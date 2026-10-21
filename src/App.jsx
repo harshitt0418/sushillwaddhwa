@@ -10,8 +10,13 @@ import { LuxuryPreloader } from '@/components/layout/LuxuryPreloader';
 
 import { Home } from '@/pages/Home';
 import { About } from '@/pages/About';
-import { PrivateAccess } from '@/pages/PrivateAccess';
+import { Business } from '@/pages/Business';
+import { Hospitality } from '@/pages/Hospitality';
+import { Lifestyle } from '@/pages/Lifestyle';
+import { Media } from '@/pages/Media';
+import { Collaborate } from '@/pages/Collaborate';
 import { Contact } from '@/pages/Contact';
+import { PrivateAccess } from '@/pages/PrivateAccess';
 
 export const App = () => {
   const location = useLocation();
@@ -62,8 +67,13 @@ export const App = () => {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/private-access" element={<PrivateAccess />} />
+            <Route path="/business" element={<Business />} />
+            <Route path="/hospitality" element={<Hospitality />} />
+            <Route path="/lifestyle" element={<Lifestyle />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/collaborate" element={<Collaborate />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/private-access" element={<PrivateAccess />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </AnimatePresence>

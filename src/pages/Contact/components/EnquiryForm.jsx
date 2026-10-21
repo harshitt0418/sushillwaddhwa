@@ -3,23 +3,22 @@ import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
-import { Lock, ShieldCheck } from 'lucide-react';
+import { Lock, ShieldCheck, Mail } from 'lucide-react';
 import { fadeIn } from '@/lib/motion';
 
 const areasOfInterest = [
-  "Hospitality & Hotel Buyouts",
-  "Luxury Real Estate",
-  "Private Aviation",
-  "Yachts & Lifestyle Access",
-  "Hotel Vision & Development",
-  "Strategic Partnership / Other"
+  "Business Enquiries",
+  "Hospitality Partnerships",
+  "Media & Speaking",
+  "Brand Collaborations",
+  "Other"
 ];
 
 const contactMethods = [
-  "Confidential Email",
+  "Executive Email",
   "Direct Telephone",
   "WhatsApp / Signal",
-  "In-Person Meeting (Dubai / London)"
+  "In-Person Meeting (Mumbai / Dubai / London)"
 ];
 
 export const EnquiryForm = () => {
@@ -33,7 +32,7 @@ export const EnquiryForm = () => {
     phone: "",
     interest: "",
     details: "",
-    preferredMethod: "Confidential Email",
+    preferredMethod: "Executive Email",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,23 +59,13 @@ export const EnquiryForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate luxury response latency
+    // Prepare enquiry reference
     setTimeout(() => {
       setIsSubmitting(false);
-      const randomCode = `SW-${Math.floor(100000 + Math.random() * 900000)}-CONF`;
+      const randomCode = `SW-${Math.floor(100000 + Math.random() * 900000)}`;
       setReferenceId(randomCode);
       setIsModalOpen(true);
-      // Reset form
-      setFormData({
-        name: "",
-        organisation: "",
-        email: "",
-        phone: "",
-        interest: "",
-        details: "",
-        preferredMethod: "Confidential Email",
-      });
-    }, 600);
+    }, 500);
   };
 
   return (
@@ -91,15 +80,15 @@ export const EnquiryForm = () => {
         <div className="flex items-center justify-between pb-8 mb-8 border-b border-stone/20">
           <div>
             <span className="text-[10px] uppercase tracking-super-wide text-bronze font-mono block">
-              Confidential Transmission Protocol
+              Official Enquiry Form
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal mt-1">
-              Private Inquiry Dossier
+              Connect with Sushill Waddhwa
             </h3>
           </div>
           <div className="flex items-center gap-2 text-stone-dark text-xs">
             <Lock className="w-3.5 h-3.5 text-bronze" />
-            <span className="hidden sm:inline font-mono text-[11px]">Strict NDA Applied</span>
+            <span className="hidden sm:inline font-mono text-[11px]">Direct Executive Desk</span>
           </div>
         </div>
 
@@ -108,7 +97,7 @@ export const EnquiryForm = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
-                Principal / Representative Name <span className="text-bronze">*</span>
+                Full Name / Representative <span className="text-bronze">*</span>
               </label>
               <input
                 type="text"
@@ -116,21 +105,21 @@ export const EnquiryForm = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="e.g. Lord Alistair Vance"
+                placeholder="e.g. Rahul Sharma / Alexandra Dupont"
                 className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base placeholder:text-stone/60 focus:outline-none focus:border-bronze transition-colors"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
-                Family Office / Entity Name
+                Company / Organisation / Entity
               </label>
               <input
                 type="text"
                 name="organisation"
                 value={formData.organisation}
                 onChange={handleChange}
-                placeholder="e.g. Vance Holdings / Independent"
+                placeholder="e.g. Luxury Brand Group / Hospitality Group"
                 className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base placeholder:text-stone/60 focus:outline-none focus:border-bronze transition-colors"
               />
             </div>
@@ -140,7 +129,7 @@ export const EnquiryForm = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
-                Direct Email Address <span className="text-bronze">*</span>
+                Email Address <span className="text-bronze">*</span>
               </label>
               <input
                 type="email"
@@ -148,14 +137,14 @@ export const EnquiryForm = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="principal@domain.com"
+                placeholder="name@organisation.com"
                 className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base placeholder:text-stone/60 focus:outline-none focus:border-bronze transition-colors"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
-                Direct Telephone / Mobile <span className="text-bronze">*</span>
+                Phone / Direct Number <span className="text-bronze">*</span>
               </label>
               <input
                 type="tel"
@@ -163,7 +152,7 @@ export const EnquiryForm = () => {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+971 50 000 0000"
+                placeholder="+91 / +971 / +44 ..."
                 className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base placeholder:text-stone/60 focus:outline-none focus:border-bronze transition-colors"
               />
             </div>
@@ -182,7 +171,7 @@ export const EnquiryForm = () => {
                 onChange={handleChange}
                 className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base focus:outline-none focus:border-bronze transition-colors cursor-pointer"
               >
-                <option value="" disabled className="bg-bone text-stone-dark">Select Primary Mandate</option>
+                <option value="" disabled className="bg-bone text-stone-dark">Select Category</option>
                 {areasOfInterest.map((opt) => (
                   <option key={opt} value={opt} className="bg-bone text-ink">
                     {opt}
@@ -210,7 +199,7 @@ export const EnquiryForm = () => {
             </div>
           </div>
 
-          {/* Row 4: Tell us what you are looking for */}
+          {/* Row 4: Scope of collaboration */}
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-widest text-stone-dark font-medium block">
               Tell us what you are looking for <span className="text-bronze">*</span>
@@ -221,7 +210,7 @@ export const EnquiryForm = () => {
               required
               value={formData.details}
               onChange={handleChange}
-              placeholder="Outline parameters: destination, dates, privacy needs, guest count, or asset specifics..."
+              placeholder="Outline your project scope, hotel buyout requirements, speaking opportunity, brand collaboration or investment conversation..."
               className="w-full bg-transparent border-b border-stone/40 py-3 text-ink text-sm sm:text-base placeholder:text-stone/60 focus:outline-none focus:border-bronze transition-colors resize-none"
             />
           </div>
@@ -231,7 +220,7 @@ export const EnquiryForm = () => {
             <div className="flex items-center gap-3 text-xs text-stone-dark font-light max-w-sm">
               <ShieldCheck className="w-4 h-4 text-bronze flex-shrink-0" />
               <span>
-                Submissions are received directly by the executive office and treated under institutional confidentiality.
+                All enquiries are handled with utmost discretion and reviewed directly by the office of Sushill Waddhwa.
               </span>
             </div>
 
@@ -241,7 +230,7 @@ export const EnquiryForm = () => {
               size="lg"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Transmitting Brief..." : "Transmit Private Enquiry"}
+              {isSubmitting ? "Preparing Enquiry..." : "Submit Enquiry"}
             </Button>
           </div>
         </form>
@@ -251,10 +240,20 @@ export const EnquiryForm = () => {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Thank you. Your enquiry has been prepared for review."
-        message="Your transmission has been logged into the secure desk of Sushill Waddhwa. Given the high-profile nature of our hospitality and private access mandates, our office exercises thorough due diligence before initiating direct communications."
+        title="Thank you. Your enquiry is ready for transmission."
+        message={`Your enquiry dossier (${formData.interest || 'General'}) has been prepared with reference code ${referenceId}. In this web preview mode prior to live SMTP integration, please email directly or dispatch via the link below.`}
         referenceId={referenceId}
-      />
+      >
+        <div className="mt-4 pt-4 border-t border-stone/20 flex flex-col sm:flex-row gap-3">
+          <a
+            href={`mailto:office@sushillwaddhwa.com?subject=Enquiry: ${encodeURIComponent(formData.interest || 'Partnership')} [Ref: ${referenceId}]&body=Name: ${encodeURIComponent(formData.name)}%0ACompany: ${encodeURIComponent(formData.organisation)}%0APhone: ${encodeURIComponent(formData.phone)}%0APreferred Method: ${encodeURIComponent(formData.preferredMethod)}%0A%0ADetails:%0A${encodeURIComponent(formData.details)}`}
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-ink text-bone text-xs uppercase tracking-widest hover:bg-bronze transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5" />
+            <span>Open in Mail Client</span>
+          </a>
+        </div>
+      </Modal>
     </>
   );
 };

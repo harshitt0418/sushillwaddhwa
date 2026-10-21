@@ -1,0 +1,5 @@
+# robots.txt for Sushill Waddhwa Personal Brand Website
+User-agent: *
+Allow: /
+
+Sitemap: https://sushillwaddhwa.vercel.app/sitemap.xml

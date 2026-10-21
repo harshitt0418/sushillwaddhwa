@@ -1,60 +1,74 @@
 export const principalBio = {
   headline: "Built on relationships. Recognised by results.",
-  lead: "Sushill Waddhwa operates at the intersection of international hospitality, private wealth advisory, and bespoke experiential infrastructure.",
+  lead: "Sushill Waddhwa operates at the intersection of international hospitality, destination vision, private wealth advisory, and experiential innovation.",
   paragraphs: [
-    "Over decades of cultivating enduring alliances with general managers, luxury hotel ownership groups, private aviation operators, and sovereign property holders, Sushill has established a quiet reputation as the definitive conduit for opportunities that never reach open markets.",
-    "As the visionary founder behind Platinum World Group and Platinum World Lifestyle, his work has consistently bridged the demanding requirements of global wedding architects, corporate leaders, and discerning families with the world's most guarded luxury estates and hospitality icons.",
-    "Today, expanding into forward-looking boutique hospitality concepts through Artoso Hospitality Corp., Sushill pairs acute commercial discipline with an innate sensitivity to refined aesthetics, architectural soul, and impeccable guest discretion."
+    "Since embarking on his entrepreneurial journey in 1989, Sushill Waddhwa has spent over three and a half decades shaping the landscape of bespoke events, global hospitality, and high-impact group experiences. What began as pioneering event choreography has evolved into a global ecosystem spanning luxury hotel buyouts, strategic tourism advisory, boutique hotel development, and cinematic media.",
+    "As the Founder & CMD of Platinum World Grroup, Sushill established one of the industry's most trusted institutions, bridging the sophisticated requirements of corporate boards, sovereign family offices, and leading wedding planners with the world's most guarded luxury estates, hotels, and private islands across more than 60 countries.",
+    "A respected thought leader and founder of WedTalks, he collaborates with national tourism boards and international hotel groups to redefine how destinations attract and execute world-class celebrations. Today, expanding through Artoso Hospitality Corp. and cinematic storytelling via Platinum World Pictures, Sushill pairs acute commercial discipline with a deep reverence for authentic hospitality and enduring relationships."
   ],
-  pullQuote: "The real value is not access alone — it is knowing what deserves to be accessed.",
+  pullQuote: "The real value is not access alone — it is knowing what deserves to be accessed, and honoring the relationships that make it possible.",
 };
 
-export const areasOfFocus = [
+export const careerTimeline = [
   {
-    number: "01",
-    title: "Hospitality Leadership",
-    summary: "Guiding premier industry stakeholders, shaping luxury destination footprints, and fostering senior institutional relationships across hospitality capitals worldwide.",
-    tags: ["Leadership", "Institutional Trust", "Global Networks"]
+    period: "1989 — The Genesis",
+    title: "Pioneering Experiential Gatherings",
+    summary: "Began entrepreneurial journey orchestrating groundbreaking corporate events and high-profile celebrations in India, establishing a benchmark for meticulous logistical execution and creative flair.",
+    tags: ["Entrepreneurship", "Event Innovation", "Logistics Mastery"]
   },
   {
-    number: "02",
-    title: "Hotel Buyouts for Events & Weddings",
-    summary: "Structuring and executing full-scale hotel and resort buyouts for multi-day weddings and private high-profile gatherings with complete privacy.",
-    tags: ["Property Buyouts", "Destination Weddings", "Discretion"]
+    period: "Expansion Era",
+    title: "Founding Platinum World Grroup",
+    summary: "Scaled operations internationally to create Platinum World Grroup, expanding into cross-border luxury travel management, multi-destination corporate movements, and royal celebrations.",
+    tags: ["Platinum World Grroup", "Global Scaling", "Luxury Travel"]
   },
   {
-    number: "03",
-    title: "Luxury Real Estate Access",
-    summary: "Connecting qualified principals to off-market residential mansions, signature penthouses, iconic hotel suites, and commercial real estate assets.",
-    tags: ["Off-Market", "Mansions & Penthouses", "Private Portfolios"]
+    period: "Hospitality Focus",
+    title: "Hotel Buyouts & Destination Tourism",
+    summary: "Pioneered structured resort buyouts and palace privatizations, building trusted GM-level alliances with major luxury hotel brands across Asia, Europe, and the Middle East.",
+    tags: ["Property Buyouts", "Hotel Alliances", "Destination Tourism"]
   },
   {
-    number: "04",
-    title: "Private Aviation & Yacht Solutions",
-    summary: "Enabling friction-free global transit via long-range private aviation charter facilitation and confidential superyacht expeditions.",
-    tags: ["Aviation Charter", "Superyacht Curation", "Tarmac Logistics"]
+    period: "Industry Leadership",
+    title: "WedTalks Forum & Tourism Advisory",
+    summary: "Spearheaded WedTalks as an intellectual symposium connecting tourism authorities and elite event creators, advising sovereign boards on capturing high-yield celebration tourism.",
+    tags: ["WedTalks", "Tourism Boards", "Thought Leadership"]
   },
   {
-    number: "05",
-    title: "Boutique Hotel Vision",
-    summary: "Pioneering character-driven boutique hotel concepts with Artoso Hospitality Corp., blending authentic regional identity with international luxury service standards.",
-    tags: ["Concept Direction", "Artoso Hospitality", "Boutique Luxury"]
+    period: "Present & Future",
+    title: "Artoso Hospitality & Next-Gen Media",
+    summary: "Leading concept direction for boutique hotels through Artoso Hospitality Corp., while exploring cinematic media with Platinum World Pictures and modern digital storytelling.",
+    tags: ["Artoso Hospitality", "Boutique Concepts", "Digital Storytelling"]
   }
 ];
 
 export const selectedEcosystem = [
   {
-    name: "Platinum World Group",
-    subname: "Platinum World Lifestyle",
-    role: "Founder",
-    status: "Active Foundation",
-    description: "The bespoke lifestyle and strategic travel advisory established to serve high-profile events, luxury buyouts, and discreet client requirements.",
+    name: "Platinum World Grroup",
+    descriptor: "Global Hospitality · Hotel Buyouts · Curated Experiences",
+    role: "Founder & CMD",
+    since: "Established 1989",
+    description: "The core international travel and hospitality management enterprise serving multinational corporations, sovereign delegations, and landmark milestone celebrations worldwide.",
   },
   {
     name: "Artoso Hospitality Corp.",
-    subname: "Global Footprint, Local Flair",
+    descriptor: "Boutique Hotel Concepts & Branded Residences",
     role: "Strategic Concept & Advisory",
-    status: "Emerging Development",
-    description: "A forward-thinking hospitality platform dedicated to concepting, developing, and curating distinctive boutique luxury hotel properties.",
+    since: "Hospitality Platform",
+    description: "A forward-thinking hospitality platform dedicated to concepting, developing, and operating distinctive boutique luxury hotels and branded residential retreats.",
+  },
+  {
+    name: "WedTalks",
+    descriptor: "Destination Celebration Forum",
+    role: "Founder & Curator",
+    since: "Knowledge Platform",
+    description: "The premier intellectual exchange bridging tourism ministries, luxury hoteliers, and international wedding designers to advance the celebration tourism economy.",
+  },
+  {
+    name: "Platinum World Pictures",
+    descriptor: "Media, Film & Destination Storytelling",
+    role: "Founder & Producer",
+    since: "Media & Film",
+    description: "Cinematic entertainment initiative dedicated to crafting destination brand films, cultural documentaries, and exploring new frontiers in digital storytelling.",
   },
 ];

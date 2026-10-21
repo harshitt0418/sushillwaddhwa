@@ -4,8 +4,8 @@ import { pageTransitionVariants } from '@/lib/motion';
 import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { PersonalIntro } from './components/PersonalIntro';
-import { HorizontalShowcase } from './components/HorizontalShowcase';
-import { ByTheNumbers } from './components/ByTheNumbers';
+import { EditorialPreviews } from './components/EditorialPreviews';
+import { LegacyMilestones } from './components/LegacyMilestones';
 import { VentureFeature } from './components/VentureFeature';
 import { EnquiryCTA } from '@/components/sections/EnquiryCTA';
 
@@ -24,23 +24,24 @@ export const Home = () => {
       {/* 02. Typographic Manifesto */}
       <Manifesto />
 
-      {/* 03. Personal Introduction to Sushill Waddhwa */}
+      {/* 03. Personal Introduction with Editorial Portrait */}
       <PersonalIntro />
 
-      {/* 04. The World, Connected (Horizontal Showcase) */}
-      <HorizontalShowcase />
+      {/* 04. Editorial Previews for Business, Hospitality, Lifestyle & Media */}
+      <EditorialPreviews />
 
-      {/* 05. By The Numbers (Verified & Transparent) */}
-      <ByTheNumbers />
+      {/* 05. Legacy & Milestones Since 1989 */}
+      <LegacyMilestones />
 
-      {/* 06. Featured Venture: Artoso Hospitality Corp */}
+      {/* 06. Featured Venture Spotlight */}
       <VentureFeature />
 
-      {/* 07. Full-width Dark Closing CTA */}
+      {/* 07. Full-width Closing Invitation */}
       <EnquiryCTA
-        headline="The most valuable opportunities are rarely public."
-        subtext="Sushill Waddhwa works closely with private clients, international wedding creators, and property owners on strategic hospitality assignments."
-        buttonText="Start a Private Conversation"
+        headline="Building a world worth experiencing."
+        subtext="Sushill Waddhwa collaborates with global hotel groups, tourism authorities, investment partners, and luxury brands on landmark hospitality and lifestyle initiatives."
+        buttonText="Begin a Conversation"
+        to="/contact"
       />
     </motion.div>
   );

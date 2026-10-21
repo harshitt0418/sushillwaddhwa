@@ -22,7 +22,7 @@ export const PersonalIntro = () => {
               <div className="flex items-center gap-3">
                 <span className="w-8 h-[1px] bg-bronze" />
                 <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
-                  The Principal
+                  The Principal · Since 1989
                 </span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ink leading-tight">
@@ -42,13 +42,13 @@ export const PersonalIntro = () => {
               className="space-y-4 text-stone-dark text-sm sm:text-base leading-relaxed font-light"
             >
               <p>
-                As the founder of <span className="text-ink font-medium">Platinum World Group</span> and <span className="text-ink font-medium">Platinum World Lifestyle</span>, Sushill Waddhwa has spent decades operating as a trusted strategic ally to royal families, luxury wedding directors, corporate leaders, and sovereign property holders.
+                Sushill Waddhwa is a global hospitality entrepreneur, investor, and luxury lifestyle personality who has spent more than 35 years building enduring relationships across the world's most guarded hospitality icons, sovereign destinations, and luxury platforms.
               </p>
               <p>
-                His reputation rests upon solving what seems impossible: completely closing luxury island resorts for exclusive multi-day celebrations, sourcing off-market prime penthouses, and commissioning heavy aircraft charters at zero notice.
+                As Founder & CMD of <span className="text-ink font-medium">Platinum World Grroup</span>, his career began in 1989 pioneering experiential corporate gatherings and bespoke celebration tourism. Over decades, his influence expanded into total hotel buyouts, destination weddings, strategic hotel advisory through <span className="text-ink font-medium">Artoso Hospitality Corp.</span>, and thought leadership forums such as <span className="text-ink font-medium">WedTalks</span>.
               </p>
               <p>
-                Every transaction and connection is built upon a single standard: uncompromising discretion and absolute alignment of values.
+                Grounded in the values of authentic Indian warmth and cosmopolitan sophistication, Sushill operates with quiet confidence, discretion, and an instinctive eye for moments that transcend standard luxury.
               </p>
             </motion.div>
 
@@ -65,12 +65,12 @@ export const PersonalIntro = () => {
                   Sushill Waddhwa
                 </span>
                 <span className="text-[11px] uppercase tracking-widest text-stone-dark block mt-0.5">
-                  Global Hospitality Leader & Founder
+                  Founder & CMD, Platinum World Grroup · Since 1989
                 </span>
               </div>
 
               <Button to="/about" variant="outline" size="md">
-                Read Principal Profile
+                Read Full Journey
               </Button>
             </motion.div>
           </div>
@@ -102,7 +102,7 @@ export const PersonalIntro = () => {
             {/* Caption mark */}
             <div className="mt-3 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono text-stone-dark">
               <span>Sushill Waddhwa</span>
-              <span className="text-bronze">The Principal</span>
+              <span className="text-bronze">Executive Profile</span>
             </div>
           </motion.div>
 

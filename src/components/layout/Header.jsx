@@ -31,29 +31,29 @@ export const Header = () => {
           "fixed top-0 left-0 right-0 z-40 transition-all duration-500 border-b",
           isScrolled
             ? "bg-ink/95 backdrop-blur-md py-3.5 sm:py-4 border-white/15 shadow-2xl"
-            : "bg-ink/80 backdrop-blur-md py-5 sm:py-6 border-white/10"
+            : "bg-ink/80 backdrop-blur-md py-4 sm:py-5 border-white/10"
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Brand Wordmark */}
           <Link to="/" className="group flex flex-col">
-            <span className="font-serif text-xl sm:text-2xl tracking-[0.2em] font-normal text-bone group-hover:text-bronze transition-colors uppercase">
+            <span className="font-serif text-xl sm:text-2xl tracking-[0.18em] font-normal text-bone group-hover:text-bronze transition-colors uppercase">
               Sushill Waddhwa
             </span>
             <span className="text-[9px] tracking-super-wide text-bronze uppercase -mt-0.5">
-              A Private Access House
+              Founder & CMD, Platinum World Grroup · Since 1989
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 lg:gap-12" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-9" aria-label="Main Navigation">
             {navigationLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
                   cn(
-                    "text-xs uppercase tracking-widest font-medium transition-colors relative py-1",
+                    "text-[11px] uppercase tracking-widest font-medium transition-colors relative py-1",
                     isActive
                       ? "text-bone font-semibold"
                       : "text-bone/75 hover:text-white"
@@ -73,16 +73,16 @@ export const Header = () => {
           </nav>
 
           {/* Header Action Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <Button to={headerCTA.path} variant="darkOutline" size="sm">
               {headerCTA.label}
             </Button>
           </div>
 
-          {/* Mobile Menu Trigger */}
+          {/* Mobile / Tablet Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden p-2 text-bone hover:text-bronze transition-colors"
+            className="lg:hidden p-2 text-bone hover:text-bronze transition-colors"
             aria-label="Open mobile navigation"
           >
             <Menu className="w-6 h-6 stroke-[1.5]" />

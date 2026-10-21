@@ -1,11 +1,19 @@
 export const navigationLinks = [
   { label: "Home", path: "/" },
-  { label: "The Principal", path: "/about" },
-  { label: "Private Access", path: "/private-access" },
-  { label: "Contact", path: "/contact" },
+  { label: "About", path: "/about" },
+  { label: "Business", path: "/business" },
+  { label: "Hospitality", path: "/hospitality" },
+  { label: "Lifestyle", path: "/lifestyle" },
+  { label: "Media", path: "/media" },
+  { label: "Collaborate", path: "/collaborate" },
 ];
 
 export const headerCTA = {
-  label: "Begin a Conversation",
+  label: "Contact",
   path: "/contact",
 };
+
+export const allRoutes = [
+  ...navigationLinks,
+  { label: "Contact", path: "/contact" },
+];

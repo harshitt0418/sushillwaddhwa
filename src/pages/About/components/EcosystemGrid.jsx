@@ -22,7 +22,7 @@ export const EcosystemGrid = () => {
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-normal text-ink leading-tight">
-            Selected ventures & operating entities.
+            Operating platforms & strategic initiatives.
           </h2>
         </motion.div>
 
@@ -34,13 +34,13 @@ export const EcosystemGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.15 }}
+              transition={{ duration: 0.8, delay: idx * 0.12 }}
               className="p-8 sm:p-10 bg-bone-light border border-stone/30 flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-stone/20 pb-4">
                   <span className="text-[10px] uppercase tracking-widest text-bronze font-mono">
-                    {venture.status}
+                    {venture.since}
                   </span>
                   <span className="text-[11px] uppercase tracking-widest text-stone-dark font-sans">
                     {venture.role}
@@ -52,7 +52,7 @@ export const EcosystemGrid = () => {
                     {venture.name}
                   </h3>
                   <span className="text-xs uppercase tracking-super-wide text-bronze-dim block mt-1">
-                    {venture.subname}
+                    {venture.descriptor}
                   </span>
                 </div>
 
@@ -63,7 +63,7 @@ export const EcosystemGrid = () => {
 
               <div className="pt-4 border-t border-stone/20 flex items-center justify-between text-xs text-stone-dark">
                 <span>Verified Entity</span>
-                <span className="font-mono text-[10px] tracking-widest uppercase">Institutional Alliance</span>
+                <span className="font-mono text-[10px] tracking-widest uppercase text-bronze">Leadership Portfolio</span>
               </div>
             </motion.div>
           ))}

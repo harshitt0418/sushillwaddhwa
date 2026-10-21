@@ -18,7 +18,7 @@ export const PullQuote = () => {
           </span>
 
           <blockquote className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal leading-[1.2] text-bone-light tracking-tight text-balance">
-            The real value is not access alone — it is knowing what deserves to be accessed.
+            The real value is not access alone — it is knowing what deserves to be accessed, and honoring the relationships that make it possible.
           </blockquote>
 
           <div className="pt-4 flex flex-col items-center gap-1">
@@ -26,7 +26,7 @@ export const PullQuote = () => {
               Sushill Waddhwa
             </cite>
             <span className="text-xs text-stone font-light">
-              Founder · Platinum World Group & Artoso Hospitality
+              Founder & CMD, Platinum World Grroup · Since 1989
             </span>
           </div>
         </motion.div>

@@ -15,14 +15,14 @@ export const LuxuryPreloader = ({ onComplete }) => {
     // Lock body scroll during arrival moment
     document.body.style.overflow = 'hidden';
 
-    // Sequence timing: ~2.5s, then doors part open decisively
+    // Sequence timing: ~2.4s, then doors part open decisively
     const dismissTimer = setTimeout(() => {
       setIsDismissing(true);
       setTimeout(() => {
         document.body.style.overflow = 'auto';
         if (onComplete) onComplete();
       }, 1000);
-    }, 2500);
+    }, 2400);
 
     return () => {
       clearTimeout(dismissTimer);
@@ -58,7 +58,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
             transition={{ duration: 0.5 }}
             className="absolute inset-0 z-20 flex flex-col items-center justify-between p-6 sm:p-10 md:p-16 text-bone pointer-events-none"
           >
-            {/* Opaque Internal Radial Bronze Glow (No external hero images) */}
+            {/* Opaque Internal Radial Bronze Glow */}
             <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(133,113,90,0.18)_0%,#0D0F12_72%)] pointer-events-none" />
 
             {/* Inset Hairline Frame */}
@@ -78,7 +78,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
             >
               <div className="flex items-center gap-2.5 text-bronze">
                 <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse" />
-                <span>A PRIVATE ACCESS HOUSE</span>
+                <span>FOUNDER & CMD, PLATINUM WORLD GRROUP</span>
               </div>
               <div className="hidden sm:flex items-center gap-6 text-stone/70">
                 <span>DUBAI</span>
@@ -86,15 +86,13 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 <span>MUMBAI</span>
                 <span>·</span>
                 <span>LONDON</span>
-                <span>·</span>
-                <span>MONACO</span>
               </div>
               <div className="text-stone-dark">
-                <span>EST. HOSPITALITY LEADERSHIP</span>
+                <span>SINCE 1989</span>
               </div>
             </motion.div>
 
-            {/* Centerpiece: Monogram, Name & Expanded Editorial Pillars */}
+            {/* Centerpiece: Monogram, Name & Master Tagline */}
             <div className="text-center max-w-3xl mx-auto z-20 my-auto px-4 flex flex-col items-center">
               
               {/* Architectural Diamond Monogram Badge */}
@@ -117,7 +115,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 className="mb-2"
               >
                 <span className="text-[10px] sm:text-[11px] font-sans font-medium uppercase tracking-[0.28em] text-bronze">
-                  GLOBAL HOSPITALITY · STRATEGIC ASSETS
+                  GLOBAL HOSPITALITY ENTREPRENEUR · INVESTOR · LIFESTYLE
                 </span>
               </motion.div>
 
@@ -133,14 +131,14 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 </motion.h1>
               </div>
 
-              {/* Tagline / Manifesto */}
+              {/* Master Tagline */}
               <motion.p
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.7 }}
                 className="font-serif italic text-lg sm:text-2xl text-stone-light font-light mt-2 text-balance max-w-xl"
               >
-                “Access is not a luxury. It is the beginning.”
+                “Building a world worth experiencing.”
               </motion.p>
 
               {/* Expanding Bronze Hairline Divider */}
@@ -151,7 +149,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 className="w-24 sm:w-36 h-[1px] bg-gradient-to-r from-transparent via-bronze to-transparent mx-auto my-5"
               />
 
-              {/* Five Core Pillars & Ecosystem Credentials */}
+              {/* Four Ecosystem Pillars */}
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -159,10 +157,10 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 className="space-y-2 max-w-2xl"
               >
                 <p className="text-[10px] sm:text-[11px] uppercase tracking-super-wide text-bone/90 font-light">
-                  Hotel Buyouts · Luxury Real Estate · Private Aviation · Superyachts · Boutique Development
+                  Platinum World Grroup · Artoso Hospitality · WedTalks · Platinum World Pictures
                 </p>
                 <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-dark font-light">
-                  Platinum World Group · Artoso Hospitality Corp.
+                  Hotels & Resorts · Destination Celebrations · Media · Culture
                 </p>
               </motion.div>
             </div>
@@ -175,12 +173,12 @@ export const LuxuryPreloader = ({ onComplete }) => {
               className="w-full max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[9px] sm:text-[10px] tracking-super-wide uppercase font-mono z-20 pb-2"
             >
               <div className="flex items-center gap-3">
-                <span className="text-stone">Entering a world of considered access</span>
+                <span className="text-stone">Entering a world of considered hospitality</span>
                 <div className="w-28 sm:w-36 h-[1px] bg-white/10 overflow-hidden relative inline-block">
                   <motion.div
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
-                    transition={{ duration: 2.2, ease: [0.25, 0.1, 0.25, 1] }}
+                    transition={{ duration: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
                     className="h-full bg-bronze"
                   />
                 </div>
@@ -194,7 +192,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
           </motion.div>
         )}
 
-        {/* 100% Solid Opaque Symmetrical Shutter Doors (Zero Transparency) */}
+        {/* 100% Solid Opaque Symmetrical Shutter Doors */}
         {!isDismissing ? (
           <>
             <motion.div
@@ -210,7 +208,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
           </>
         ) : (
           <>
-            {/* The parting doors during dismissal - Golden line appears only when transition happens */}
+            {/* The parting doors during dismissal - Golden line appears only on transition */}
             <motion.div
               key="shutter-top-parting"
               initial={{ y: 0 }}

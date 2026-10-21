@@ -4,7 +4,7 @@ import { fadeIn } from '@/lib/motion';
 
 export const Manifesto = () => {
   return (
-    <section className="py-28 md:py-40 bg-bone text-ink relative overflow-hidden hairline-b">
+    <section className="py-24 md:py-36 bg-bone text-ink relative overflow-hidden hairline-b">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <motion.div
           variants={fadeIn('up', 0.1)}
@@ -22,26 +22,26 @@ export const Manifesto = () => {
               </span>
             </div>
             <p className="mt-4 text-xs font-mono text-stone-dark">
-              01 / 05 · A PRIVATE ACCESS HOUSE
+              EST. 1989 · GLOBAL PERSPECTIVE
             </p>
           </div>
 
           {/* Right Column / Oversized Typography */}
           <div className="lg:col-span-9 space-y-8">
             <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.08] tracking-tight text-ink text-balance">
-              Not more options.
+              Building a world
               <br />
               <span className="italic font-light text-stone-dark">
-                The right introduction.
+                worth experiencing.
               </span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
               <p className="text-sm sm:text-base text-stone-dark leading-relaxed font-light">
-                In an era overwhelmed by platforms, listings, and algorithmic concierge desks, true influence remains deeply personal. The most valuable hotel buyouts, secluded estates, and maritime charters are never cataloged for public consumption.
+                In an era dominated by superficial trends and algorithmic recommendations, extraordinary hospitality remains an inherently human art. It thrives within trusted relationships nurtured across decades, deep respect for cultural nuance, and an instinctive understanding of how to make people feel truly welcomed.
               </p>
               <p className="text-sm sm:text-base text-stone-dark leading-relaxed font-light">
-                Sushill Waddhwa acts as an uncompromising curator and confidential conduit — translating decades of institutional hospitality trust into seamless introductions where reputation, privacy, and precision are paramount.
+                Whether structuring an exclusive palace buyout for a landmark wedding, advising tourism boards on high-yield celebration economies, or concepting boutique hotels with soul, Sushill Waddhwa approaches every endeavor with quiet confidence, intellectual rigor, and genuine warmth.
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight, Instagram, Linkedin } from 'lucide-react';
-import { navigationLinks, headerCTA } from '@/data/navigation';
+import { allRoutes, headerCTA } from '@/data/navigation';
 import { siteConfig } from '@/data/siteConfig';
 
 export const MobileMenu = ({ isOpen, onClose }) => {
@@ -13,17 +13,17 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-ink text-bone flex flex-col justify-between p-6 sm:p-10 md:hidden overflow-y-auto"
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-50 bg-ink text-bone flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between border-b border-bone/10 pb-6">
+          <div className="flex items-center justify-between border-b border-bone/10 pb-5">
             <div>
               <div className="font-serif tracking-widest text-lg text-bone uppercase">
                 Sushill Waddhwa
               </div>
-              <div className="text-[10px] tracking-super-wide text-stone uppercase">
-                A Private Access House
+              <div className="text-[10px] tracking-super-wide text-bronze uppercase">
+                Founder & CMD, Platinum World Grroup · Since 1989
               </div>
             </div>
             <button
@@ -36,13 +36,13 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           </div>
 
           {/* Links List */}
-          <div className="py-12 flex flex-col gap-8">
-            {navigationLinks.map((link, idx) => (
+          <div className="py-8 flex flex-col gap-5">
+            {allRoutes.map((link, idx) => (
               <motion.div
                 key={link.path}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.15 + idx * 0.08 }}
+                transition={{ duration: 0.35, delay: 0.1 + idx * 0.05 }}
               >
                 <NavLink
                   to={link.path}
@@ -53,7 +53,7 @@ export const MobileMenu = ({ isOpen, onClose }) => {
                     }`
                   }
                 >
-                  <span className="font-serif text-3xl font-light tracking-wide flex items-baseline gap-4">
+                  <span className="font-serif text-2xl sm:text-3xl font-light tracking-wide flex items-baseline gap-4">
                     <span className="font-sans text-xs tracking-widest text-stone/60">
                       0{idx + 1}
                     </span>
@@ -66,17 +66,17 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           </div>
 
           {/* Bottom Area */}
-          <div className="pt-6 border-t border-bone/10 space-y-6">
+          <div className="pt-6 border-t border-bone/10 space-y-4">
             <NavLink
               to={headerCTA.path}
               onClick={onClose}
-              className="block w-full py-4 text-center bg-bone text-ink hover:bg-bronze hover:text-white uppercase tracking-widest text-xs font-medium transition-colors"
+              className="block w-full py-3.5 text-center bg-bone text-ink hover:bg-bronze hover:text-white uppercase tracking-widest text-xs font-medium transition-colors"
             >
-              {headerCTA.label}
+              Connect with the Executive Desk
             </NavLink>
 
             <div className="flex items-center justify-between text-xs text-stone">
-              <span>Verified Global Inquiries</span>
+              <span>{siteConfig.contact.hubs}</span>
               <div className="flex items-center gap-4">
                 <a
                   href={siteConfig.socials.instagram}
