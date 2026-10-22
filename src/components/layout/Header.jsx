@@ -34,13 +34,13 @@ export const Header = () => {
             : "bg-ink/80 backdrop-blur-md py-4 sm:py-5 border-white/10"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
           {/* Brand Wordmark */}
-          <Link to="/" className="group flex flex-col max-w-[240px] sm:max-w-none">
-            <span className="font-serif text-lg sm:text-2xl tracking-[0.16em] sm:tracking-[0.18em] font-normal text-bone group-hover:text-bronze transition-colors uppercase truncate">
+          <Link to="/" className="group flex flex-col max-w-[200px] sm:max-w-none">
+            <span className="font-serif text-base sm:text-2xl tracking-[0.14em] sm:tracking-[0.18em] font-normal text-bone group-hover:text-bronze transition-colors uppercase truncate">
               Sushill Waddhwa
             </span>
-            <span className="text-[8px] sm:text-[9px] tracking-widest sm:tracking-super-wide text-bronze uppercase -mt-0.5 truncate">
+            <span className="text-[7.5px] sm:text-[9px] tracking-wider sm:tracking-super-wide text-bronze uppercase -mt-0.5 truncate">
               Founder & CMD, Platinum World Grroup · Since 1989
             </span>
           </Link>

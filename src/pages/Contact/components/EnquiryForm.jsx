@@ -295,6 +295,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
               type="submit"
               variant="primary"
               size="lg"
+              className="w-full sm:w-auto"
             >
               Compose Enquiry in Gmail
             </Button>

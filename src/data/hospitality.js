@@ -9,11 +9,11 @@ export const hospitalityPillars = [
     id: "luxury-hotels-resorts",
     number: "01",
     title: "Luxury Hotels & Resorts",
-    subtitle: "Enduring alliances with global hospitality icons",
+    subtitle: "Enduring relationships with global hospitality icons",
     description: "Decades of personal rapport with general managers, managing directors, and asset owners across the world’s most prestigious hotel brands and independent landmark properties.",
     scope: [
       "Preferred relationships with five-star international hospitality groups",
-      "Direct GM-level communication for custom guest arrangements and priority allocations",
+      "Direct leadership communication for custom guest arrangements and priority allocations",
       "Deep understanding of hotel yield management, seasonal exclusivity, and owner priorities",
       "Curated recommendations spanning historic palazzos, coastal sanctuaries, and alpine lodges"
     ],

@@ -48,13 +48,13 @@ export const RouteSEO = () => {
     setMeta('property', 'og:image:width', '1200');
     setMeta('property', 'og:image:height', '630');
 
-    // 4. Twitter Card Tags
-    setMeta('property', 'twitter:card', 'summary_large_image');
-    setMeta('property', 'twitter:url', seo.canonical);
-    setMeta('property', 'twitter:title', seo.ogTitle || seo.title);
-    setMeta('property', 'twitter:description', seo.ogDescription || seo.description);
-    setMeta('property', 'twitter:image', seo.ogImage);
-    setMeta('property', 'twitter:image:alt', seo.imageAlt);
+    // 4. Twitter Card Tags (using name="twitter:..." per spec)
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:url', seo.canonical);
+    setMeta('name', 'twitter:title', seo.ogTitle || seo.title);
+    setMeta('name', 'twitter:description', seo.ogDescription || seo.description);
+    setMeta('name', 'twitter:image', seo.ogImage);
+    setMeta('name', 'twitter:image:alt', seo.imageAlt);
 
     // 5. Route-Specific JSON-LD
     let scriptEl = document.getElementById('route-jsonld');

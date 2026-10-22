@@ -25,8 +25,8 @@ export const careerTimeline = [
   {
     period: "Hospitality Focus",
     title: "Hotel Buyouts & Destination Tourism",
-    summary: "Pioneered structured resort buyouts and palace privatizations, building trusted GM-level alliances with major luxury hotel brands across Asia, Europe, and the Middle East.",
-    tags: ["Property Buyouts", "Hotel Alliances", "Destination Tourism"]
+    summary: "Pioneered structured resort buyouts and palace privatizations, building long-standing relationships across hospitality and destinations with major luxury hotel brands across Asia, Europe, and the Middle East.",
+    tags: ["Property Buyouts", "Hotel Partnerships", "Destination Tourism"]
   },
   {
     period: "Industry Leadership",

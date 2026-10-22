@@ -115,7 +115,7 @@ export const routeSeoData = {
 
   "/hospitality": {
     title: "Hospitality Leadership — Sushill Waddhwa | Luxury Hotels & Buyouts",
-    description: "Sushill Waddhwa connects luxury hotels, hotel buyouts, destination weddings, and tourism boards through decades of GM-level alliances and the WedTalks Forum.",
+    description: "Sushill Waddhwa connects luxury hotels, hotel buyouts, destination weddings, and tourism boards through long-standing relationships across hospitality and destinations and the WedTalks Forum.",
     canonical: `${siteBaseUrl}/hospitality`,
     ogTitle: "Hospitality Leadership — Sushill Waddhwa",
     ogDescription: "Uniting luxury hoteliers, destination tourism authorities, and premier celebration designers across five core hospitality pillars.",
@@ -127,7 +127,7 @@ export const routeSeoData = {
       "@id": `${siteBaseUrl}/hospitality#webpage`,
       "url": `${siteBaseUrl}/hospitality`,
       "name": "Hospitality Leadership — Sushill Waddhwa",
-      "description": "Decades of GM-level alliances, hotel buyouts, destination celebration tourism, and tourism board advisory."
+      "description": "Long-standing relationships across hospitality and destinations, hotel buyouts, destination celebration tourism, and tourism board advisory."
     }
   },
 
