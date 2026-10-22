@@ -1,3 +1,8 @@
+import buyoutImg from '@/assets/images/editorial/editorial-hospitality-buyout.jpg';
+import hotelImg from '@/assets/images/editorial/editorial-boutique-hotel.jpg';
+import investmentImg from '@/assets/images/editorial/editorial-strategic-investments.jpg';
+import cinemaImg from '@/assets/images/editorial/editorial-destination-cinema.jpg';
+
 export const businessEntities = [
   {
     id: "platinum-world-grroup",
@@ -13,7 +18,7 @@ export const businessEntities = [
       "End-to-end event logistics spanning seamless arrivals, premium transport, and curated destination experiences"
     ],
     highlight: "A respected legacy built over decades of direct collaboration with leading global hotel brands and international event directors.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85",
+    image: buyoutImg,
   },
   {
     id: "artoso-hospitality",
@@ -29,7 +34,7 @@ export const businessEntities = [
       "Owner representation and strategic operator alignment with global hospitality brands"
     ],
     highlight: "Bridging the gap between regional architectural character and sustainable commercial longevity.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85",
+    image: hotelImg,
   },
   {
     id: "strategic-investments",
@@ -42,10 +47,10 @@ export const businessEntities = [
       "Selective co-investments in signature boutique hospitality and eco-luxury retreat developments",
       "Seed and growth backing for experiential hospitality tech and specialized concierge platforms",
       "Advisory equity in cultural content platforms and destination celebration forums",
-      "Synergistic partnerships accelerating private real estate and branded lifestyle ventures"
+      "Synergistic partnerships accelerating residential hospitality and branded lifestyle ventures"
     ],
     highlight: "Disciplined capital deployment guided by 35+ years of operational industry insight.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+    image: investmentImg,
   },
   {
     id: "platinum-world-pictures",
@@ -61,6 +66,6 @@ export const businessEntities = [
       "Cross-platform visual content connecting discerning global audiences with luxury brands"
     ],
     highlight: "Transforming brand narratives into emotionally resonant cinematic experiences.",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85",
+    image: cinemaImg,
   },
 ];

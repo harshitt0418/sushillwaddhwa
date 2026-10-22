@@ -41,7 +41,7 @@ export const Manifesto = () => {
                 In an era dominated by superficial trends and algorithmic recommendations, extraordinary hospitality remains an inherently human art. It thrives within trusted relationships nurtured across decades, deep respect for cultural nuance, and an instinctive understanding of how to make people feel truly welcomed.
               </p>
               <p className="text-sm sm:text-base text-stone-dark leading-relaxed font-light">
-                Whether structuring an exclusive palace buyout for a landmark wedding, advising tourism boards on high-yield celebration economies, or concepting boutique hotels with soul, Sushill Waddhwa approaches every endeavor with quiet confidence, intellectual rigor, and genuine warmth.
+                Whether structuring a luxury hotel buyout for a landmark wedding, advising tourism boards on high-yield celebration economies, or concepting boutique hotels with soul, Sushill Waddhwa approaches every endeavor with quiet confidence, intellectual rigor, and genuine warmth.
               </p>
             </div>
           </div>

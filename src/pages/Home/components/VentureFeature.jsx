@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { fadeIn, imageMask } from '@/lib/motion';
+import featureImg from '@/assets/images/editorial/editorial-artoso-feature.jpg';
 
 export const VentureFeature = () => {
   return (
@@ -74,7 +75,7 @@ export const VentureFeature = () => {
           >
             <div className="relative aspect-[16/11] overflow-hidden bg-ink/10 border border-stone/30 shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=85"
+                src={featureImg}
                 alt="Artoso Hospitality boutique architectural concept"
                 className="w-full h-full object-cover filter brightness-95 contrast-105"
                 loading="lazy"

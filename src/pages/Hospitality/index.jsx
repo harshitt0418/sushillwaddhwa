@@ -172,7 +172,7 @@ export const Hospitality = () => {
                       variant="primary"
                       size="md"
                     >
-                      Discuss Hospitality Mandates
+                      Discuss Hospitality Partnerships
                     </Button>
                   </motion.div>
 

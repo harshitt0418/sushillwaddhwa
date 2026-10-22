@@ -1,3 +1,9 @@
+import luxuryHotelsImg from '@/assets/images/editorial/editorial-luxury-hotels.jpg';
+import resortBuyoutImg from '@/assets/images/editorial/editorial-resort-buyout.jpg';
+import destinationCelebrationImg from '@/assets/images/editorial/editorial-destination-celebration.jpg';
+import plannerRelationsImg from '@/assets/images/editorial/editorial-planner-relations.jpg';
+import tourismWedtalksImg from '@/assets/images/editorial/editorial-tourism-wedtalks.jpg';
+
 export const hospitalityPillars = [
   {
     id: "luxury-hotels-resorts",
@@ -11,7 +17,7 @@ export const hospitalityPillars = [
       "Deep understanding of hotel yield management, seasonal exclusivity, and owner priorities",
       "Curated recommendations spanning historic palazzos, coastal sanctuaries, and alpine lodges"
     ],
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=85",
+    image: luxuryHotelsImg,
   },
   {
     id: "hotel-buyouts",
@@ -25,7 +31,7 @@ export const hospitalityPillars = [
       "Bespoke food & beverage choreography and guest culinary curation",
       "Multi-destination arrival logistics and premium transit coordination"
     ],
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85",
+    image: resortBuyoutImg,
   },
   {
     id: "destination-weddings",
@@ -39,7 +45,7 @@ export const hospitalityPillars = [
       "Heritage palace, coastal estate, and historic property privatization facilitation",
       "Cultural authenticity integration combined with world-class hospitality logistics"
     ],
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85",
+    image: destinationCelebrationImg,
   },
   {
     id: "planner-relations",
@@ -53,7 +59,7 @@ export const hospitalityPillars = [
       "Advocacy for realistic hotel operational timelines, load-in safety, and guest choreography",
       "Long-term trust built over hundreds of successfully executed milestone events"
     ],
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=85",
+    image: plannerRelationsImg,
   },
   {
     id: "tourism-boards-wedtalks",
@@ -67,7 +73,7 @@ export const hospitalityPillars = [
       "Destination familiarization and media storytelling initiatives in emerging luxury markets",
       "Cross-border best practices easing international event movement and planning"
     ],
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1600&q=85",
+    image: tourismWedtalksImg,
   },
 ];
 
@@ -80,7 +86,7 @@ export const hospitalityHubs = [
   {
     region: "Dubai & The GCC",
     role: "Ultra-Luxury Infrastructure & Global Hub",
-    description: "Pinnacle hospitality towers, private desert oasis resorts, and seamless transit connecting East and West.",
+    description: "Pinnacle hospitality towers, secluded desert oasis resorts, and seamless transit connecting East and West.",
   },
   {
     region: "Europe & Mediterranean",

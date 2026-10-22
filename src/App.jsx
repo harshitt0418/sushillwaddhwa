@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import { LuxuryPreloader } from '@/components/layout/LuxuryPreloader';
+import { RouteSEO } from '@/components/common/RouteSEO';
 
 import { Home } from '@/pages/Home';
 import { About } from '@/pages/About';
@@ -17,26 +18,9 @@ import { Media } from '@/pages/Media';
 import { Collaborate } from '@/pages/Collaborate';
 import { Contact } from '@/pages/Contact';
 
-const pageTitles = {
-  '/': 'Sushill Waddhwa — Global Hospitality Entrepreneur · Investor · Luxury Lifestyle',
-  '/about': 'About Sushill Waddhwa — Founder & CMD, Platinum World Grroup | Since 1989',
-  '/business': 'Business & Ventures — Sushill Waddhwa | Platinum World Grroup & Artoso Hospitality',
-  '/hospitality': 'Hospitality Leadership — Sushill Waddhwa | Luxury Hotels & Buyouts',
-  '/lifestyle': 'Curated Lifestyle — Sushill Waddhwa | Travel, Culture & Wellbeing',
-  '/media': 'Media & Keynotes — Sushill Waddhwa | Speaking, WedTalks & Screen Storytelling',
-  '/collaborate': 'Selective Collaborations — Sushill Waddhwa | Luxury Brand Partnerships',
-  '/contact': 'Contact Executive Office — Sushill Waddhwa | Inquiries & Strategic Dialogue',
-};
-
 export const App = () => {
   const location = useLocation();
   const [isPreloaderActive, setIsPreloaderActive] = React.useState(true);
-
-  // Dynamic route-based title updates for SEO
-  useEffect(() => {
-    const title = pageTitles[location.pathname] || 'Sushill Waddhwa — Global Hospitality Entrepreneur';
-    document.title = title;
-  }, [location.pathname]);
 
   useEffect(() => {
     // Check user preference for reduced motion
@@ -72,6 +56,7 @@ export const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-bone text-ink selection:bg-bronze selection:text-bone font-sans">
+      <RouteSEO />
       {isPreloaderActive && (
         <LuxuryPreloader onComplete={() => setIsPreloaderActive(false)} />
       )}

@@ -181,7 +181,7 @@ export const Business = () => {
                       variant="primary"
                       size="md"
                     >
-                      Enquire on Mandates
+                      Explore Venture Partnerships
                     </Button>
                   </motion.div>
 
@@ -196,8 +196,8 @@ export const Business = () => {
       {/* 03. Concluding CTA */}
       <EnquiryCTA
         headline="Collaborate on institutional ventures."
-        subtext="For commercial hotel operator alignment, hospitality joint ventures, or strategic investment opportunities, connect directly with Sushill Waddhwa's desk."
-        buttonText="Initiate Business Dialogue"
+        subtext="For commercial hotel operator alignment, hospitality joint ventures, or strategic investment opportunities, connect directly with the executive office."
+        buttonText="Explore Business Collaboration"
         to="/contact?interest=Business%20Enquiries"
       />
     </motion.div>

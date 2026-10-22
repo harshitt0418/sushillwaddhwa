@@ -40,8 +40,8 @@ export const NarrativeBio = () => {
                 <span className="text-ink font-sans">Platinum World Grroup</span>
               </div>
               <div className="flex justify-between">
-                <span>Headquarters:</span>
-                <span className="text-ink font-sans">Dubai · Mumbai · London</span>
+                <span>Reach:</span>
+                <span className="text-ink font-sans">Global Hospitality Network</span>
               </div>
             </div>
           </motion.div>

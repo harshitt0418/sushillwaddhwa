@@ -16,8 +16,8 @@ export const mediaFeatures = [
     description: "Conceived and spearheaded by Sushill Waddhwa, WedTalks serves as the premier thought-leadership platform uniting tourism boards, luxury hotel executives, destination planners, and media architects.",
     topics: [
       "Fostering collaboration between destination tourism boards and event creators",
-      "Standardizing contracts and operational protocols for multi-day palace buyouts",
-      "Sustainable luxury: Managing environmental footprints during massive private celebrations"
+      "Standardizing contracts and operational protocols for multi-day hotel and property buyouts",
+      "Sustainable luxury: Managing environmental footprints during large-scale destination celebrations"
     ],
   },
   {

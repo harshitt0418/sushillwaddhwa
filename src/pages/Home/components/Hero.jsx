@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ChevronDown } from 'lucide-react';
 import { fadeIn, transitions } from '@/lib/motion';
+import heroImg from '@/assets/images/editorial/editorial-hero-architecture.jpg';
 
 export const Hero = () => {
   return (
@@ -10,7 +11,7 @@ export const Hero = () => {
       {/* Background Architectural Image Layer with subtle cinematic treatment */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85"
+          src={heroImg}
           alt="Architectural luxury hospitality interior"
           className="w-full h-full object-cover object-center filter brightness-[0.35] contrast-[1.08] scale-105 animate-pulseSlow"
         />

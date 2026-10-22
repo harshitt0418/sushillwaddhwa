@@ -17,7 +17,7 @@ export const siteConfig = {
       name: "Platinum World Grroup",
       role: "Founder & CMD",
       since: "1989",
-      description: "Global hospitality leader orchestrating hotel buyouts, group experiences, luxury incentives, and private experiential travel.",
+      description: "Global hospitality leader orchestrating hotel buyouts, group experiences, luxury incentives, and curated experiential travel.",
       link: "/business#platinum-world-grroup",
     },
     {
@@ -50,9 +50,6 @@ export const siteConfig = {
 
   contact: {
     executiveDesk: "office@sushillwaddhwa.com",
-    partnerships: "partnerships@platinumworld.net",
-    directPhone: "+91 22 6600 0000",
-    hubs: "Mumbai · Dubai · London",
-    confidentialityClause: "All enquiries and commercial proposals are received directly by the executive office and treated under strict institutional discretion.",
+    confidentialityClause: "All enquiries and collaboration proposals are received directly by the executive office and treated under professional discretion.",
   },
 };

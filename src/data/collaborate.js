@@ -18,7 +18,7 @@ export const collaborationCategories = [
   },
   {
     name: "Automotive",
-    description: "Grand touring narratives, private driving expeditions, vehicle unveilings, and lifestyle brand integration.",
+    description: "Grand touring narratives, curated driving expeditions, vehicle unveilings, and lifestyle brand integration.",
     icon: "Car",
   },
   {
@@ -54,7 +54,7 @@ export const collaborationPillars = [
   },
   {
     title: "Curated Experiential Salons",
-    description: "Intimate dinners, destination retreats, and private gatherings bringing together tastemakers, hotel leaders, and brand executives.",
+    description: "Intimate dinners, destination retreats, and curated gatherings bringing together tastemakers, hotel leaders, and brand executives.",
   },
   {
     title: "Keynote Speaking & Thought Leadership",

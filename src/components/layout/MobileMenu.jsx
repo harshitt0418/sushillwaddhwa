@@ -76,7 +76,7 @@ export const MobileMenu = ({ isOpen, onClose }) => {
             </NavLink>
 
             <div className="flex items-center justify-between text-xs text-stone">
-              <span>{siteConfig.contact.hubs}</span>
+              <span>Est. 1989 · Global Hospitality</span>
               <div className="flex items-center gap-4">
                 <a
                   href={siteConfig.socials.instagram}

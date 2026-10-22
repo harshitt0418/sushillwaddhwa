@@ -101,8 +101,13 @@ export const Footer = () => {
             </div>
 
             <div className="pt-4 border-t border-white/5 space-y-1 text-[11px] text-stone/80">
-              <p className="text-stone-light font-medium">Headquarters & Hubs:</p>
-              <p className="font-mono text-[10px] text-stone">{siteConfig.contact.hubs}</p>
+              <p className="text-stone-light font-medium">Executive Inquiries:</p>
+              <a
+                href={`mailto:${siteConfig.contact.executiveDesk}`}
+                className="font-mono text-[10px] text-stone hover:text-bronze transition-colors block"
+              >
+                {siteConfig.contact.executiveDesk}
+              </a>
             </div>
           </div>
         </div>

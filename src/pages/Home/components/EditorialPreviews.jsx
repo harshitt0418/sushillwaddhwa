@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { fadeIn } from '@/lib/motion';
 
+import businessImg from '@/assets/images/editorial/editorial-hospitality-buyout.jpg';
+import hospitalityImg from '@/assets/images/editorial/editorial-luxury-hotels.jpg';
+import lifestyleImg from '@/assets/images/editorial/editorial-lifestyle-style.jpg';
+import mediaImg from '@/assets/images/editorial/editorial-tourism-wedtalks.jpg';
+
 const editorialPillars = [
   {
     id: "business",
@@ -14,7 +19,7 @@ const editorialPillars = [
     description: "Guiding Platinum World Grroup across global hospitality and buyouts, directing boutique hospitality concepts through Artoso Hospitality, managing strategic investments, and developing media through Platinum World Pictures.",
     highlights: ["Platinum World Grroup", "Artoso Hospitality Corp.", "Strategic Investments", "Platinum World Pictures"],
     link: "/business",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85",
+    image: businessImg,
   },
   {
     id: "hospitality",
@@ -23,9 +28,9 @@ const editorialPillars = [
     title: "Hospitality",
     subtitle: "Grand Gatherings & Destination Vision",
     description: "Deep relationships with luxury hotel groups, full property buyouts for multi-day weddings and corporate summits, and strategic advisory for national tourism boards and the WedTalks Forum.",
-    highlights: ["Resort & Palace Buyouts", "Destination Wedding Tourism", "WedTalks Knowledge Forum", "Tourism Board Advisory"],
+    highlights: ["Hotel & Resort Buyouts", "Destination Wedding Tourism", "WedTalks Knowledge Forum", "Tourism Board Advisory"],
     link: "/hospitality",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=85",
+    image: hospitalityImg,
   },
   {
     id: "lifestyle",
@@ -36,7 +41,7 @@ const editorialPillars = [
     description: "An authentic, editorial perspective on intentional travel, iconic hotels, functional fitness and vitality, bespoke sartorial style, Indian heritage pride, and mindful living.",
     highlights: ["Global Travel & Hotels", "Fitness & Vitality", "Quiet Luxury & Style", "Culture & Art"],
     link: "/lifestyle",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1600&q=85",
+    image: lifestyleImg,
   },
   {
     id: "media",
@@ -47,7 +52,7 @@ const editorialPillars = [
     description: "Industry keynote addresses, destination podcasts, documentary storytelling via Platinum World Pictures, WedTalks conversations, and future-facing AI narrative exploration.",
     highlights: ["Global Keynote Speaking", "WedTalks Conversations", "Platinum World Pictures", "AI-Powered Storytelling"],
     link: "/media",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1600&q=85",
+    image: mediaImg,
   },
 ];
 

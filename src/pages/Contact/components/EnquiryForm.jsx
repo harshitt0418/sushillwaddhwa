@@ -17,7 +17,7 @@ const contactMethods = [
   "Email",
   "Telephone",
   "WhatsApp",
-  "In-Person Meeting (Mumbai / Dubai / London)"
+  "In-Person Meeting"
 ];
 
 export const EnquiryForm = () => {
@@ -105,7 +105,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="bg-bone-light p-8 sm:p-12 md:p-16 border border-stone/30 shadow-sm relative"
+      className="bg-bone-light p-6 sm:p-10 md:p-16 border border-stone/30 shadow-sm relative"
     >
       <div className="flex items-center justify-between pb-8 mb-8 border-b border-stone/20">
         <div>

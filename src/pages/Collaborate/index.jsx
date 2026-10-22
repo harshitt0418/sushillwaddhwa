@@ -179,8 +179,8 @@ export const Collaborate = () => {
       {/* 04. Concluding CTA */}
       <EnquiryCTA
         headline="Initiate a selective collaboration."
-        subtext="Share your brand vision, campaign parameters, and target timeline. The executive desk evaluates each inquiry with discretion and prompt consideration."
-        buttonText="Begin Partnership Dialogue"
+        subtext="Share your brand vision, campaign parameters, and target timeline. The executive office evaluates each inquiry with prompt consideration."
+        buttonText="Explore Brand Collaboration"
         to="/contact?interest=Brand%20Collaborations"
       />
     </motion.div>

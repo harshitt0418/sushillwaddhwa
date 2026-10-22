@@ -17,13 +17,13 @@ export const About = () => {
       exit="exit"
       className="w-full"
     >
-      {/* 01. Executive Hero */}
+      {/* 01. Hero with Official Editorial Portrait */}
       <PrincipalHero />
 
-      {/* 02. Narrative Bio & Philosophy */}
+      {/* 02. Narrative Biography (1989 Genesis to Present Day) */}
       <NarrativeBio />
 
-      {/* 03. 5 Focus Areas Timeline */}
+      {/* 03. Chronological Career & Focus Milestones */}
       <FocusTimeline />
 
       {/* 04. Editorial Pull Quote */}
@@ -34,9 +34,10 @@ export const About = () => {
 
       {/* 06. Concluding Direct Enquiry CTA */}
       <EnquiryCTA
-        headline="Direct dialogue with the Principal."
-        subtext="For institutional hotel buyouts, confidential partnership advisory, or family office inquiries, direct channels remain accessible."
-        buttonText="Begin Private Dialogue"
+        headline="Direct collaboration with Sushill Waddhwa."
+        subtext="For hospitality partnerships, hotel buyout inquiries, or strategic venture discussions, connect directly with the executive office."
+        buttonText="Connect with Sushill Waddhwa"
+        to="/contact?interest=Hospitality%20Partnerships"
       />
     </motion.div>
   );

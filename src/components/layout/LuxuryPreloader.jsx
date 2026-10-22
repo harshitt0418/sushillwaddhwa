@@ -81,11 +81,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 <span>FOUNDER & CMD, PLATINUM WORLD GRROUP</span>
               </div>
               <div className="hidden sm:flex items-center gap-6 text-stone/70">
-                <span>DUBAI</span>
-                <span>·</span>
-                <span>MUMBAI</span>
-                <span>·</span>
-                <span>LONDON</span>
+                <span>GLOBAL HOSPITALITY & ADVISORY</span>
               </div>
               <div className="text-stone-dark">
                 <span>SINCE 1989</span>
@@ -112,9 +108,9 @@ export const LuxuryPreloader = ({ onComplete }) => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="mb-2"
+                className="mb-2 max-w-xs sm:max-w-none"
               >
-                <span className="text-[10px] sm:text-[11px] font-sans font-medium uppercase tracking-[0.28em] text-bronze">
+                <span className="text-[9px] sm:text-[11px] font-sans font-medium uppercase tracking-[0.18em] sm:tracking-[0.28em] text-bronze break-words">
                   GLOBAL HOSPITALITY ENTREPRENEUR · INVESTOR · LIFESTYLE
                 </span>
               </motion.div>
@@ -125,7 +121,7 @@ export const LuxuryPreloader = ({ onComplete }) => {
                   initial={{ y: "110%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
                   transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.2em] font-normal text-bone"
+                  className="font-serif text-2xl sm:text-5xl md:text-6xl uppercase tracking-[0.16em] sm:tracking-[0.2em] font-normal text-bone"
                 >
                   Sushill Waddhwa
                 </motion.h1>

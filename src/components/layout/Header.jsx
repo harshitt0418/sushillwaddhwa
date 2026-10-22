@@ -36,11 +36,11 @@ export const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Brand Wordmark */}
-          <Link to="/" className="group flex flex-col">
-            <span className="font-serif text-xl sm:text-2xl tracking-[0.18em] font-normal text-bone group-hover:text-bronze transition-colors uppercase">
+          <Link to="/" className="group flex flex-col max-w-[240px] sm:max-w-none">
+            <span className="font-serif text-lg sm:text-2xl tracking-[0.16em] sm:tracking-[0.18em] font-normal text-bone group-hover:text-bronze transition-colors uppercase truncate">
               Sushill Waddhwa
             </span>
-            <span className="text-[9px] tracking-super-wide text-bronze uppercase -mt-0.5">
+            <span className="text-[8px] sm:text-[9px] tracking-widest sm:tracking-super-wide text-bronze uppercase -mt-0.5 truncate">
               Founder & CMD, Platinum World Grroup · Since 1989
             </span>
           </Link>

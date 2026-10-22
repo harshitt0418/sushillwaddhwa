@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, ArrowUpRight, Mail, Phone, MapPin, Copy, Check } from 'lucide-react';
+import { Instagram, Linkedin, ArrowUpRight, Mail, Copy, Check, Clock, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { fadeIn } from '@/lib/motion';
 
@@ -22,13 +22,13 @@ export const DirectCoordinates = () => {
       className="space-y-8"
     >
       {/* Editorial Direct Channels */}
-      <div className="bg-bone-light p-8 sm:p-10 border border-stone/30 space-y-8">
+      <div className="bg-bone-light p-6 sm:p-10 border border-stone/30 space-y-8">
         <div>
           <span className="text-[10px] uppercase tracking-super-wide text-bronze-dim block mb-1">
             Official Channels
           </span>
           <h3 className="font-serif text-2xl text-ink font-normal">
-            Executive Office Channels
+            Executive Office
           </h3>
         </div>
 
@@ -41,7 +41,7 @@ export const DirectCoordinates = () => {
               </div>
               <div>
                 <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
-                  Executive Desk
+                  Official Inquiries
                 </span>
                 <a
                   href={`mailto:${siteConfig.contact.executiveDesk}`}
@@ -67,35 +67,17 @@ export const DirectCoordinates = () => {
             </button>
           </div>
 
-          {/* Telephone */}
+          {/* Response Commitment */}
           <div className="flex items-start gap-4">
             <div className="w-8 h-8 rounded-none bg-bone-dim flex items-center justify-center text-bronze flex-shrink-0">
-              <Phone className="w-4 h-4" />
+              <Clock className="w-4 h-4" />
             </div>
             <div>
               <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
-                Direct Line
+                Response Time
               </span>
-              <a
-                href={`tel:${siteConfig.contact.directPhone.replace(/\s+/g, '')}`}
-                className="font-mono text-xs text-ink mt-0.5 hover:text-bronze transition-colors block"
-              >
-                {siteConfig.contact.directPhone}
-              </a>
-            </div>
-          </div>
-
-          {/* Geographic Hubs */}
-          <div className="flex items-start gap-4">
-            <div className="w-8 h-8 rounded-none bg-bone-dim flex items-center justify-center text-bronze flex-shrink-0">
-              <MapPin className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-stone-dark block">
-                Primary Corridors
-              </span>
-              <p className="text-xs text-ink mt-0.5 font-medium">
-                {siteConfig.contact.hubs}
+              <p className="text-xs text-stone-dark mt-0.5 font-light">
+                All business, speaking and brand collaboration inquiries receive direct attention from the executive office.
               </p>
             </div>
           </div>
@@ -141,9 +123,12 @@ export const DirectCoordinates = () => {
 
       {/* Discretion statement card */}
       <div className="p-6 bg-ink text-bone border border-white/10 space-y-3">
-        <span className="text-[10px] uppercase tracking-super-wide text-bronze block">
-          Professional Discretion Guarantee
-        </span>
+        <div className="flex items-center gap-2 text-bronze">
+          <ShieldCheck className="w-4 h-4" />
+          <span className="text-[10px] uppercase tracking-super-wide block">
+            Professional Discretion
+          </span>
+        </div>
         <p className="text-xs text-stone font-light leading-relaxed">
           {siteConfig.contact.confidentialityClause}
         </p>
