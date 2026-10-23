@@ -105,7 +105,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="bg-midnight p-6 sm:p-10 md:p-14 border border-gold/30 shadow-2xl relative rounded-[1px]"
+      className="bg-midnight p-6 sm:p-10 md:p-14 border border-gold/30 shadow-[0_24px_60px_rgba(0,0,0,0.7)] relative rounded-[1px] crosshair-corner"
     >
       <div className="flex items-center justify-between pb-8 mb-8 border-b border-gold/20">
         <div>
@@ -125,7 +125,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
         {/* Row 1: Name & Organisation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Name <span className="text-gold">*</span>
             </label>
             <input
@@ -135,7 +135,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Rahul Sharma"
-              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/50 focus:outline-none transition-colors ${
+              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/40 focus:outline-none transition-colors duration-300 ${
                 errors.name ? 'border-red-400' : 'border-gold/30 focus:border-gold'
               }`}
             />
@@ -145,7 +145,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Organisation <span className="text-gold">*</span>
             </label>
             <input
@@ -155,7 +155,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
               value={formData.organisation}
               onChange={handleChange}
               placeholder="e.g. Luxury Brand Group / Hospitality Advisory"
-              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/50 focus:outline-none transition-colors ${
+              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/40 focus:outline-none transition-colors duration-300 ${
                 errors.organisation ? 'border-red-400' : 'border-gold/30 focus:border-gold'
               }`}
             />
@@ -168,7 +168,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
         {/* Row 2: Email & Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Email <span className="text-gold">*</span>
             </label>
             <input
@@ -178,7 +178,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
               value={formData.email}
               onChange={handleChange}
               placeholder="name@organisation.com"
-              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/50 focus:outline-none transition-colors ${
+              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/40 focus:outline-none transition-colors duration-300 ${
                 errors.email ? 'border-red-400' : 'border-gold/30 focus:border-gold'
               }`}
             />
@@ -188,7 +188,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Phone <span className="text-gold">*</span>
             </label>
             <input
@@ -198,7 +198,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
               value={formData.phone}
               onChange={handleChange}
               placeholder="+91 / +971 / +44 ..."
-              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/50 focus:outline-none transition-colors ${
+              className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/40 focus:outline-none transition-colors duration-300 ${
                 errors.phone ? 'border-red-400' : 'border-gold/30 focus:border-gold'
               }`}
             />
@@ -211,7 +211,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
         {/* Row 3: Enquiry Type & Preferred Contact Method */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Enquiry Type <span className="text-gold">*</span>
             </label>
             <div className="relative">
@@ -220,7 +220,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
                 required
                 value={formData.enquiryType}
                 onChange={handleChange}
-                className={`w-full bg-transparent border-b py-3 pr-8 text-porcelain text-sm sm:text-base focus:outline-none transition-colors cursor-pointer appearance-none ${
+                className={`w-full bg-transparent border-b py-3 pr-8 text-porcelain text-sm sm:text-base focus:outline-none transition-colors duration-300 cursor-pointer appearance-none ${
                   errors.enquiryType ? 'border-red-400' : 'border-gold/30 focus:border-gold'
                 }`}
               >
@@ -239,7 +239,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+            <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
               Preferred Contact Method <span className="text-gold">*</span>
             </label>
             <div className="relative">
@@ -247,7 +247,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
                 name="preferredMethod"
                 value={formData.preferredMethod}
                 onChange={handleChange}
-                className="w-full bg-transparent border-b border-gold/30 py-3 pr-8 text-porcelain text-sm sm:text-base focus:outline-none focus:border-gold transition-colors cursor-pointer appearance-none"
+                className="w-full bg-transparent border-b border-gold/30 py-3 pr-8 text-porcelain text-sm sm:text-base focus:outline-none focus:border-gold transition-colors duration-300 cursor-pointer appearance-none"
               >
                 {contactMethods.map((method) => (
                   <option key={method} value={method} className="bg-obsidian text-porcelain">
@@ -262,7 +262,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
 
         {/* Row 4: Message */}
         <div className="space-y-2">
-          <label className="text-xs uppercase tracking-widest text-warmstone font-medium block">
+          <label className="text-xs uppercase tracking-widest text-warmstone font-medium block font-mono">
             Message <span className="text-gold">*</span>
           </label>
           <textarea
@@ -272,7 +272,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
             value={formData.message}
             onChange={handleChange}
             placeholder="Share details regarding your initiative, hotel partnership, speaking engagement or brand collaboration..."
-            className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/50 focus:outline-none transition-colors resize-none ${
+            className={`w-full bg-transparent border-b py-3 text-porcelain text-sm sm:text-base placeholder:text-warmstone/40 focus:outline-none transition-colors duration-300 resize-none ${
               errors.message ? 'border-red-400' : 'border-gold/30 focus:border-gold'
             }`}
           />
@@ -282,7 +282,7 @@ Submitted via: sushillwaddhwa.vercel.app`;
         </div>
 
         {/* Submission Button and Actions */}
-        <div className="pt-4 space-y-4">
+        <div className="pt-4 space-y-5">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-3 text-xs text-warmstone font-light max-w-sm">
               <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />

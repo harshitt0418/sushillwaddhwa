@@ -15,9 +15,11 @@ export const Media = () => {
       exit="exit"
       className="w-full"
     >
-      {/* 01. Media Hero */}
-      <section className="pt-36 sm:pt-44 pb-20 sm:pb-28 bg-obsidian text-porcelain border-b border-gold/15">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* 01. Media Hero - Prestige Cinema Atmosphere */}
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sapphire/20 rounded-full blur-[130px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
               variants={fadeIn('down', 0.1)}
@@ -25,17 +27,18 @@ export const Media = () => {
               animate="animate"
               className="flex items-center gap-3 font-mono"
             >
-              <span className="w-8 h-[1px] bg-gold" />
+              <span className="w-8 sm:w-12 h-[1px] bg-gold" />
               <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
                 Thought Leadership · Keynotes · Cinema
               </span>
+              <span className="text-gold/40 text-[10px] font-mono">[ BROADCAST ]</span>
             </motion.div>
 
             <motion.h1
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight text-porcelain text-balance"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
             >
               Perspectives, global keynotes & destination storytelling.
             </motion.h1>
@@ -44,12 +47,12 @@ export const Media = () => {
               variants={fadeIn('up', 0.3)}
               initial="initial"
               animate="animate"
-              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed pt-2"
+              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed-luxury pt-2"
             >
               Sharing insights honed over 35 years across international hospitality summits, curated dialogues via WedTalks, destination brand films with Platinum World Pictures, and future-facing digital storytelling.
             </motion.p>
 
-            <div className="pt-4 flex flex-wrap gap-3 text-xs uppercase tracking-widest font-mono text-warmstone">
+            <div className="pt-4 flex flex-wrap gap-3 text-xs uppercase tracking-widest font-mono text-warmstone/80">
               <span>Press</span>
               <span className="text-gold">·</span>
               <span>Interviews</span>
@@ -68,9 +71,9 @@ export const Media = () => {
         </div>
       </section>
 
-      {/* 02. Media Domains Grid */}
-      <section className="py-24 sm:py-36 bg-midnight text-porcelain border-b border-gold/15">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* 02. Media Domains Grid - Haute Atelier Modules */}
+      <section className="py-24 sm:py-36 md:py-44 bg-midnight text-porcelain border-b border-gold/15 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {mediaFeatures.map((item, idx) => {
               const icons = [Mic, Sparkles, Newspaper, Video];
@@ -79,11 +82,11 @@ export const Media = () => {
               return (
                 <motion.div
                   key={item.category}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.12 }}
-                  className="p-8 sm:p-10 bg-obsidian border border-gold/25 flex flex-col justify-between space-y-6 shadow-2xl"
+                  className="p-8 sm:p-12 bg-obsidian border border-gold/25 flex flex-col justify-between space-y-6 shadow-[0_20px_50px_rgba(0,0,0,0.6)] crosshair-corner"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-gold/20 pb-4">
@@ -117,7 +120,7 @@ export const Media = () => {
                   </div>
 
                   <div className="pt-4 border-t border-gold/20 flex items-center justify-between text-xs">
-                    <span className="text-warmstone">Curated Dialogue</span>
+                    <span className="text-warmstone font-mono text-[10px]">Curated Dialogue</span>
                     <Button
                       to="/contact?interest=Media%20%26%20Speaking"
                       variant="ghost"
@@ -134,21 +137,21 @@ export const Media = () => {
       </section>
 
       {/* 03. Dedicated AI-Storytelling Area (Exact required line included) */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-midnight via-obsidian to-obsidian text-porcelain relative overflow-hidden border-b border-gold/15">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
+      <section className="py-24 sm:py-36 md:py-44 bg-gradient-to-b from-midnight via-obsidian to-obsidian text-porcelain relative overflow-hidden border-b border-gold/15">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
           <motion.div
             variants={fadeIn('up', 0.1)}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 sm:space-y-8"
           >
-            <div className="inline-flex items-center gap-3">
-              <span className="w-8 h-[1px] bg-gold" />
-              <span className="text-[11px] uppercase tracking-super-wide text-gold font-mono">
+            <div className="inline-flex items-center gap-3 font-mono">
+              <span className="w-8 sm:w-12 h-[1px] bg-gold" />
+              <span className="text-[11px] uppercase tracking-super-wide text-gold">
                 {aiStorytellingNote.headline}
               </span>
-              <span className="w-8 h-[1px] bg-gold" />
+              <span className="w-8 sm:w-12 h-[1px] bg-gold" />
             </div>
 
             {/* Exact required line */}
@@ -156,12 +159,12 @@ export const Media = () => {
               “{aiStorytellingNote.exactQuote}”
             </h2>
 
-            <p className="text-warmstone text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed pt-2">
+            <p className="text-warmstone text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed-luxury pt-2">
               {aiStorytellingNote.narrative}
             </p>
 
             <div className="pt-6">
-              <span className="inline-block text-[11px] tracking-widest uppercase font-mono py-1.5 px-4 border border-gold/40 text-gold-champagne bg-midnight/50">
+              <span className="inline-block text-[11px] tracking-widest uppercase font-mono py-2 px-5 border border-gold/40 text-gold-champagne bg-midnight/60 shadow-lg">
                 Innovation & Virtual Media Initiative
               </span>
             </div>

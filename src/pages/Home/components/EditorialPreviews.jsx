@@ -61,54 +61,58 @@ export const EditorialPreviews = () => {
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -420 : 420;
+      const scrollAmount = direction === 'left' ? -440 : 440;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="py-24 sm:py-36 bg-midnight text-porcelain relative overflow-hidden border-b border-gold/15">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section Header with Carousel Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-16">
+    <section className="py-24 sm:py-36 md:py-44 bg-midnight text-porcelain relative overflow-hidden border-b border-gold/15">
+      {/* Background ambient radial glow */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#F7F5F0_1px,transparent_1px)] [background-size:28px_28px]" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Section Header with Haute Horlogerie Precision Carousel Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 sm:mb-20">
           <motion.div
             variants={fadeIn('up', 0.1)}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-2xl space-y-4"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[1px] bg-gold" />
-              <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium font-mono">
+            <div className="flex items-center gap-3 font-mono">
+              <span className="w-8 sm:w-12 h-[1px] bg-gold" />
+              <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
                 Core Domains
               </span>
+              <span className="text-gold/40 text-[10px] font-mono">[ 04 / 07 ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-porcelain font-normal leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-porcelain font-normal leading-[1.08] tracking-tight">
               Four pillars shaping a global journey.
             </h2>
           </motion.div>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center gap-3">
+          {/* Precision Dial Navigation Arrows */}
+          <div className="flex items-center gap-3.5">
             <button
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
               aria-label="Scroll left"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
               aria-label="Scroll right"
             >
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </div>
         </div>
 
-        {/* Horizontal Scroll Track */}
+        {/* Horizontal Editorial Momentum Gallery */}
         <div
           ref={scrollContainerRef}
           className="flex gap-6 sm:gap-8 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory"
@@ -117,29 +121,30 @@ export const EditorialPreviews = () => {
           {editorialPillars.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex-shrink-0 w-[85vw] sm:w-[380px] md:w-[440px] snap-start group"
+              transition={{ duration: 0.8, delay: index * 0.12 }}
+              className="flex-shrink-0 w-[85vw] sm:w-[380px] md:w-[420px] snap-start group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian border border-gold/20 mb-6">
+              {/* Image Frame with Double Edge Framing */}
+              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian border border-gold/25 mb-6 shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.78] contrast-[1.08]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.78] contrast-[1.1]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-transparent opacity-90" />
 
                 {/* Number Badge */}
-                <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-gold uppercase bg-obsidian/90 backdrop-blur-sm px-3.5 py-1.5 border border-gold/30">
+                <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-gold uppercase bg-obsidian/90 backdrop-blur-md px-3.5 py-1.5 border border-gold/30 shadow-md">
                   {item.number} / 04
                 </div>
 
                 {/* Bottom title banner */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-1 font-mono">
+                <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                  <span className="text-[10px] tracking-super-wide text-gold uppercase block font-mono">
                     {item.subtitle}
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal leading-tight">
@@ -155,7 +160,7 @@ export const EditorialPreviews = () => {
 
               <div className="mb-4 flex flex-wrap gap-2">
                 {item.highlights.slice(0, 2).map((h, i) => (
-                  <span key={i} className="text-[10px] uppercase tracking-widest text-warmstone/80 border border-gold/20 px-2 py-0.5 bg-sapphire/30 font-mono">
+                  <span key={i} className="text-[10px] uppercase tracking-widest text-warmstone/80 border border-gold/20 px-2.5 py-0.5 bg-sapphire/30 font-mono">
                     {h}
                   </span>
                 ))}
@@ -163,7 +168,7 @@ export const EditorialPreviews = () => {
 
               <Link
                 to={item.link}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-porcelain group-hover:text-gold transition-colors pt-1 border-b border-transparent group-hover:border-gold"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-porcelain group-hover:text-gold transition-colors pt-1 border-b border-transparent group-hover:border-gold font-medium font-mono"
               >
                 <span>Explore {item.title}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
