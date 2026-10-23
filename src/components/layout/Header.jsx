@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import { allRoutes, headerCTA } from '@/data/navigation';
+import { navigationLinks, headerCTA } from '@/data/navigation';
 import { MobileMenu } from './MobileMenu';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +29,9 @@ export const Header = () => {
             : "bg-obsidian/75 backdrop-blur-md py-4 sm:py-5 border-b border-white/10"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between gap-4">
           {/* Brand Wordmark - Haute Couture Editorial Identity */}
-          <Link to="/" className="group flex flex-col max-w-[220px] sm:max-w-none">
+          <Link to="/" className="group flex flex-col flex-shrink-0">
             <span className="font-serif text-lg sm:text-2xl tracking-[0.16em] sm:tracking-[0.2em] font-normal text-ivory group-hover:text-gold transition-colors duration-300 uppercase truncate">
               Sushill Waddhwa
             </span>
@@ -41,24 +40,27 @@ export const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation - Clean, perfectly adjusted all route links */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-7" aria-label="Main Navigation">
-            {allRoutes.map((link) => (
+          {/* Desktop Navigation - Classic numbered luxury aesthetic with overlap-proof responsive spacing */}
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8 flex-shrink-0" aria-label="Main Navigation">
+            {navigationLinks.map((link, idx) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
                   cn(
-                    "text-[11px] xl:text-[11.5px] uppercase tracking-[0.16em] font-medium transition-all duration-300 relative py-1 group",
+                    "text-[9.5px] xl:text-[10.5px] uppercase tracking-[0.12em] xl:tracking-[0.18em] font-medium transition-all duration-300 relative py-1 group",
                     isActive
                       ? "text-ivory font-semibold"
-                      : "text-warmstone/75 hover:text-gold"
+                      : "text-warmstone/80 hover:text-ivory"
                   )
                 }
               >
                 {({ isActive }) => (
-                  <span className="flex items-center">
+                  <span className="flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
+                    <span className="font-mono text-[8.5px] xl:text-[9.5px] text-gold/60 group-hover:text-gold transition-colors">
+                      0{idx + 1}
+                    </span>
                     <span>{link.label}</span>
                     {isActive && (
                       <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-gold" />
@@ -69,17 +71,22 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* Header Action Button for extra convenience */}
-          <div className="hidden 2xl:flex items-center">
-            <Button to={headerCTA.path} variant="outline" size="sm">
-              Inquire
+          {/* Header Action Button - Contact */}
+          <div className="hidden lg:flex items-center flex-shrink-0">
+            <Button
+              to={headerCTA.path}
+              variant="outline"
+              size="sm"
+              className="px-3.5 xl:px-5 py-2 text-[10px] tracking-widest whitespace-nowrap"
+            >
+              {headerCTA.label}
             </Button>
           </div>
 
           {/* Mobile / Tablet Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-ivory hover:text-gold transition-colors duration-300"
+            className="lg:hidden p-2 text-ivory hover:text-gold transition-colors duration-300 flex-shrink-0"
             aria-label="Open mobile navigation"
           >
             <Menu className="w-6 h-6 stroke-[1.5]" />
