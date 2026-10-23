@@ -67,12 +67,12 @@ export const EditorialPreviews = () => {
   };
 
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-midnight text-porcelain relative overflow-hidden border-b border-gold/15">
-      {/* Background ambient radial glow */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#F7F5F0_1px,transparent_1px)] [background-size:28px_28px]" />
+    <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15">
+      {/* Background ambient charcoal glow */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#F4F0E8_1px,transparent_1px)] [background-size:28px_28px]" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section Header with Haute Horlogerie Precision Carousel Controls */}
+        {/* Section Header with Precision Carousel Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 sm:mb-20">
           <motion.div
             variants={fadeIn('up', 0.1)}
@@ -88,7 +88,7 @@ export const EditorialPreviews = () => {
               </span>
               <span className="text-gold/40 text-[10px] font-mono">[ 04 / 07 ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-porcelain font-normal leading-[1.08] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory font-normal leading-[1.08] tracking-tight">
               Four pillars shaping a global journey.
             </h2>
           </motion.div>
@@ -97,14 +97,14 @@ export const EditorialPreviews = () => {
           <div className="flex items-center gap-3.5">
             <button
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmgrey-light hover:text-ink hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmgrey-light hover:text-ink hover:bg-gold hover:border-gold transition-all duration-300 shadow-lg group"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -127,8 +127,8 @@ export const EditorialPreviews = () => {
               transition={{ duration: 0.8, delay: index * 0.12 }}
               className="flex-shrink-0 w-[85vw] sm:w-[380px] md:w-[420px] snap-start group"
             >
-              {/* Image Frame with Double Edge Framing */}
-              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian border border-gold/25 mb-6 shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
+              {/* Image Frame with Double Edge Framing in Soft Charcoal & Gold */}
+              <div className="relative aspect-[4/5] overflow-hidden bg-charcoal border border-gold/25 mb-6 shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -147,20 +147,20 @@ export const EditorialPreviews = () => {
                   <span className="text-[10px] tracking-super-wide text-gold uppercase block font-mono">
                     {item.subtitle}
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal leading-tight">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-normal leading-tight">
                     {item.title}
                   </h3>
                 </div>
               </div>
 
               {/* Narrative & Highlights */}
-              <p className="text-warmstone text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 font-light">
+              <p className="text-ivory/70 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 font-light">
                 {item.description}
               </p>
 
               <div className="mb-4 flex flex-wrap gap-2">
                 {item.highlights.slice(0, 2).map((h, i) => (
-                  <span key={i} className="text-[10px] uppercase tracking-widest text-warmstone/80 border border-gold/20 px-2.5 py-0.5 bg-sapphire/30 font-mono">
+                  <span key={i} className="text-[10px] uppercase tracking-widest text-ivory/80 border border-gold/20 px-2.5 py-0.5 bg-charcoal/60 font-mono">
                     {h}
                   </span>
                 ))}
@@ -168,7 +168,7 @@ export const EditorialPreviews = () => {
 
               <Link
                 to={item.link}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-porcelain group-hover:text-gold transition-colors pt-1 border-b border-transparent group-hover:border-gold font-medium font-mono"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ivory group-hover:text-gold transition-colors pt-1 border-b border-transparent group-hover:border-gold font-medium font-mono"
               >
                 <span>Explore {item.title}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

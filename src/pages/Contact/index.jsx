@@ -14,11 +14,11 @@ export const Contact = () => {
       exit="exit"
       className="w-full"
     >
-      {/* 01. Contact Hero */}
+      {/* 01. Contact Hero - Obsidian Black Authority */}
       <ContactHero />
 
-      {/* 02. Form & Coordinates Dossier */}
-      <section className="py-20 sm:py-28 bg-obsidian text-porcelain">
+      {/* 02. Form & Coordinates Dossier - Warm Ivory Concierge Desk */}
+      <section className="py-20 sm:py-28 bg-ivory text-ink border-b border-champagne/40">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             

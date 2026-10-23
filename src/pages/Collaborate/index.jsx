@@ -38,8 +38,8 @@ export const Collaborate = () => {
       className="w-full"
     >
       {/* 01. Collaborate Hero with Exact Required Master Copy */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sapphire/20 rounded-full blur-[130px] pointer-events-none" />
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-5xl space-y-6">
@@ -61,7 +61,7 @@ export const Collaborate = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-porcelain text-balance"
+              className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-ivory text-balance"
             >
               “{collaborationMasterCopy}”
             </motion.h1>
@@ -78,8 +78,8 @@ export const Collaborate = () => {
         </div>
       </section>
 
-      {/* 02. The Eight Specified Collaboration Categories */}
-      <section className="py-24 sm:py-36 md:py-44 bg-midnight text-porcelain border-b border-gold/15 relative overflow-hidden">
+      {/* 02. The Eight Specified Collaboration Categories - Warm Ivory Ledger */}
+      <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-champagne/40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">
@@ -89,7 +89,7 @@ export const Collaborate = () => {
               </span>
               <span className="text-gold/40 text-[10px] font-mono">[ 08 DISCIPLINES ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-porcelain leading-[1.08] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ink leading-[1.08] tracking-tight">
               Eight curated categories of alignment.
             </h2>
           </div>
@@ -105,23 +105,23 @@ export const Collaborate = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: idx * 0.08 }}
-                  className="p-7 sm:p-8 bg-obsidian border border-gold/25 hover:border-gold transition-colors flex flex-col justify-between space-y-5 group shadow-[0_16px_40px_rgba(0,0,0,0.6)] crosshair-corner"
+                  className="p-7 sm:p-8 bg-white/75 backdrop-blur-sm border border-champagne/70 hover:border-gold/50 transition-colors duration-500 flex flex-col justify-between space-y-5 group shadow-sm crosshair-corner"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-[1px] bg-sapphire/50 border border-gold/30 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-obsidian transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-[1px] bg-champagne/40 border border-gold/30 flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-gold transition-colors duration-300">
                       <IconComp className="w-5 h-5 stroke-[1.5]" />
                     </div>
 
-                    <h3 className="font-serif text-xl sm:text-2xl text-porcelain font-normal leading-snug">
+                    <h3 className="font-serif text-xl sm:text-2xl text-ink font-normal leading-snug">
                       {cat.name}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-warmstone font-light leading-relaxed">
+                    <p className="text-xs sm:text-sm text-warmgrey font-light leading-relaxed">
                       {cat.description}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-gold/15 flex items-center justify-between text-[10px] font-mono uppercase text-gold">
+                  <div className="pt-4 border-t border-champagne/60 flex items-center justify-between text-[10px] font-mono uppercase text-gold">
                     <span>Category 0{idx + 1}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
@@ -132,8 +132,8 @@ export const Collaborate = () => {
         </div>
       </section>
 
-      {/* 03. Partnership Models */}
-      <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
+      {/* 03. Partnership Models - Soft Charcoal Contrast Section */}
+      <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">
@@ -143,7 +143,7 @@ export const Collaborate = () => {
               </span>
               <span className="text-gold/40 text-[10px] font-mono">[ STRUCTURES ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-porcelain leading-[1.08] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ivory leading-[1.08] tracking-tight">
               Four tailored engagement formats.
             </h2>
           </div>
@@ -156,10 +156,10 @@ export const Collaborate = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.75, delay: i * 0.12 }}
-                className="p-8 sm:p-12 bg-midnight border border-gold/25 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] crosshair-corner"
+                className="p-8 sm:p-12 bg-obsidian border border-gold/25 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] crosshair-corner"
               >
                 <span className="font-mono text-xs text-gold uppercase tracking-widest">Framework 0{i + 1}</span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal">{pillar.title}</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-normal">{pillar.title}</h3>
                 <p className="text-sm text-warmstone font-light leading-relaxed-luxury">
                   {pillar.description}
                 </p>
@@ -167,14 +167,14 @@ export const Collaborate = () => {
             ))}
           </div>
 
-          <div className="mt-14 p-6 sm:p-8 bg-midnight border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
+          <div className="mt-14 p-6 sm:p-8 bg-obsidian border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
             <div className="flex items-center gap-3.5">
               <ShieldCheck className="w-6 h-6 text-gold flex-shrink-0" />
               <span className="text-xs sm:text-sm text-warmstone font-light leading-relaxed">
                 Strict brand exclusivity and category protection offered for multi-season ambassadorial alignments.
               </span>
             </div>
-            <Button to="/contact?interest=Brand%20Collaborations" variant="primary" size="md">
+            <Button to="/contact?interest=Brand%20Collaborations" variant="dark" size="md">
               Submit Collaboration Brief
             </Button>
           </div>

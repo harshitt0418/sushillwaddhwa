@@ -4,8 +4,8 @@ import { fadeIn } from '@/lib/motion';
 
 export const ContactHero = () => {
   return (
-    <section className="pt-36 sm:pt-48 pb-16 sm:pb-24 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sapphire/20 rounded-full blur-[130px] pointer-events-none" />
+    <section className="pt-36 sm:pt-48 pb-16 sm:pb-24 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-4xl space-y-6">
@@ -26,7 +26,7 @@ export const ContactHero = () => {
             variants={fadeIn('up', 0.2)}
             initial="initial"
             animate="animate"
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
+            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-ivory text-balance"
           >
             Begin with a conversation.
           </motion.h1>

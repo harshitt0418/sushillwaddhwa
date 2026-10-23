@@ -17,9 +17,7 @@ export const Hospitality = () => {
       className="w-full"
     >
       {/* 01. Hospitality Hero - Full-Scale Editorial Opening */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
-        <div className="absolute top-0 right-1/3 w-[550px] h-[550px] bg-sapphire/20 rounded-full blur-[140px] pointer-events-none" />
-
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
@@ -39,7 +37,7 @@ export const Hospitality = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-ivory text-balance"
             >
               Where world-class hotels and landmark celebrations align.
             </motion.h1>
@@ -48,7 +46,7 @@ export const Hospitality = () => {
               variants={fadeIn('up', 0.3)}
               initial="initial"
               animate="animate"
-              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed-luxury pt-2"
+              className="text-base sm:text-lg text-ivory/80 max-w-2xl font-light leading-relaxed-luxury pt-2"
             >
               Sushill Waddhwa has built his reputation as an indispensable bridge in global hospitality — uniting luxury hoteliers, destination tourism authorities, and premier celebration designers to realize gatherings of rare scale and distinction.
             </motion.p>
@@ -56,17 +54,20 @@ export const Hospitality = () => {
         </div>
       </section>
 
-      {/* 02. The Five Core Hospitality Pillars */}
+      {/* 02. The Five Core Hospitality Pillars - Alternating Warm Ivory & Charcoal Rhythm */}
       {hospitalityPillars.map((pillar, index) => {
-        const isEven = index % 2 === 1;
+        // Alternating rhythm: 0: Ivory, 1: Charcoal, 2: Ivory, 3: Charcoal, 4: Ivory
+        const isIvory = index % 2 === 0;
 
         return (
           <section
             key={pillar.id}
             id={pillar.id}
             className={cn(
-              "py-24 sm:py-36 md:py-44 relative overflow-hidden border-b border-gold/15 scroll-mt-20",
-              isEven ? "bg-midnight text-porcelain" : "bg-obsidian text-porcelain"
+              "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20",
+              isIvory
+                ? "bg-ivory text-ink border-b border-ink/10"
+                : "bg-charcoal text-ivory border-b border-gold/15"
             )}
           >
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -80,20 +81,33 @@ export const Hospitality = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   className={cn(
                     "lg:col-span-6 relative",
-                    isEven ? "lg:order-2" : "lg:order-1"
+                    !isIvory ? "lg:order-2" : "lg:order-1"
                   )}
                 >
-                  <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden bg-sapphire border border-gold/30 shadow-[0_24px_60px_rgba(0,0,0,0.7)] group crosshair-corner">
+                  <div className={cn(
+                    "relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden shadow-2xl group crosshair-corner",
+                    isIvory
+                      ? "bg-ivory-dim border border-ink/20"
+                      : "bg-obsidian border border-gold/30"
+                  )}>
                     <img
                       src={pillar.image}
                       alt={pillar.title}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter brightness-95 contrast-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-obsidian/20 mix-blend-multiply transition-opacity group-hover:opacity-10" />
+                    <div className={cn(
+                      "absolute inset-0 mix-blend-multiply transition-opacity group-hover:opacity-10",
+                      isIvory ? "bg-ink/10" : "bg-obsidian/25"
+                    )} />
 
                     {/* Number Overlay */}
-                    <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-gold bg-obsidian/90 backdrop-blur-md px-3.5 py-1.5 border border-gold/30 uppercase shadow-md">
+                    <div className={cn(
+                      "absolute top-6 left-6 font-mono text-xs tracking-widest px-3.5 py-1.5 uppercase shadow-md",
+                      isIvory
+                        ? "bg-ivory/95 text-ink border border-ink/20 font-semibold"
+                        : "bg-obsidian/90 text-gold border border-gold/30"
+                    )}>
                       Pillar {pillar.number} / 05
                     </div>
                   </div>
@@ -103,7 +117,7 @@ export const Hospitality = () => {
                 <div
                   className={cn(
                     "lg:col-span-6 space-y-8",
-                    isEven ? "lg:order-1" : "lg:order-2"
+                    !isIvory ? "lg:order-1" : "lg:order-2"
                   )}
                 >
                   <motion.div
@@ -115,12 +129,18 @@ export const Hospitality = () => {
                   >
                     <div className="flex items-center gap-3 font-mono">
                       <span className="w-8 h-[1px] bg-gold" />
-                      <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
+                      <span className={cn(
+                        "text-[11px] uppercase tracking-super-wide font-medium",
+                        isIvory ? "text-gold font-semibold" : "text-gold"
+                      )}>
                         {pillar.subtitle}
                       </span>
                     </div>
 
-                    <h2 className="font-serif text-3xl sm:text-5xl font-normal text-porcelain leading-[1.08] tracking-tight">
+                    <h2 className={cn(
+                      "font-serif text-3xl sm:text-5xl font-normal leading-[1.08] tracking-tight",
+                      isIvory ? "text-ink" : "text-ivory"
+                    )}>
                       {pillar.title}
                     </h2>
                   </motion.div>
@@ -130,7 +150,10 @@ export const Hospitality = () => {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="text-sm sm:text-base text-warmstone font-light leading-relaxed-luxury"
+                    className={cn(
+                      "text-sm sm:text-base font-light leading-relaxed-luxury",
+                      isIvory ? "text-ink/80" : "text-ivory/80"
+                    )}
                   >
                     {pillar.description}
                   </motion.p>
@@ -143,13 +166,24 @@ export const Hospitality = () => {
                     viewport={{ once: true }}
                     className="space-y-3 pt-2"
                   >
-                    <span className="text-[10px] uppercase tracking-widest text-gold font-mono block">
+                    <span className={cn(
+                      "text-[10px] uppercase tracking-widest font-mono block",
+                      isIvory ? "text-gold font-semibold" : "text-gold"
+                    )}>
                       Scope of Strategic Engagement:
                     </span>
                     <ul className="grid grid-cols-1 gap-3">
                       {pillar.scope.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-porcelain/90 font-light">
-                          <span className="mt-1 w-4 h-4 rounded-[1px] bg-sapphire/60 border border-gold/30 flex items-center justify-center flex-shrink-0 text-gold">
+                        <li key={idx} className={cn(
+                          "flex items-start gap-3 text-xs sm:text-sm font-light",
+                          isIvory ? "text-ink/90" : "text-ivory/90"
+                        )}>
+                          <span className={cn(
+                            "mt-1 w-4 h-4 rounded-[1px] flex items-center justify-center flex-shrink-0 text-gold",
+                            isIvory
+                              ? "bg-ivory-dim border border-ink/15"
+                              : "bg-obsidian border border-gold/30"
+                          )}>
                             <Check className="w-2.5 h-2.5 stroke-[2.5]" />
                           </span>
                           <span>{item}</span>
@@ -164,15 +198,21 @@ export const Hospitality = () => {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="pt-6 border-t border-gold/20 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                    className={cn(
+                      "pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-6",
+                      isIvory ? "border-ink/10" : "border-gold/20"
+                    )}
                   >
-                    <span className="text-xs text-warmstone italic font-serif">
+                    <span className={cn(
+                      "text-xs italic font-serif",
+                      isIvory ? "text-warmgrey" : "text-ivory/70"
+                    )}>
                       Direct executive collaboration
                     </span>
 
                     <Button
                       to={`/contact?interest=Hospitality%20Partnerships`}
-                      variant="primary"
+                      variant={isIvory ? "primary" : "dark"}
                       size="md"
                     >
                       Discuss Hospitality Partnerships
@@ -188,7 +228,7 @@ export const Hospitality = () => {
       })}
 
       {/* 03. Global Corridors & Destination Focus - Styled as Luxury World Atlas */}
-      <section className="py-24 sm:py-36 md:py-44 bg-midnight text-porcelain relative overflow-hidden border-b border-gold/15">
+      <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">
@@ -198,10 +238,10 @@ export const Hospitality = () => {
               </span>
               <span className="text-gold/40 text-[10px] font-mono">[ ATLAS ]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-porcelain leading-[1.08] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ivory leading-[1.08] tracking-tight">
               Primary destination corridors across the globe.
             </h2>
-            <p className="mt-4 text-xs sm:text-sm text-warmstone font-light leading-relaxed">
+            <p className="mt-4 text-xs sm:text-sm text-ivory/75 font-light leading-relaxed">
               Centering on destinations and luxury regions where Sushill maintains longstanding relationships with hotel ownership, destination leaders, and event architects.
             </p>
           </div>
@@ -214,18 +254,18 @@ export const Hospitality = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.75, delay: idx * 0.12 }}
-                className="p-7 sm:p-8 bg-obsidian border border-gold/25 hover:border-gold transition-colors shadow-[0_16px_40px_rgba(0,0,0,0.6)] group crosshair-corner"
+                className="p-7 sm:p-8 bg-charcoal border border-gold/25 hover:border-gold transition-colors shadow-xl group crosshair-corner"
               >
                 <span className="font-mono text-[10px] text-gold uppercase block mb-3">
                   Corridor 0{idx + 1}
                 </span>
-                <h3 className="font-serif text-2xl text-porcelain mb-1 font-normal">
+                <h3 className="font-serif text-2xl text-ivory mb-1 font-normal">
                   {hub.region}
                 </h3>
                 <span className="text-[10px] tracking-widest uppercase text-gold-champagne block mb-4 font-mono">
                   {hub.role}
                 </span>
-                <p className="text-xs text-warmstone font-light leading-relaxed">
+                <p className="text-xs text-ivory/70 font-light leading-relaxed">
                   {hub.description}
                 </p>
               </motion.div>

@@ -55,7 +55,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-obsidian text-porcelain selection:bg-gold selection:text-obsidian font-sans relative">
+    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-gold selection:text-obsidian font-sans relative">
       {/* Cinematic Editorial Film Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.032] mix-blend-screen bg-noise" />
       

@@ -16,10 +16,8 @@ export const Business = () => {
       exit="exit"
       className="w-full"
     >
-      {/* 01. Business Hero - Cinematic Editorial Opening */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sapphire/20 rounded-full blur-[130px] pointer-events-none" />
-
+      {/* 01. Business Hero - Cinematic Obsidian Opening */}
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
@@ -39,7 +37,7 @@ export const Business = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-ivory text-balance"
             >
               Building enduring platforms across global hospitality, investment and media.
             </motion.h1>
@@ -48,7 +46,7 @@ export const Business = () => {
               variants={fadeIn('up', 0.3)}
               initial="initial"
               animate="animate"
-              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed-luxury pt-2"
+              className="text-base sm:text-lg text-ivory/80 max-w-2xl font-light leading-relaxed-luxury pt-2"
             >
               From pioneering luxury group travel in 1989 through Platinum World Grroup to developing contemporary boutique hotel concepts with Artoso Hospitality, Sushill Waddhwa's commercial endeavors pair operational discipline with visionary creativity.
             </motion.p>
@@ -56,17 +54,21 @@ export const Business = () => {
         </div>
       </section>
 
-      {/* 02. Four Curated Business Entity Monographs */}
+      {/* 02. Four Curated Business Entity Monographs - Alternating Light & Dark Rhythm */}
       {businessEntities.map((entity, index) => {
-        const isEven = index % 2 === 1;
+        // Even indices (0: Platinum World, 2: Strategic Investments) -> Warm Ivory
+        // Odd indices (1: Artoso, 3: Pictures) -> Soft Charcoal
+        const isIvory = index % 2 === 0;
 
         return (
           <section
             key={entity.id}
             id={entity.id}
             className={cn(
-              "py-24 sm:py-36 md:py-44 relative overflow-hidden border-b border-gold/15 scroll-mt-20",
-              isEven ? "bg-midnight text-porcelain" : "bg-obsidian text-porcelain"
+              "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20",
+              isIvory
+                ? "bg-ivory text-ink border-b border-ink/10"
+                : "bg-charcoal text-ivory border-b border-gold/15"
             )}
           >
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -80,20 +82,33 @@ export const Business = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   className={cn(
                     "lg:col-span-6 relative",
-                    isEven ? "lg:order-2" : "lg:order-1"
+                    !isIvory ? "lg:order-2" : "lg:order-1"
                   )}
                 >
-                  <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden bg-sapphire border border-gold/30 shadow-[0_24px_60px_rgba(0,0,0,0.7)] group crosshair-corner">
+                  <div className={cn(
+                    "relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden shadow-2xl group crosshair-corner",
+                    isIvory
+                      ? "bg-ivory-dim border border-ink/20"
+                      : "bg-obsidian border border-gold/30"
+                  )}>
                     <img
                       src={entity.image}
                       alt={entity.name}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter brightness-95 contrast-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-obsidian/20 mix-blend-multiply transition-opacity group-hover:opacity-10" />
+                    <div className={cn(
+                      "absolute inset-0 mix-blend-multiply transition-opacity group-hover:opacity-10",
+                      isIvory ? "bg-ink/10" : "bg-obsidian/25"
+                    )} />
 
                     {/* Metadata Overlay Badge */}
-                    <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-gold bg-obsidian/90 backdrop-blur-md px-3.5 py-1.5 border border-gold/30 uppercase shadow-md">
+                    <div className={cn(
+                      "absolute top-6 left-6 font-mono text-xs tracking-widest px-3.5 py-1.5 uppercase shadow-md",
+                      isIvory
+                        ? "bg-ivory/95 text-ink border border-ink/20 font-semibold"
+                        : "bg-obsidian/90 text-gold border border-gold/30"
+                    )}>
                       {entity.since}
                     </div>
                   </div>
@@ -103,7 +118,7 @@ export const Business = () => {
                 <div
                   className={cn(
                     "lg:col-span-6 space-y-8",
-                    isEven ? "lg:order-1" : "lg:order-2"
+                    !isIvory ? "lg:order-1" : "lg:order-2"
                   )}
                 >
                   <motion.div
@@ -115,18 +130,33 @@ export const Business = () => {
                   >
                     <div className="flex items-center gap-3 font-mono">
                       <span className="w-8 h-[1px] bg-gold" />
-                      <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
+                      <span className={cn(
+                        "text-[11px] uppercase tracking-super-wide font-medium",
+                        isIvory ? "text-gold font-semibold" : "text-gold"
+                      )}>
                         {entity.descriptor}
                       </span>
-                      <span className="text-gold/40 text-[10px] font-mono">0{index + 1} / 04</span>
+                      <span className={cn(
+                        "text-[10px] font-mono",
+                        isIvory ? "text-ink/30" : "text-gold/40"
+                      )}>0{index + 1} / 04</span>
                     </div>
 
-                    <h2 className="font-serif text-3xl sm:text-5xl font-normal text-porcelain leading-[1.08] tracking-tight">
+                    <h2 className={cn(
+                      "font-serif text-3xl sm:text-5xl font-normal leading-[1.08] tracking-tight",
+                      isIvory ? "text-ink" : "text-ivory"
+                    )}>
                       {entity.name}
                     </h2>
 
-                    <div className="text-xs uppercase tracking-widest font-mono text-warmstone/80 pt-1">
-                      Role: <span className="text-porcelain font-sans font-medium">{entity.role}</span>
+                    <div className={cn(
+                      "text-xs uppercase tracking-widest font-mono pt-1",
+                      isIvory ? "text-warmgrey" : "text-ivory/70"
+                    )}>
+                      Role: <span className={cn(
+                        "font-sans font-medium",
+                        isIvory ? "text-ink" : "text-ivory"
+                      )}>{entity.role}</span>
                     </div>
                   </motion.div>
 
@@ -135,7 +165,10 @@ export const Business = () => {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="text-sm sm:text-base text-warmstone font-light leading-relaxed-luxury"
+                    className={cn(
+                      "text-sm sm:text-base font-light leading-relaxed-luxury",
+                      isIvory ? "text-ink/80" : "text-ivory/80"
+                    )}
                   >
                     {entity.summary}
                   </motion.p>
@@ -148,13 +181,24 @@ export const Business = () => {
                     viewport={{ once: true }}
                     className="space-y-3 pt-2"
                   >
-                    <span className="text-[10px] uppercase tracking-widest text-gold font-mono block">
+                    <span className={cn(
+                      "text-[10px] uppercase tracking-widest font-mono block",
+                      isIvory ? "text-gold font-semibold" : "text-gold"
+                    )}>
                       Core Scope & Operating Capabilities:
                     </span>
                     <ul className="grid grid-cols-1 gap-3">
                       {entity.capabilities.map((cap, i) => (
-                        <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-porcelain/90 font-light">
-                          <span className="mt-1 w-4 h-4 rounded-[1px] bg-sapphire/60 border border-gold/30 flex items-center justify-center flex-shrink-0 text-gold">
+                        <li key={i} className={cn(
+                          "flex items-start gap-3 text-xs sm:text-sm font-light",
+                          isIvory ? "text-ink/90" : "text-ivory/90"
+                        )}>
+                          <span className={cn(
+                            "mt-1 w-4 h-4 rounded-[1px] flex items-center justify-center flex-shrink-0 text-gold",
+                            isIvory
+                              ? "bg-ivory-dim border border-ink/15"
+                              : "bg-obsidian border border-gold/30"
+                          )}>
                             <Check className="w-2.5 h-2.5 stroke-[2.5]" />
                           </span>
                           <span>{cap}</span>
@@ -169,20 +213,29 @@ export const Business = () => {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="pt-6 border-t border-gold/20 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                    className={cn(
+                      "pt-6 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-6",
+                      isIvory ? "border-ink/10" : "border-gold/20"
+                    )}
                   >
                     <div className="max-w-xs">
-                      <span className="text-[10px] uppercase tracking-widest text-gold font-mono block mb-1">
+                      <span className={cn(
+                        "text-[10px] uppercase tracking-widest font-mono block mb-1",
+                        isIvory ? "text-warmgrey" : "text-gold"
+                      )}>
                         Strategic Rationale
                       </span>
-                      <span className="text-xs text-porcelain/85 italic font-serif">
+                      <span className={cn(
+                        "text-xs italic font-serif",
+                        isIvory ? "text-ink/85 font-normal" : "text-ivory/85"
+                      )}>
                         {entity.highlight}
                       </span>
                     </div>
 
                     <Button
                       to={`/contact?interest=${encodeURIComponent(entity.name)}`}
-                      variant="primary"
+                      variant={isIvory ? "primary" : "dark"}
                       size="md"
                     >
                       Explore Venture Partnerships

@@ -6,10 +6,7 @@ import editorialPortrait from '@/assets/images/sushill-waddhwa-editorial-portrai
 
 export const PersonalIntro = () => {
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-porcelain border-b border-gold/15 overflow-hidden relative">
-      {/* Subtle background ambient glow */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-sapphire/15 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-
+    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
@@ -24,15 +21,15 @@ export const PersonalIntro = () => {
             >
               <div className="flex items-center gap-3 font-mono">
                 <span className="w-8 sm:w-12 h-[1px] bg-gold" />
-                <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
+                <span className="text-[11px] uppercase tracking-super-wide text-gold font-semibold">
                   The Founder · Since 1989
                 </span>
-                <span className="text-gold/40 text-[10px] font-mono">[ 03 / 07 ]</span>
+                <span className="text-ink/30 text-[10px] font-mono">[ 03 / 07 ]</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-porcelain leading-[1.08] tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ink leading-[1.08] tracking-tight">
                 Global vision.
                 <br />
-                <span className="italic font-light text-gold-champagne">
+                <span className="italic font-light text-gold">
                   Personally guided.
                 </span>
               </h2>
@@ -43,13 +40,13 @@ export const PersonalIntro = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, margin: '-60px' }}
-              className="space-y-5 text-warmstone text-sm sm:text-base leading-relaxed-luxury font-light max-w-2xl"
+              className="space-y-5 text-ink/80 text-sm sm:text-base leading-relaxed-luxury font-light max-w-2xl"
             >
               <p>
                 Sushill Waddhwa is a global hospitality entrepreneur, investor, and luxury lifestyle personality who has spent more than 35 years building enduring relationships across premier luxury hotels, international destinations, and hospitality platforms.
               </p>
               <p>
-                As Founder & CMD of <span className="text-porcelain font-medium">Platinum World Grroup</span>, his career began in 1989 pioneering experiential corporate gatherings and bespoke celebration tourism. Over decades, his focus expanded into luxury hotel buyouts, destination weddings, strategic hotel advisory through <span className="text-porcelain font-medium">Artoso Hospitality Corp.</span>, and thought leadership forums such as <span className="text-porcelain font-medium">WedTalks</span>.
+                As Founder & CMD of <span className="text-ink font-semibold">Platinum World Grroup</span>, his career began in 1989 pioneering experiential corporate gatherings and bespoke celebration tourism. Over decades, his focus expanded into luxury hotel buyouts, destination weddings, strategic hotel advisory through <span className="text-ink font-semibold">Artoso Hospitality Corp.</span>, and thought leadership forums such as <span className="text-ink font-semibold">WedTalks</span>.
               </p>
               <p>
                 Grounded in the values of authentic Indian warmth and cosmopolitan sophistication, Sushill operates with quiet confidence, discretion, and an instinctive eye for experiences that endure.
@@ -67,7 +64,7 @@ export const PersonalIntro = () => {
               <Button to="/about" variant="primary" size="md">
                 Explore Full Biography
               </Button>
-              <Button to="/collaborate" variant="outline" size="md">
+              <Button to="/collaborate" variant="lightOutline" size="md">
                 Partnership Opportunities
               </Button>
             </motion.div>
@@ -82,9 +79,9 @@ export const PersonalIntro = () => {
               viewport={{ once: true, margin: '-60px' }}
               className="relative max-w-md mx-auto lg:max-w-none"
             >
-              {/* Museum-Grade Matting: Obsidian/Midnight frame with Maybach Gold edges */}
-              <div className="relative border border-gold/30 p-2 sm:p-3.5 bg-midnight shadow-[0_24px_60px_rgba(0,0,0,0.7)] crosshair-corner">
-                <div className="relative aspect-[3/4] overflow-hidden bg-sapphire">
+              {/* Refined Charcoal Frame with Thin Antique Gold Edge */}
+              <div className="relative border border-ink/20 p-2 sm:p-3.5 bg-ivory-dim shadow-xl crosshair-corner">
+                <div className="relative aspect-[3/4] overflow-hidden bg-ivory border border-gold/40">
                   <img
                     src={editorialPortrait}
                     alt="Sushill Waddhwa, Global Hospitality Leader and Founder"
@@ -97,9 +94,9 @@ export const PersonalIntro = () => {
               </div>
 
               {/* Minimal caption plate */}
-              <div className="mt-4 flex items-center justify-between text-xs text-warmstone font-mono pt-1">
-                <span className="tracking-widest uppercase text-[10px] text-warmstone/80">Founder & CMD</span>
-                <span className="text-gold tracking-wider text-[11px]">Platinum World Grroup</span>
+              <div className="mt-4 flex items-center justify-between text-xs text-ink/70 font-mono pt-1">
+                <span className="tracking-widest uppercase text-[10px] text-warmgrey">Founder & CMD</span>
+                <span className="text-gold tracking-wider text-[11px] font-semibold">Platinum World Grroup</span>
               </div>
             </motion.div>
           </div>

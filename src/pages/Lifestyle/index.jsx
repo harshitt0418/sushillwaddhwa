@@ -15,9 +15,7 @@ export const Lifestyle = () => {
       className="w-full"
     >
       {/* 01. Lifestyle Hero - High-Fashion Magazine Header */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sapphire/20 rounded-full blur-[130px] pointer-events-none" />
-
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
@@ -37,7 +35,7 @@ export const Lifestyle = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-ivory text-balance"
             >
               The art of living well across time zones.
             </motion.h1>
@@ -46,12 +44,12 @@ export const Lifestyle = () => {
               variants={fadeIn('up', 0.3)}
               initial="initial"
               animate="animate"
-              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed-luxury pt-2"
+              className="text-base sm:text-lg text-ivory/80 max-w-2xl font-light leading-relaxed-luxury pt-2"
             >
               For Sushill Waddhwa, luxury is never loud or performative. It is the natural consequence of curiosity, refined taste, physical discipline, and deep respect for the places, people, and traditions encountered along the way.
             </motion.p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest font-mono text-warmstone/80">
+            <div className="pt-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest font-mono text-warmgrey-light">
               <span>Travel</span>
               <span className="text-gold">·</span>
               <span>Hotels</span>
@@ -68,10 +66,11 @@ export const Lifestyle = () => {
         </div>
       </section>
 
-      {/* 02. Lifestyle Chapters - Luxury Magazine Feature Format */}
+      {/* 02. Lifestyle Chapters - Luxury Magazine Feature Format with Alternating Rhythm */}
       <div className="divide-y divide-gold/15">
         {lifestylePillars.map((pillar, index) => {
-          const isEven = index % 2 === 1;
+          // Alternating: Even -> Warm Ivory, Odd -> Soft Charcoal
+          const isIvory = index % 2 === 0;
 
           return (
             <section
@@ -79,7 +78,9 @@ export const Lifestyle = () => {
               id={pillar.id}
               className={cn(
                 "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20",
-                isEven ? "bg-midnight text-porcelain" : "bg-obsidian text-porcelain"
+                isIvory
+                  ? "bg-ivory text-ink border-b border-ink/10"
+                  : "bg-charcoal text-ivory border-b border-gold/15"
               )}
             >
               <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -93,22 +94,33 @@ export const Lifestyle = () => {
                     viewport={{ once: true, margin: '-60px' }}
                     className={cn(
                       "lg:col-span-5 relative",
-                      isEven ? "lg:order-2" : "lg:order-1"
+                      !isIvory ? "lg:order-2" : "lg:order-1"
                     )}
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden bg-sapphire border border-gold/30 shadow-[0_24px_60px_rgba(0,0,0,0.7)] group crosshair-corner">
+                    <div className={cn(
+                      "relative aspect-[3/4] overflow-hidden shadow-2xl group crosshair-corner",
+                      isIvory
+                        ? "bg-ivory-dim border border-ink/20"
+                        : "bg-obsidian border border-gold/30"
+                    )}>
                       <img
                         src={pillar.image}
                         alt={pillar.title}
                         className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter contrast-[1.03]"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-obsidian/20 mix-blend-multiply" />
+                      <div className={cn(
+                        "absolute inset-0 mix-blend-multiply",
+                        isIvory ? "bg-ink/10" : "bg-obsidian/20"
+                      )} />
                     </div>
 
-                    <div className="mt-4 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono text-warmstone pt-1">
+                    <div className={cn(
+                      "mt-4 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono pt-1",
+                      isIvory ? "text-warmgrey" : "text-ivory/70"
+                    )}>
                       <span>Chapter 0{index + 1}</span>
-                      <span className="text-gold">{pillar.title}</span>
+                      <span className="text-gold font-semibold">{pillar.title}</span>
                     </div>
                   </motion.div>
 
@@ -116,7 +128,7 @@ export const Lifestyle = () => {
                   <div
                     className={cn(
                       "lg:col-span-7 space-y-7",
-                      isEven ? "lg:order-1" : "lg:order-2"
+                      !isIvory ? "lg:order-1" : "lg:order-2"
                     )}
                   >
                     <motion.div
@@ -126,10 +138,16 @@ export const Lifestyle = () => {
                       viewport={{ once: true }}
                       className="space-y-3"
                     >
-                      <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium block font-mono">
+                      <span className={cn(
+                        "text-[11px] uppercase tracking-super-wide font-medium block font-mono",
+                        isIvory ? "text-gold font-semibold" : "text-gold"
+                      )}>
                         {pillar.subtitle}
                       </span>
-                      <h2 className="font-serif text-3xl sm:text-5xl font-normal text-porcelain leading-[1.08] tracking-tight">
+                      <h2 className={cn(
+                        "font-serif text-3xl sm:text-5xl font-normal leading-[1.08] tracking-tight",
+                        isIvory ? "text-ink" : "text-ivory"
+                      )}>
                         {pillar.title}
                       </h2>
                     </motion.div>
@@ -140,9 +158,15 @@ export const Lifestyle = () => {
                       initial="initial"
                       whileInView="animate"
                       viewport={{ once: true }}
-                      className="p-6 sm:p-7 bg-sapphire/35 border-l-2 border-gold shadow-[0_12px_32px_rgba(0,0,0,0.4)]"
+                      className={cn(
+                        "p-6 sm:p-7 border-l-2 border-gold shadow-md",
+                        isIvory ? "bg-ivory-dim/70 text-ink" : "bg-obsidian/60 text-ivory"
+                      )}
                     >
-                      <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-porcelain leading-snug">
+                      <p className={cn(
+                        "font-serif italic text-lg sm:text-xl md:text-2xl leading-snug",
+                        isIvory ? "text-ink" : "text-ivory"
+                      )}>
                         “{pillar.quote}”
                       </p>
                     </motion.div>
@@ -152,7 +176,10 @@ export const Lifestyle = () => {
                       initial="initial"
                       whileInView="animate"
                       viewport={{ once: true }}
-                      className="text-sm sm:text-base text-warmstone font-light leading-relaxed-luxury"
+                      className={cn(
+                        "text-sm sm:text-base font-light leading-relaxed-luxury",
+                        isIvory ? "text-ink/80" : "text-ivory/80"
+                      )}
                     >
                       {pillar.narrative}
                     </motion.p>
@@ -168,7 +195,12 @@ export const Lifestyle = () => {
                       {pillar.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] uppercase tracking-widest px-3 py-1.5 bg-obsidian text-warmstone border border-gold/25 font-mono shadow-sm"
+                          className={cn(
+                            "text-[10px] uppercase tracking-widest px-3 py-1.5 font-mono shadow-sm",
+                            isIvory
+                              ? "bg-ivory-dim text-ink/80 border border-ink/15"
+                              : "bg-obsidian text-ivory/80 border border-gold/25"
+                          )}
                         >
                           {tag}
                         </span>

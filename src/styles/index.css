@@ -4,37 +4,36 @@
 
 @layer base {
   :root {
-    --color-obsidian: #080D17;
-    --color-midnight: #0D1B35;
-    --color-sapphire: #14284A;
+    --color-obsidian: #0A0A0B;
+    --color-charcoal: #151517;
+    --color-midnight: #101621;
+    --color-ivory: #F4F0E8;
+    --color-champagne: #E6DDCC;
     --color-gold: #B8954F;
-    --color-champagne: #D6C08D;
-    --color-porcelain: #F7F5F0;
-    --color-warmstone: #B7B0A4;
+    --color-ink: #171613;
+    --color-warmgrey: #777168;
 
     /* Legacy CSS Variable mappings */
-    --color-ink: #080D17;
-    --color-ink-soft: #0D1B35;
-    --color-bone: #080D17;
-    --color-bone-light: #0D1B35;
-    --color-bone-dim: #14284A;
-    --color-stone: #B7B0A4;
+    --color-bone: #F4F0E8;
+    --color-bone-light: #FAF7F2;
+    --color-bone-dim: #E6DDCC;
+    --color-stone: #777168;
     --color-bronze: #B8954F;
-    --color-forest: #0D1B35;
+    --color-forest: #151517;
   }
 
   html {
     font-family: 'Manrope', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #F7F5F0;
-    background-color: #080D17;
+    color: #171613;
+    background-color: #0A0A0B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
-    background-color: #080D17;
-    color: #F7F5F0;
+    background-color: #0A0A0B;
+    color: #F4F0E8;
     overflow-x: hidden;
   }
 
@@ -50,7 +49,7 @@
     height: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #080D17;
+    background: #0A0A0B;
   }
   ::-webkit-scrollbar-thumb {
     background: #B8954F;
@@ -62,17 +61,31 @@
 }
 
 @layer utilities {
-  /* Hairline borders in subtle Maybach Gold */
+  /* Hairline borders in subtle Antique Gold */
   .hairline-b {
-    border-bottom: 1px solid rgba(184, 149, 79, 0.2);
+    border-bottom: 1px solid rgba(184, 149, 79, 0.22);
   }
   .hairline-t {
-    border-top: 1px solid rgba(184, 149, 79, 0.2);
+    border-top: 1px solid rgba(184, 149, 79, 0.22);
   }
   .hairline-y {
-    border-top: 1px solid rgba(184, 149, 79, 0.2);
-    border-bottom: 1px solid rgba(184, 149, 79, 0.2);
+    border-top: 1px solid rgba(184, 149, 79, 0.22);
+    border-bottom: 1px solid rgba(184, 149, 79, 0.22);
   }
+  
+  /* Hairline borders for Ivory/Light sections */
+  .hairline-ivory-b {
+    border-bottom: 1px solid rgba(23, 22, 19, 0.12);
+  }
+  .hairline-ivory-t {
+    border-top: 1px solid rgba(23, 22, 19, 0.12);
+  }
+  .hairline-ivory-y {
+    border-top: 1px solid rgba(23, 22, 19, 0.12);
+    border-bottom: 1px solid rgba(23, 22, 19, 0.12);
+  }
+
+  /* Dark hairline borders */
   .hairline-dark-b {
     border-bottom: 1px solid rgba(184, 149, 79, 0.16);
   }
