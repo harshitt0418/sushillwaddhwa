@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        'nav': '1180px',
+        'nav': '1240px',
       },
       colors: {
         // Obsidian, Ivory and Antique Gold Luxury Editorial Palette

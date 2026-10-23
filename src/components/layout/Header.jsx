@@ -29,19 +29,19 @@ export const Header = () => {
             : "bg-obsidian/75 backdrop-blur-md py-4 sm:py-5 border-b border-white/10"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between gap-4">
+        <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 md:px-8 xl:px-12 flex items-center justify-between gap-3 xl:gap-6">
           {/* Brand Wordmark - Haute Couture Editorial Identity */}
           <Link to="/" className="group flex flex-col flex-shrink-0">
-            <span className="font-serif text-lg sm:text-2xl tracking-[0.16em] sm:tracking-[0.2em] font-normal text-ivory group-hover:text-gold transition-colors duration-300 uppercase truncate">
+            <span className="font-serif text-base sm:text-xl xl:text-2xl tracking-[0.16em] xl:tracking-[0.2em] font-normal text-ivory group-hover:text-gold transition-colors duration-300 uppercase">
               Sushill Waddhwa
             </span>
-            <span className="text-[7.5px] sm:text-[9px] tracking-super-wide text-gold uppercase -mt-0.5 truncate font-mono">
+            <span className="text-[7px] sm:text-[8px] xl:text-[9px] tracking-super-wide text-gold uppercase -mt-0.5 font-mono truncate max-w-[210px] sm:max-w-none">
               Founder & CMD, Platinum World Grroup · Since 1989
             </span>
           </Link>
 
           {/* Desktop Navigation - Classic numbered luxury aesthetic with overlap-proof responsive spacing */}
-          <nav className="hidden nav:flex items-center gap-4 xl:gap-7 2xl:gap-9 flex-shrink-0" aria-label="Main Navigation">
+          <nav className="hidden nav:flex items-center gap-3.5 xl:gap-5 2xl:gap-7 flex-shrink-0" aria-label="Main Navigation">
             {navigationLinks.map((link, idx) => (
               <NavLink
                 key={link.path}
@@ -49,7 +49,7 @@ export const Header = () => {
                 end={link.path === '/'}
                 className={({ isActive }) =>
                   cn(
-                    "text-[10px] xl:text-[11px] uppercase tracking-[0.14em] xl:tracking-[0.18em] font-medium transition-all duration-300 relative py-1 group",
+                    "text-[9.5px] xl:text-[10.5px] uppercase tracking-[0.12em] xl:tracking-[0.16em] font-medium transition-all duration-300 relative py-1 group",
                     isActive
                       ? "text-ivory font-semibold"
                       : "text-warmstone/80 hover:text-ivory"
@@ -57,8 +57,8 @@ export const Header = () => {
                 }
               >
                 {({ isActive }) => (
-                  <span className="flex items-center gap-1.5 whitespace-nowrap">
-                    <span className="font-mono text-[9px] xl:text-[9.5px] text-gold/60 group-hover:text-gold transition-colors">
+                  <span className="flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
+                    <span className="font-mono text-[8.5px] xl:text-[9px] text-gold/60 group-hover:text-gold transition-colors">
                       0{idx + 1}
                     </span>
                     <span>{link.label}</span>
@@ -77,13 +77,13 @@ export const Header = () => {
               to={headerCTA.path}
               variant="outline"
               size="sm"
-              className="px-4 xl:px-6 py-2 text-[10px] tracking-widest whitespace-nowrap"
+              className="px-3.5 xl:px-5 py-2 text-[10px] tracking-widest whitespace-nowrap"
             >
               {headerCTA.label}
             </Button>
           </div>
 
-          {/* Mobile / Tablet Menu Trigger (Below 1180px) */}
+          {/* Mobile / Tablet Menu Trigger (Below 1240px) */}
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="nav:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-ivory hover:text-gold transition-colors duration-300 flex-shrink-0 -mr-2"

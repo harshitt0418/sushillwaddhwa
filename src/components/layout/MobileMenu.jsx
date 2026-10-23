@@ -35,7 +35,7 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           exit={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-obsidian text-ivory flex flex-col justify-between p-6 sm:p-10 nav:hidden overflow-y-auto"
+          className="fixed inset-0 z-50 bg-obsidian text-ivory flex flex-col justify-between p-5 sm:p-8 md:p-10 nav:hidden overflow-y-auto"
         >
           {/* Subtle noise and radial background glow */}
           <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(184,149,79,0.08)_0%,transparent_60%)]" />
@@ -43,10 +43,10 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           {/* Top Bar */}
           <div className="relative z-10 flex items-center justify-between border-b border-gold/20 pb-4">
             <div>
-              <div className="font-serif tracking-[0.16em] text-lg text-ivory uppercase">
+              <div className="font-serif tracking-[0.16em] text-base sm:text-lg text-ivory uppercase">
                 Sushill Waddhwa
               </div>
-              <div className="text-[9px] tracking-super-wide text-gold uppercase font-mono">
+              <div className="text-[7.5px] sm:text-[9px] tracking-super-wide text-gold uppercase font-mono truncate max-w-[210px] sm:max-w-none">
                 Founder & CMD, Platinum World Grroup · Since 1989
               </div>
             </div>
