@@ -5,9 +5,14 @@ export const LuxuryPreloader = ({ onComplete }) => {
   const [isDismissing, setIsDismissing] = useState(false);
 
   useEffect(() => {
-    // Respect reduced motion preferences
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
+    // Respect reduced motion preferences or if already played this session
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let alreadyPlayed = false;
+    try {
+      alreadyPlayed = typeof window !== 'undefined' && !!sessionStorage.getItem('sw_intro_played');
+    } catch (e) {}
+
+    if (prefersReducedMotion || alreadyPlayed) {
       if (onComplete) onComplete();
       return;
     }
@@ -15,14 +20,17 @@ export const LuxuryPreloader = ({ onComplete }) => {
     // Lock body scroll during arrival moment
     document.body.style.overflow = 'hidden';
 
-    // Fast, elegant sequence timing: ~1.2s, then smooth parting reveal
+    // Sequence timing: ~1.2s, then smooth parting reveal (total ~1.8s)
     const dismissTimer = setTimeout(() => {
       setIsDismissing(true);
       setTimeout(() => {
         document.body.style.overflow = 'auto';
+        try {
+          sessionStorage.setItem('sw_intro_played', 'true');
+        } catch (e) {}
         if (onComplete) onComplete();
-      }, 750);
-    }, 1200);
+      }, 650);
+    }, 1150);
 
     return () => {
       clearTimeout(dismissTimer);
@@ -34,8 +42,11 @@ export const LuxuryPreloader = ({ onComplete }) => {
     setIsDismissing(true);
     setTimeout(() => {
       document.body.style.overflow = 'auto';
+      try {
+        sessionStorage.setItem('sw_intro_played', 'true');
+      } catch (e) {}
       if (onComplete) onComplete();
-    }, 400);
+    }, 350);
   };
 
   return (

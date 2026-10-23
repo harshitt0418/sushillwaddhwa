@@ -41,7 +41,7 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Classic numbered luxury aesthetic with overlap-proof responsive spacing */}
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8 flex-shrink-0" aria-label="Main Navigation">
+          <nav className="hidden nav:flex items-center gap-4 xl:gap-7 2xl:gap-9 flex-shrink-0" aria-label="Main Navigation">
             {navigationLinks.map((link, idx) => (
               <NavLink
                 key={link.path}
@@ -49,7 +49,7 @@ export const Header = () => {
                 end={link.path === '/'}
                 className={({ isActive }) =>
                   cn(
-                    "text-[9.5px] xl:text-[10.5px] uppercase tracking-[0.12em] xl:tracking-[0.18em] font-medium transition-all duration-300 relative py-1 group",
+                    "text-[10px] xl:text-[11px] uppercase tracking-[0.14em] xl:tracking-[0.18em] font-medium transition-all duration-300 relative py-1 group",
                     isActive
                       ? "text-ivory font-semibold"
                       : "text-warmstone/80 hover:text-ivory"
@@ -57,8 +57,8 @@ export const Header = () => {
                 }
               >
                 {({ isActive }) => (
-                  <span className="flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
-                    <span className="font-mono text-[8.5px] xl:text-[9.5px] text-gold/60 group-hover:text-gold transition-colors">
+                  <span className="flex items-center gap-1.5 whitespace-nowrap">
+                    <span className="font-mono text-[9px] xl:text-[9.5px] text-gold/60 group-hover:text-gold transition-colors">
                       0{idx + 1}
                     </span>
                     <span>{link.label}</span>
@@ -72,21 +72,21 @@ export const Header = () => {
           </nav>
 
           {/* Header Action Button - Contact */}
-          <div className="hidden lg:flex items-center flex-shrink-0">
+          <div className="hidden nav:flex items-center flex-shrink-0">
             <Button
               to={headerCTA.path}
               variant="outline"
               size="sm"
-              className="px-3.5 xl:px-5 py-2 text-[10px] tracking-widest whitespace-nowrap"
+              className="px-4 xl:px-6 py-2 text-[10px] tracking-widest whitespace-nowrap"
             >
               {headerCTA.label}
             </Button>
           </div>
 
-          {/* Mobile / Tablet Menu Trigger */}
+          {/* Mobile / Tablet Menu Trigger (Below 1180px) */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-ivory hover:text-gold transition-colors duration-300 flex-shrink-0"
+            className="nav:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-ivory hover:text-gold transition-colors duration-300 flex-shrink-0 -mr-2"
             aria-label="Open mobile navigation"
           >
             <Menu className="w-6 h-6 stroke-[1.5]" />

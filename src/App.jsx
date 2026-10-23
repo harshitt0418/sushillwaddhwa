@@ -20,11 +20,30 @@ import { Contact } from '@/pages/Contact';
 
 export const App = () => {
   const location = useLocation();
-  const [isPreloaderActive, setIsPreloaderActive] = React.useState(true);
+  const [isPreloaderActive, setIsPreloaderActive] = React.useState(() => {
+    try {
+      if (typeof window !== 'undefined') {
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return false;
+        const hasPlayed = sessionStorage.getItem('sw_intro_played');
+        return !hasPlayed;
+      }
+    } catch (e) {}
+    return false;
+  });
+
+  const handlePreloaderComplete = React.useCallback(() => {
+    try {
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('sw_intro_played', 'true');
+      }
+    } catch (e) {}
+    setIsPreloaderActive(false);
+  }, []);
 
   useEffect(() => {
     // Check user preference for reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       setIsPreloaderActive(false);
       return;
@@ -55,13 +74,13 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-gold selection:text-obsidian font-sans relative">
+    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-gold selection:text-obsidian font-sans relative overflow-x-hidden w-full">
       {/* Cinematic Editorial Film Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.032] mix-blend-screen bg-noise" />
       
       <RouteSEO />
       {isPreloaderActive && (
-        <LuxuryPreloader onComplete={() => setIsPreloaderActive(false)} />
+        <LuxuryPreloader onComplete={handlePreloaderComplete} />
       )}
       <ScrollToTop />
       <Header />

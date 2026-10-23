@@ -29,12 +29,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
     background-color: #0A0A0B;
     color: #F4F0E8;
     overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, .font-editorial {

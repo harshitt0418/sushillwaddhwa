@@ -20,9 +20,9 @@ export const Button = ({
   const baseStyles = "inline-flex items-center justify-center font-sans tracking-[0.18em] text-xs uppercase transition-all duration-300 relative group overflow-hidden focus:outline-none focus:ring-1 focus:ring-gold rounded-[1px]";
 
   const sizeStyles = {
-    sm: "px-4 py-2.5 text-[10px]",
-    md: "px-7 py-3.5 text-[11px]",
-    lg: "px-9 py-4 text-[12px]",
+    sm: "px-4 py-2 text-[10px] min-h-[38px]",
+    md: "px-6 sm:px-7 py-3 sm:py-3.5 text-[11px] min-h-[44px]",
+    lg: "px-7 sm:px-9 py-3.5 sm:py-4 text-[11px] sm:text-[12px] min-h-[48px]",
   };
 
   const variants = {

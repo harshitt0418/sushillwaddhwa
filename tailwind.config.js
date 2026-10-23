@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'nav': '1180px',
+      },
       colors: {
         // Obsidian, Ivory and Antique Gold Luxury Editorial Palette
         obsidian: {

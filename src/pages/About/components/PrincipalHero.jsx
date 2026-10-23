@@ -5,9 +5,9 @@ import editorialPortrait from '@/assets/images/sushill-waddhwa-editorial-portrai
 
 export const PrincipalHero = () => {
   return (
-    <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-porcelain border-b border-gold/15 relative overflow-hidden">
+    <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-sapphire/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -31,7 +31,7 @@ export const PrincipalHero = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-porcelain text-balance"
+              className="font-serif text-3xl sm:text-5xl lg:text-7xl font-normal leading-[1.04] tracking-tight text-ivory text-balance break-words"
             >
               Built on relationships.
               <br />
@@ -57,12 +57,12 @@ export const PrincipalHero = () => {
             >
               <div className="flex items-center gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="text-porcelain tracking-wider">Platinum World Grroup</span>
+                <span className="text-ivory tracking-wider">Platinum World Grroup</span>
               </div>
               <span className="text-gold/30">/</span>
               <div className="flex items-center gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="text-porcelain tracking-wider">Artoso Hospitality Corp.</span>
+                <span className="text-ivory tracking-wider">Artoso Hospitality Corp.</span>
               </div>
             </motion.div>
           </div>
@@ -75,8 +75,8 @@ export const PrincipalHero = () => {
             className="lg:col-span-5 relative"
           >
             {/* Museum matting frame with fine gold corner registration marks */}
-            <div className="relative border border-gold/30 p-2 sm:p-3 bg-midnight shadow-[0_24px_60px_rgba(0,0,0,0.7)] crosshair-corner">
-              <div className="relative aspect-[2/3] overflow-hidden bg-sapphire border border-gold/20">
+            <div className="relative border border-gold/30 p-2 sm:p-3 bg-charcoal shadow-[0_24px_60px_rgba(0,0,0,0.7)] crosshair-corner">
+              <div className="relative aspect-[2/3] overflow-hidden bg-obsidian border border-gold/20">
                 <img
                   src={editorialPortrait}
                   alt="Sushill Waddhwa, Global Hospitality Leader and Founder"
