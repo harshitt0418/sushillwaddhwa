@@ -60,6 +60,8 @@ export const App = () => {
       touchMultiplier: 1.5,
     });
 
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -70,7 +72,17 @@ export const App = () => {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      window.lenis = null;
     };
+  }, []);
+
+  const handleExitComplete = React.useCallback(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    }
   }, []);
 
   return (
@@ -85,8 +97,8 @@ export const App = () => {
       <ScrollToTop />
       <Header />
       
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
+      <main className="flex-grow min-h-screen">
+        <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

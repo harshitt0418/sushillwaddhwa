@@ -84,9 +84,9 @@ export const pageTransitionVariants = {
   },
   exit: {
     opacity: 0,
-    y: -8,
+    y: -4,
     transition: {
-      duration: 0.4,
+      duration: 0.2,
       ease: transitions.luxuryEase,
     },
   },
