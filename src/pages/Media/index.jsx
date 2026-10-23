@@ -4,7 +4,7 @@ import { pageTransitionVariants, fadeIn } from '@/lib/motion';
 import { mediaFeatures, aiStorytellingNote } from '@/data/media';
 import { Button } from '@/components/ui/Button';
 import { EnquiryCTA } from '@/components/sections/EnquiryCTA';
-import { Mic, Video, Newspaper, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Mic, Video, Newspaper, Sparkles } from 'lucide-react';
 
 export const Media = () => {
   return (
@@ -16,17 +16,17 @@ export const Media = () => {
       className="w-full"
     >
       {/* 01. Media Hero */}
-      <section className="pt-36 sm:pt-44 pb-20 sm:pb-28 bg-bone text-ink hairline-b">
+      <section className="pt-36 sm:pt-44 pb-20 sm:pb-28 bg-obsidian text-porcelain border-b border-gold/15">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-4xl space-y-6">
             <motion.div
               variants={fadeIn('down', 0.1)}
               initial="initial"
               animate="animate"
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 font-mono"
             >
-              <span className="w-8 h-[1px] bg-bronze" />
-              <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
+              <span className="w-8 h-[1px] bg-gold" />
+              <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
                 Thought Leadership · Keynotes · Cinema
               </span>
             </motion.div>
@@ -35,7 +35,7 @@ export const Media = () => {
               variants={fadeIn('up', 0.2)}
               initial="initial"
               animate="animate"
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight text-ink text-balance"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight text-porcelain text-balance"
             >
               Perspectives, global keynotes & destination storytelling.
             </motion.h1>
@@ -44,24 +44,24 @@ export const Media = () => {
               variants={fadeIn('up', 0.3)}
               initial="initial"
               animate="animate"
-              className="text-base sm:text-lg text-stone-dark max-w-2xl font-light leading-relaxed pt-2"
+              className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed pt-2"
             >
               Sharing insights honed over 35 years across international hospitality summits, curated dialogues via WedTalks, destination brand films with Platinum World Pictures, and future-facing digital storytelling.
             </motion.p>
 
-            <div className="pt-4 flex flex-wrap gap-3 text-xs uppercase tracking-widest font-mono text-stone-dark">
+            <div className="pt-4 flex flex-wrap gap-3 text-xs uppercase tracking-widest font-mono text-warmstone">
               <span>Press</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>Interviews</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>Speaking</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>Videos</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>Articles</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>WedTalks</span>
-              <span className="text-bronze">·</span>
+              <span className="text-gold">·</span>
               <span>Platinum World Pictures</span>
             </div>
           </div>
@@ -69,7 +69,7 @@ export const Media = () => {
       </section>
 
       {/* 02. Media Domains Grid */}
-      <section className="py-24 sm:py-36 bg-bone text-ink hairline-b">
+      <section className="py-24 sm:py-36 bg-midnight text-porcelain border-b border-gold/15">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {mediaFeatures.map((item, idx) => {
@@ -83,32 +83,32 @@ export const Media = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: idx * 0.12 }}
-                  className="p-8 sm:p-10 bg-bone-light border border-stone/30 flex flex-col justify-between space-y-6"
+                  className="p-8 sm:p-10 bg-obsidian border border-gold/25 flex flex-col justify-between space-y-6 shadow-2xl"
                 >
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-stone/20 pb-4">
-                      <span className="text-[10px] uppercase tracking-widest text-bronze font-mono">
+                    <div className="flex items-center justify-between border-b border-gold/20 pb-4">
+                      <span className="text-[10px] uppercase tracking-widest text-gold font-mono">
                         {item.category}
                       </span>
-                      <IconComponent className="w-4 h-4 text-bronze" />
+                      <IconComponent className="w-4 h-4 text-gold" />
                     </div>
 
-                    <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal">
+                    <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-stone-dark font-light leading-relaxed">
+                    <p className="text-sm text-warmstone font-light leading-relaxed">
                       {item.description}
                     </p>
 
                     <div className="pt-2 space-y-2.5">
-                      <span className="text-[10px] uppercase tracking-widest text-stone-dark font-mono block">
+                      <span className="text-[10px] uppercase tracking-widest text-gold font-mono block">
                         Featured Topics & Perspectives:
                       </span>
                       <ul className="space-y-2">
                         {item.topics.map((t, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs text-ink/90 font-light">
-                            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-bronze flex-shrink-0" />
+                          <li key={i} className="flex items-start gap-2.5 text-xs text-porcelain/90 font-light">
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                             <span>{t}</span>
                           </li>
                         ))}
@@ -116,8 +116,8 @@ export const Media = () => {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-stone/20 flex items-center justify-between text-xs">
-                    <span className="text-stone-dark">Curated Dialogue</span>
+                  <div className="pt-4 border-t border-gold/20 flex items-center justify-between text-xs">
+                    <span className="text-warmstone">Curated Dialogue</span>
                     <Button
                       to="/contact?interest=Media%20%26%20Speaking"
                       variant="ghost"
@@ -134,7 +134,7 @@ export const Media = () => {
       </section>
 
       {/* 03. Dedicated AI-Storytelling Area (Exact required line included) */}
-      <section className="py-24 sm:py-32 bg-ink text-bone relative overflow-hidden hairline-dark-b">
+      <section className="py-24 sm:py-32 bg-gradient-to-b from-midnight via-obsidian to-obsidian text-porcelain relative overflow-hidden border-b border-gold/15">
         <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
           <motion.div
             variants={fadeIn('up', 0.1)}
@@ -144,24 +144,24 @@ export const Media = () => {
             className="space-y-6"
           >
             <div className="inline-flex items-center gap-3">
-              <span className="w-8 h-[1px] bg-bronze" />
-              <span className="text-[11px] uppercase tracking-super-wide text-bronze font-mono">
+              <span className="w-8 h-[1px] bg-gold" />
+              <span className="text-[11px] uppercase tracking-super-wide text-gold font-mono">
                 {aiStorytellingNote.headline}
               </span>
-              <span className="w-8 h-[1px] bg-bronze" />
+              <span className="w-8 h-[1px] bg-gold" />
             </div>
 
             {/* Exact required line */}
-            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-bone font-normal leading-tight max-w-4xl mx-auto text-balance">
+            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-porcelain font-normal leading-tight max-w-4xl mx-auto text-balance">
               “{aiStorytellingNote.exactQuote}”
             </h2>
 
-            <p className="text-stone text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed pt-2">
+            <p className="text-warmstone text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed pt-2">
               {aiStorytellingNote.narrative}
             </p>
 
             <div className="pt-6">
-              <span className="inline-block text-[11px] tracking-widest uppercase font-mono py-1.5 px-4 border border-bronze/40 text-bronze">
+              <span className="inline-block text-[11px] tracking-widest uppercase font-mono py-1.5 px-4 border border-gold/40 text-gold-champagne bg-midnight/50">
                 Innovation & Virtual Media Initiative
               </span>
             </div>

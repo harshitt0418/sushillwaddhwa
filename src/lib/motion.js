@@ -2,12 +2,13 @@ export const transitions = {
   luxuryEase: [0.16, 1, 0.3, 1], // fluid deceleration
   editorialSlow: [0.25, 0.1, 0.25, 1],
   curtainEase: [0.76, 0, 0.24, 1],
+  goldEase: [0.33, 1, 0.68, 1],
 };
 
 export const fadeIn = (direction = "up", delay = 0) => ({
   initial: {
-    y: direction === "up" ? 32 : direction === "down" ? -32 : 0,
-    x: direction === "left" ? 32 : direction === "right" ? -32 : 0,
+    y: direction === "up" ? 28 : direction === "down" ? -28 : 0,
+    x: direction === "left" ? 28 : direction === "right" ? -28 : 0,
     opacity: 0,
   },
   animate: {
@@ -15,7 +16,7 @@ export const fadeIn = (direction = "up", delay = 0) => ({
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.9,
+      duration: 0.95,
       ease: transitions.luxuryEase,
       delay,
     },
@@ -40,18 +41,29 @@ export const staggerContainer = {
   animate: {
     transition: {
       staggerChildren: 0.12,
-      delayChildren: 0.1,
+      delayChildren: 0.08,
     },
   },
 };
 
 export const imageMask = {
-  initial: { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", scale: 1.08 },
+  initial: { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", scale: 1.06 },
   animate: {
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
     scale: 1,
     transition: {
-      duration: 1.2,
+      duration: 1.25,
+      ease: transitions.luxuryEase,
+    },
+  },
+};
+
+export const lineDraw = {
+  initial: { scaleX: 0, originX: 0 },
+  animate: {
+    scaleX: 1,
+    transition: {
+      duration: 1.1,
       ease: transitions.luxuryEase,
     },
   },
@@ -66,7 +78,7 @@ export const pageTransitionVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.65,
       ease: transitions.luxuryEase,
     },
   },

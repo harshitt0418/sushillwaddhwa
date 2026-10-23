@@ -10,9 +10,9 @@ export const EnquiryCTA = ({
   to = "/contact"
 }) => {
   return (
-    <section className="bg-ink text-bone py-24 sm:py-32 relative overflow-hidden border-t border-b border-white/10">
-      {/* Background Architectural Grid/Texture hint */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#F4F0E8_1px,transparent_1px)] [background-size:24px_24px]" />
+    <section className="bg-gradient-to-b from-midnight via-obsidian to-obsidian text-porcelain py-24 sm:py-32 relative overflow-hidden border-t border-b border-gold/20">
+      {/* Background Architectural Grid / Subtle Maybach luxury pinstriping */}
+      <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#B8954F_1px,transparent_1px)] [background-size:28px_28px]" />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
         <motion.div
@@ -23,26 +23,26 @@ export const EnquiryCTA = ({
           className="space-y-6 sm:space-y-8"
         >
           <div className="inline-flex items-center gap-3">
-            <span className="w-8 h-[1px] bg-bronze" />
-            <span className="text-[11px] uppercase tracking-super-wide text-bronze font-medium">
+            <span className="w-8 h-[1px] bg-gold" />
+            <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium font-mono">
               Executive Dialogue · Strategic Partnerships
             </span>
-            <span className="w-8 h-[1px] bg-bronze" />
+            <span className="w-8 h-[1px] bg-gold" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-bone font-normal leading-tight text-balance max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-porcelain font-normal leading-tight text-balance max-w-4xl mx-auto">
             {headline}
           </h2>
 
-          <p className="text-stone text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-warmstone text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
             {subtext}
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button to={to} variant="dark" size="lg">
+            <Button to={to} variant="primary" size="lg">
               {buttonText}
             </Button>
-            <Button to="/collaborate" variant="darkOutline" size="lg" icon={false}>
+            <Button to="/collaborate" variant="outline" size="lg" icon={false}>
               Collaboration Frameworks
             </Button>
           </div>

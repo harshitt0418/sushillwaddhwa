@@ -14,21 +14,21 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-ink text-bone flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
+          className="fixed inset-0 z-50 bg-obsidian text-porcelain flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between border-b border-bone/10 pb-5">
+          <div className="flex items-center justify-between border-b border-gold/20 pb-5">
             <div>
-              <div className="font-serif tracking-widest text-lg text-bone uppercase">
+              <div className="font-serif tracking-widest text-lg text-porcelain uppercase">
                 Sushill Waddhwa
               </div>
-              <div className="text-[10px] tracking-super-wide text-bronze uppercase">
+              <div className="text-[10px] tracking-super-wide text-gold uppercase">
                 Founder & CMD, Platinum World Grroup · Since 1989
               </div>
             </div>
             <button
               onClick={onClose}
-              className="p-2 text-stone hover:text-bone transition-colors"
+              className="p-2 text-warmstone hover:text-gold transition-colors"
               aria-label="Close navigation menu"
             >
               <X className="w-6 h-6 stroke-[1.5]" />
@@ -49,40 +49,40 @@ export const MobileMenu = ({ isOpen, onClose }) => {
                   onClick={onClose}
                   className={({ isActive }) =>
                     `group flex items-baseline justify-between py-2 border-b border-white/5 transition-all ${
-                      isActive ? 'text-bronze' : 'text-bone hover:text-bronze'
+                      isActive ? 'text-gold' : 'text-porcelain hover:text-gold-champagne'
                     }`
                   }
                 >
                   <span className="font-serif text-2xl sm:text-3xl font-light tracking-wide flex items-baseline gap-4">
-                    <span className="font-sans text-xs tracking-widest text-stone/60">
+                    <span className="font-sans text-xs tracking-widest text-warmstone/60">
                       0{idx + 1}
                     </span>
                     {link.label}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-bronze" />
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-gold" />
                 </NavLink>
               </motion.div>
             ))}
           </div>
 
           {/* Bottom Area */}
-          <div className="pt-6 border-t border-bone/10 space-y-4">
+          <div className="pt-6 border-t border-gold/20 space-y-4">
             <NavLink
               to={headerCTA.path}
               onClick={onClose}
-              className="block w-full py-3.5 text-center bg-bone text-ink hover:bg-bronze hover:text-white uppercase tracking-widest text-xs font-medium transition-colors"
+              className="block w-full py-3.5 text-center bg-porcelain text-obsidian hover:bg-gold hover:text-obsidian uppercase tracking-widest text-xs font-medium transition-colors rounded-[1px]"
             >
               Connect with the Executive Desk
             </NavLink>
 
-            <div className="flex items-center justify-between text-xs text-stone">
+            <div className="flex items-center justify-between text-xs text-warmstone">
               <span>Est. 1989 · Global Hospitality</span>
               <div className="flex items-center gap-4">
                 <a
                   href={siteConfig.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-bone transition-colors"
+                  className="hover:text-gold transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-4 h-4" />
@@ -91,7 +91,7 @@ export const MobileMenu = ({ isOpen, onClose }) => {
                   href={siteConfig.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-bone transition-colors"
+                  className="hover:text-gold transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -104,3 +104,5 @@ export const MobileMenu = ({ isOpen, onClose }) => {
     </AnimatePresence>
   );
 };
+
+export default MobileMenu;

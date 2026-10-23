@@ -67,7 +67,7 @@ export const EditorialPreviews = () => {
   };
 
   return (
-    <section className="py-24 sm:py-36 bg-ink text-bone relative overflow-hidden hairline-dark-b">
+    <section className="py-24 sm:py-36 bg-midnight text-porcelain relative overflow-hidden border-b border-gold/15">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header with Carousel Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-16">
@@ -79,12 +79,12 @@ export const EditorialPreviews = () => {
             className="max-w-2xl"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[1px] bg-bronze" />
-              <span className="text-[11px] uppercase tracking-super-wide text-stone font-medium">
+              <span className="w-8 h-[1px] bg-gold" />
+              <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium font-mono">
                 Core Domains
               </span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-bone font-normal leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-porcelain font-normal leading-tight">
               Four pillars shaping a global journey.
             </h2>
           </motion.div>
@@ -93,14 +93,14 @@ export const EditorialPreviews = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-none border border-white/20 flex items-center justify-center text-stone hover:text-bone hover:border-bronze hover:bg-white/5 transition-all"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-none border border-white/20 flex items-center justify-center text-stone hover:text-bone hover:border-bronze hover:bg-white/5 transition-all"
+              className="w-12 h-12 rounded-[1px] border border-gold/30 flex items-center justify-center text-warmstone hover:text-obsidian hover:bg-gold hover:border-gold transition-all"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-4 h-4" />
@@ -123,39 +123,39 @@ export const EditorialPreviews = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="flex-shrink-0 w-[85vw] sm:w-[380px] md:w-[440px] snap-start group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-ink-soft border border-white/10 mb-6">
+              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian border border-gold/20 mb-6">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.75] contrast-[1.05]"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.78] contrast-[1.08]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent opacity-90" />
 
                 {/* Number Badge */}
-                <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-bronze uppercase bg-ink/80 backdrop-blur-sm px-3.5 py-1.5 border border-white/10">
+                <div className="absolute top-6 left-6 font-mono text-xs tracking-widest text-gold uppercase bg-obsidian/90 backdrop-blur-sm px-3.5 py-1.5 border border-gold/30">
                   {item.number} / 04
                 </div>
 
                 {/* Bottom title banner */}
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-[10px] tracking-super-wide text-bronze uppercase block mb-1">
+                  <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-1 font-mono">
                     {item.subtitle}
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-bone font-normal leading-tight">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal leading-tight">
                     {item.title}
                   </h3>
                 </div>
               </div>
 
               {/* Narrative & Highlights */}
-              <p className="text-stone text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 font-light">
+              <p className="text-warmstone text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 font-light">
                 {item.description}
               </p>
 
               <div className="mb-4 flex flex-wrap gap-2">
                 {item.highlights.slice(0, 2).map((h, i) => (
-                  <span key={i} className="text-[10px] uppercase tracking-widest text-stone-dark border border-white/10 px-2 py-0.5">
+                  <span key={i} className="text-[10px] uppercase tracking-widest text-warmstone/80 border border-gold/20 px-2 py-0.5 bg-sapphire/30 font-mono">
                     {h}
                   </span>
                 ))}
@@ -163,7 +163,7 @@ export const EditorialPreviews = () => {
 
               <Link
                 to={item.link}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-bone group-hover:text-bronze transition-colors pt-1 border-b border-transparent group-hover:border-bronze"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-porcelain group-hover:text-gold transition-colors pt-1 border-b border-transparent group-hover:border-gold"
               >
                 <span>Explore {item.title}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -175,3 +175,5 @@ export const EditorialPreviews = () => {
     </section>
   );
 };
+
+export default EditorialPreviews;

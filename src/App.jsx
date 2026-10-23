@@ -55,7 +55,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-bone text-ink selection:bg-bronze selection:text-bone font-sans">
+    <div className="min-h-screen flex flex-col bg-obsidian text-porcelain selection:bg-gold selection:text-obsidian font-sans">
       <RouteSEO />
       {isPreloaderActive && (
         <LuxuryPreloader onComplete={() => setIsPreloaderActive(false)} />

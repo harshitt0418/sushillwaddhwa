@@ -18,7 +18,7 @@ export const Contact = () => {
       <ContactHero />
 
       {/* 02. Form & Coordinates Dossier */}
-      <section className="py-20 sm:py-28 bg-bone text-ink">
+      <section className="py-20 sm:py-28 bg-obsidian text-porcelain">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             

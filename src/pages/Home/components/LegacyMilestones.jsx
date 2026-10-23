@@ -27,7 +27,7 @@ const verifiedMilestones = [
 
 export const LegacyMilestones = () => {
   return (
-    <section className="py-24 sm:py-32 bg-bone text-ink hairline-b">
+    <section className="py-24 sm:py-32 bg-obsidian text-porcelain border-b border-gold/15">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Eyebrow and intro */}
         <motion.div
@@ -38,18 +38,18 @@ export const LegacyMilestones = () => {
           className="max-w-3xl mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-[1px] bg-bronze" />
-            <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
+            <span className="w-8 h-[1px] bg-gold" />
+            <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium font-mono">
               A Legacy of Trust
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-ink leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-porcelain leading-tight">
             Measured by enduring relationships, not fleeting numbers.
           </h2>
         </motion.div>
 
         {/* 4-column metric ledger */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pt-6 border-t border-stone/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pt-6 border-t border-gold/20">
           {verifiedMilestones.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -59,14 +59,14 @@ export const LegacyMilestones = () => {
               transition={{ duration: 0.7, delay: idx * 0.1 }}
               className="space-y-4"
             >
-              <div className="flex items-baseline justify-between border-b border-stone/20 pb-2">
-                <span className="font-serif text-2xl text-ink font-normal">{item.label}</span>
-                <span className="font-mono text-[10px] text-bronze uppercase">Milestone 0{idx + 1}</span>
+              <div className="flex items-baseline justify-between border-b border-gold/20 pb-2">
+                <span className="font-serif text-2xl text-porcelain font-normal">{item.label}</span>
+                <span className="font-mono text-[10px] text-gold uppercase">Milestone 0{idx + 1}</span>
               </div>
-              <h3 className="font-serif text-xl sm:text-2xl text-ink font-normal leading-snug">
+              <h3 className="font-serif text-xl sm:text-2xl text-porcelain font-normal leading-snug">
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-stone-dark font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-warmstone font-light leading-relaxed">
                 {item.detail}
               </p>
             </motion.div>
@@ -74,8 +74,8 @@ export const LegacyMilestones = () => {
         </div>
 
         {/* Quiet footnote */}
-        <div className="mt-12 pt-6 border-t border-stone/10 text-right">
-          <p className="text-[11px] text-stone-dark/80 italic">
+        <div className="mt-12 pt-6 border-t border-gold/10 text-right">
+          <p className="text-[11px] text-warmstone/75 italic">
             * Direct principal-to-principal consultations conducted under mutual professional discretion.
           </p>
         </div>
@@ -83,3 +83,5 @@ export const LegacyMilestones = () => {
     </section>
   );
 };
+
+export default LegacyMilestones;

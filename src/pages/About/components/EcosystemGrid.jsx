@@ -5,7 +5,7 @@ import { fadeIn } from '@/lib/motion';
 
 export const EcosystemGrid = () => {
   return (
-    <section className="py-24 sm:py-32 bg-bone text-ink hairline-b">
+    <section className="py-24 sm:py-32 bg-obsidian text-porcelain border-b border-gold/15">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div
@@ -16,12 +16,12 @@ export const EcosystemGrid = () => {
           className="max-w-2xl mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-[1px] bg-bronze" />
-            <span className="text-[11px] uppercase tracking-super-wide text-bronze-dim font-medium">
+            <span className="w-8 h-[1px] bg-gold" />
+            <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium font-mono">
               Venture Ecosystem
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-ink leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-porcelain leading-tight">
             Operating platforms & strategic initiatives.
           </h2>
         </motion.div>
@@ -35,35 +35,35 @@ export const EcosystemGrid = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.12 }}
-              className="p-8 sm:p-10 bg-bone-light border border-stone/30 flex flex-col justify-between space-y-6"
+              className="p-8 sm:p-10 bg-midnight border border-gold/25 flex flex-col justify-between space-y-6 shadow-2xl"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-stone/20 pb-4">
-                  <span className="text-[10px] uppercase tracking-widest text-bronze font-mono">
+                <div className="flex items-center justify-between border-b border-gold/20 pb-4">
+                  <span className="text-[10px] uppercase tracking-widest text-gold font-mono">
                     {venture.since}
                   </span>
-                  <span className="text-[11px] uppercase tracking-widest text-stone-dark font-sans">
+                  <span className="text-[11px] uppercase tracking-widest text-warmstone font-sans">
                     {venture.role}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-porcelain font-normal">
                     {venture.name}
                   </h3>
-                  <span className="text-xs uppercase tracking-super-wide text-bronze-dim block mt-1">
+                  <span className="text-xs uppercase tracking-super-wide text-gold-champagne block mt-1 font-mono">
                     {venture.descriptor}
                   </span>
                 </div>
 
-                <p className="text-sm text-stone-dark font-light leading-relaxed pt-2">
+                <p className="text-sm text-warmstone font-light leading-relaxed pt-2">
                   {venture.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-stone/20 flex items-center justify-between text-xs text-stone-dark">
+              <div className="pt-4 border-t border-gold/20 flex items-center justify-between text-xs text-warmstone">
                 <span>Verified Entity</span>
-                <span className="font-mono text-[10px] tracking-widest uppercase text-bronze">Leadership Portfolio</span>
+                <span className="font-mono text-[10px] tracking-widest uppercase text-gold">Leadership Portfolio</span>
               </div>
             </motion.div>
           ))}
@@ -72,3 +72,5 @@ export const EcosystemGrid = () => {
     </section>
   );
 };
+
+export default EcosystemGrid;

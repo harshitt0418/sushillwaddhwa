@@ -8,10 +8,10 @@ export const SectionHeader = ({
   title,
   subtitle,
   align = 'left', // 'left' | 'center'
-  theme = 'light', // 'light' | 'dark'
+  theme = 'dark', // default to 'dark' for Obsidian Maybach theme
   className,
 }) => {
-  const isDark = theme === 'dark';
+  const isLight = theme === 'light';
 
   return (
     <motion.div
@@ -26,14 +26,11 @@ export const SectionHeader = ({
       )}
     >
       {eyebrow && (
-        <div className="flex items-center gap-3 mb-4 tracking-widest text-[11px] font-medium uppercase">
-          <span className={cn(
-            "w-6 h-[1px]",
-            isDark ? "bg-bronze" : "bg-bronze"
-          )} />
+        <div className="flex items-center gap-3 mb-4 tracking-widest text-[11px] font-medium uppercase font-mono">
+          <span className="w-6 h-[1px] bg-gold" />
           <span className={cn(
             "tracking-super-wide",
-            isDark ? "text-stone" : "text-bronze-dim"
+            isLight ? "text-gold-dark" : "text-gold"
           )}>
             {eyebrow}
           </span>
@@ -43,7 +40,7 @@ export const SectionHeader = ({
       {title && (
         <h2 className={cn(
           "font-serif font-normal leading-[1.08] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-balance",
-          isDark ? "text-bone" : "text-ink"
+          isLight ? "text-obsidian" : "text-porcelain"
         )}>
           {title}
         </h2>
@@ -52,7 +49,7 @@ export const SectionHeader = ({
       {subtitle && (
         <p className={cn(
           "mt-5 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-light",
-          isDark ? "text-stone" : "text-stone-dark"
+          isLight ? "text-obsidian/75" : "text-warmstone"
         )}>
           {subtitle}
         </p>
@@ -60,3 +57,5 @@ export const SectionHeader = ({
     </motion.div>
   );
 };
+
+export default SectionHeader;
