@@ -49,10 +49,11 @@ export const MobileMenu = ({ isOpen, onClose }) => {
               >
                 <NavLink
                   to={link.path}
+                  end={link.path === '/'}
                   onClick={onClose}
                   className={({ isActive }) =>
                     `group flex items-baseline justify-between py-2 border-b border-white/5 transition-all duration-300 ${
-                      isActive ? 'text-gold' : 'text-porcelain hover:text-gold-champagne'
+                      isActive ? 'text-gold' : 'text-ivory hover:text-gold-champagne'
                     }`
                   }
                 >

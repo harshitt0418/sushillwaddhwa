@@ -2,50 +2,50 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
-import { navigationLinks } from '@/data/navigation';
+import { allRoutes } from '@/data/navigation';
 
 export const Footer = () => {
   return (
-    <footer className="bg-obsidian text-ivory pt-20 pb-12 border-t border-gold/20 overflow-hidden">
+    <footer className="bg-ivory text-ink pt-20 pb-12 border-t-2 border-gold/40 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Top Tier: Brand Statement & Wordmark */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-gold/15">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-champagne/80">
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-2 font-mono">
+              <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-2 font-mono font-medium">
                 Founder & CMD, Platinum World Grroup · Since 1989
               </span>
-              <h3 className="font-serif text-3xl sm:text-4xl text-ivory tracking-wide uppercase">
+              <h3 className="font-serif text-3xl sm:text-4xl text-ink tracking-wide uppercase">
                 {siteConfig.name}
               </h3>
             </div>
-            <p className="font-serif italic text-lg text-ivory/85">
+            <p className="font-serif italic text-lg text-ink/85">
               “{siteConfig.masterTagline}”
             </p>
-            <p className="text-warmgrey-light text-xs sm:text-sm leading-relaxed font-light max-w-md">
+            <p className="text-warmgrey text-xs sm:text-sm leading-relaxed font-light max-w-md">
               {siteConfig.bioSummary}
             </p>
             <div className="pt-2">
-              <span className="inline-block text-[11px] tracking-widest uppercase py-1.5 px-3 border border-gold/40 text-gold-champagne bg-charcoal/60 font-mono">
+              <span className="inline-block text-[11px] tracking-widest uppercase py-1.5 px-3 border border-gold/40 text-ink bg-champagne/40 font-mono font-medium">
                 Global Hospitality Entrepreneur · Investor · Luxury Lifestyle
               </span>
             </div>
           </div>
 
-          {/* Core Navigation */}
+          {/* Core Navigation - All Routes Cleanly Linked */}
           <div className="lg:col-span-3 space-y-4">
-            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono">
-              Explore
+            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono font-medium">
+              Explore Routes
             </span>
             <ul className="space-y-2.5 text-xs">
-              {navigationLinks.map((link) => (
+              {allRoutes.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-warmgrey-light hover:text-gold transition-colors flex items-center justify-between group"
+                    className="text-warmgrey hover:text-ink hover:text-gold transition-colors flex items-center justify-between group py-0.5"
                   >
                     <span>{link.label}</span>
-                    <ArrowUpRight className="w-3 h-3 text-gold/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="w-3 h-3 text-gold/60 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
@@ -54,7 +54,7 @@ export const Footer = () => {
 
           {/* Key Ventures */}
           <div className="lg:col-span-2 space-y-4">
-            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono">
+            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono font-medium">
               Ventures
             </span>
             <ul className="space-y-2.5 text-xs">
@@ -62,9 +62,9 @@ export const Footer = () => {
                 <li key={venture.name}>
                   <Link
                     to={venture.link}
-                    className="text-warmgrey-light hover:text-gold transition-colors block"
+                    className="text-warmgrey hover:text-ink transition-colors block"
                   >
-                    <span className="block text-ivory font-medium">{venture.name}</span>
+                    <span className="block text-ink font-medium">{venture.name}</span>
                     <span className="text-[10px] text-warmgrey block font-mono">{venture.role}</span>
                   </Link>
                 </li>
@@ -74,10 +74,10 @@ export const Footer = () => {
 
           {/* Coordinates & Verified Socials */}
           <div className="lg:col-span-2 space-y-4">
-            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono">
+            <span className="text-[10px] tracking-super-wide text-gold uppercase block mb-3 font-mono font-medium">
               Connect
             </span>
-            <div className="space-y-3 text-xs text-warmgrey-light">
+            <div className="space-y-3 text-xs text-warmgrey">
               <a
                 href={siteConfig.socials.instagram}
                 target="_blank"
@@ -85,7 +85,7 @@ export const Footer = () => {
                 className="flex items-center gap-2 hover:text-gold transition-colors"
               >
                 <Instagram className="w-3.5 h-3.5 text-gold" />
-                <span>Instagram Profile</span>
+                <span className="text-ink">Instagram Profile</span>
                 <ArrowUpRight className="w-3 h-3 text-warmgrey" />
               </a>
               <a
@@ -95,16 +95,16 @@ export const Footer = () => {
                 className="flex items-center gap-2 hover:text-gold transition-colors"
               >
                 <Linkedin className="w-3.5 h-3.5 text-gold" />
-                <span>LinkedIn Network</span>
+                <span className="text-ink">LinkedIn Network</span>
                 <ArrowUpRight className="w-3 h-3 text-warmgrey" />
               </a>
             </div>
 
-            <div className="pt-4 border-t border-gold/15 space-y-1 text-[11px] text-warmgrey">
-              <p className="text-ivory font-medium">Executive Inquiries:</p>
+            <div className="pt-4 border-t border-champagne/80 space-y-1 text-[11px] text-warmgrey">
+              <p className="text-ink font-medium">Executive Inquiries:</p>
               <a
                 href={`mailto:${siteConfig.contact.executiveDesk}`}
-                className="font-mono text-[10px] text-warmgrey-light hover:text-gold transition-colors block"
+                className="font-mono text-xs text-ink hover:text-gold transition-colors block"
               >
                 {siteConfig.contact.executiveDesk}
               </a>
@@ -113,16 +113,16 @@ export const Footer = () => {
         </div>
 
         {/* Middle Tier: Verified Entities Note */}
-        <div className="py-6 border-b border-gold/10 flex flex-wrap items-center justify-between gap-4 text-xs text-warmgrey">
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <span className="text-gold font-mono text-[10px] uppercase">Ecosystem:</span>
-            <span className="text-ivory/90">Platinum World Grroup</span>
-            <span className="w-1 h-1 rounded-full bg-gold/40" />
-            <span className="text-ivory/90">Artoso Hospitality Corp.</span>
-            <span className="w-1 h-1 rounded-full bg-gold/40" />
-            <span className="text-ivory/90">WedTalks</span>
-            <span className="w-1 h-1 rounded-full bg-gold/40" />
-            <span className="text-ivory/90">Platinum World Pictures</span>
+        <div className="py-6 border-b border-champagne/80 flex flex-wrap items-center justify-between gap-4 text-xs text-warmgrey">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6">
+            <span className="text-gold font-mono text-[10px] uppercase font-medium">Ecosystem:</span>
+            <span className="text-ink font-medium">Platinum World Grroup</span>
+            <span className="w-1 h-1 rounded-full bg-gold/60" />
+            <span className="text-ink font-medium">Artoso Hospitality Corp.</span>
+            <span className="w-1 h-1 rounded-full bg-gold/60" />
+            <span className="text-ink font-medium">WedTalks</span>
+            <span className="w-1 h-1 rounded-full bg-gold/60" />
+            <span className="text-ink font-medium">Platinum World Pictures</span>
           </div>
           <div className="text-[11px] text-warmgrey font-mono">
             Global Hospitality · Investments · Luxury Lifestyle
@@ -136,7 +136,7 @@ export const Footer = () => {
           </div>
           <div className="flex items-center gap-6">
             <span>Established 1989</span>
-            <span className="w-1 h-1 rounded-full bg-gold/40" />
+            <span className="w-1 h-1 rounded-full bg-gold/60" />
             <span>Building a world worth experiencing.</span>
           </div>
         </div>
