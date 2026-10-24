@@ -3,47 +3,47 @@ export const collaborationMasterCopy = "Sushill Waddhwa selectively collaborates
 export const collaborationCategories = [
   {
     name: "Luxury Hotels & Resorts",
-    description: "Property launches, experiential residencies, executive retreats, and senior advisory on high-yield celebration tourism.",
+    description: "Selective collaboration opportunities across destination campaigns, editorial storytelling, and curated property experiences.",
     icon: "Building2",
   },
   {
     name: "Tourism Boards & Destinations",
-    description: "Destination strategy, high-net-worth tourism campaigns, WedTalks collaborations, and international familiarization roadshows.",
+    description: "Prospective alignments focusing on destination vision, cultural storytelling, and experiential tourism initiatives.",
     icon: "Compass",
   },
   {
     name: "Travel",
-    description: "Curated expedition partnerships, luxury journeys, and experiential destination campaigns.",
+    description: "Curated travel narratives, destination exploration, and experiential editorial features.",
     icon: "Plane",
   },
   {
     name: "Automotive",
-    description: "Grand touring narratives, driving expeditions, vehicle unveilings, and curated brand integration.",
+    description: "Selective brand alignments, touring narratives, and visual storytelling connecting design with travel.",
     icon: "Car",
   },
   {
     name: "Watches",
-    description: "Horology perspectives, craftsmanship stories, collector dialogues, and editorial alignments.",
+    description: "Editorial perspectives, craftsmanship narratives, and brand storytelling celebrating enduring design.",
     icon: "Watch",
   },
   {
     name: "Fashion",
-    description: "Brand ambassadorship, editorial campaigns, classic craftsmanship, and sophisticated capsule alignments.",
+    description: "Selective brand ambassadorship, editorial features, and personal style storytelling rooted in understated elegance.",
     icon: "Shirt",
   },
   {
     name: "Eyewear",
-    description: "Signature optical and sunwear collaborations celebrating timeless design and artisanal craftsmanship.",
+    description: "Brand alignments and editorial features celebrating timeless design proportion and optical aesthetics.",
     icon: "Glasses",
   },
   {
     name: "Wellness",
-    description: "Longevity retreats, functional vitality platforms, mindful balance, and holistic wellbeing partnerships.",
+    description: "Collaborations centered on vitality, mindful living, and balanced lifestyle storytelling.",
     icon: "HeartPulse",
   },
   {
     name: "Lifestyle",
-    description: "Curated living experiences, architectural spaces, cultural dialogues, and selective brand partnerships.",
+    description: "Selective partnerships across luxury living, cultural experiences, and authentic brand storytelling.",
     icon: "Sparkles",
   },
 ];
@@ -51,18 +51,18 @@ export const collaborationCategories = [
 export const collaborationPillars = [
   {
     title: "Destination & Hotel Campaigns",
-    description: "Authentic, high-production visual narratives and editorial storytelling showcasing the unique soul of world-class properties and regions.",
+    description: "Selective visual narratives and editorial storytelling highlighting the character of destinations and luxury properties.",
   },
   {
     title: "Brand Ambassadorship",
-    description: "Long-term relationships with heritage and modern luxury brands aligned with Sushill’s personal values, travel rhythm, and aesthetic sensibilities.",
+    description: "Selective alignments with heritage and contemporary brands that share an aesthetic of understated elegance and quality.",
   },
   {
     title: "Curated Experiential Salons",
-    description: "Intimate dinners, destination retreats, and curated gatherings bringing together tastemakers, hotel leaders, and brand executives.",
+    description: "Intimate gatherings bringing together hospitality leaders, cultural creators, and brand visionaries.",
   },
   {
     title: "Keynote Speaking & Thought Leadership",
-    description: "Moderating or headlining global hospitality forums, luxury summits, tourism symposiums, and WedTalks conferences.",
+    description: "Speaking contributions and panel participation across international hospitality and tourism forums.",
   },
 ];

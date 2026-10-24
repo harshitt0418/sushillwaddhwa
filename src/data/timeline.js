@@ -48,14 +48,14 @@ export const selectedEcosystem = [
     descriptor: "Global Hospitality · Hotel Buyouts · Group Bookings & Experiences",
     role: "Founder & CMD",
     since: "Established 1989",
-    description: "Global hospitality leader orchestrating hotel buyouts, group bookings, luxury incentives, and curated experiential travel.",
+    description: "Global hospitality, hotel buyouts, group bookings and experiences.",
   },
   {
     name: "Artoso Hospitality Corp.",
     descriptor: "Hotel Management · Hospitality Concepts · Branded Residences",
     role: "Strategic Concept & Advisory",
     since: "Hospitality Platform",
-    description: "Boutique hotel management, distinctive lifestyle hospitality concepts, and branded luxury residences.",
+    description: "Hotel management, hospitality concepts and branded residences.",
   },
   {
     name: "WedTalks",
@@ -69,6 +69,6 @@ export const selectedEcosystem = [
     descriptor: "Media, Film & Entertainment Initiatives",
     role: "Founder & Producer",
     since: "Media & Film",
-    description: "Cinematic entertainment initiative dedicated to crafting destination brand films, cultural documentaries, and exploring new frontiers in digital storytelling.",
+    description: "Media, film and entertainment initiatives.",
   },
 ];

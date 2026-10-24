@@ -10,14 +10,14 @@ export const businessEntities = [
     descriptor: "Global Hospitality · Hotel Buyouts · Group Bookings & Experiences",
     role: "Founder & CMD",
     since: "Established 1989",
-    summary: "Since 1989, Platinum World Grroup has stood as a trusted institution in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across premier destinations worldwide.",
+    summary: "Since 1989, Platinum World Grroup has represented Sushill Waddhwa's primary platform across global hospitality, hotel buyouts, group bookings, and curated destination experiences.",
     capabilities: [
-      "Complete luxury hotel and resort buyouts for landmark celebrations and corporate leadership summits",
-      "Bespoke international group travel management and luxury incentive movements",
-      "Direct hospitality contract negotiation with global luxury property owners",
-      "End-to-end event logistics spanning seamless arrivals, premium transport, and curated destination experiences"
+      "Luxury hotel and resort buyouts for landmark celebrations and corporate gatherings",
+      "International group bookings and luxury travel coordination",
+      "Long-term relationships with premier global hotel properties and destination authorities",
+      "Seamless guest choreography, arrival coordination, and bespoke hospitality logistics"
     ],
-    highlight: "A respected legacy built over decades of direct collaboration with leading global hotel brands and international event directors.",
+    highlight: "Built on enduring relationships and decades of hospitality leadership.",
     image: buyoutImg,
   },
   {
@@ -25,31 +25,23 @@ export const businessEntities = [
     name: "Artoso Hospitality Corp.",
     descriptor: "Hotel Management · Hospitality Concepts · Branded Residences",
     role: "Strategic Concept & Advisory",
-    since: "Contemporary Platform",
-    summary: "Artoso Hospitality represents the contemporary evolution of boutique hotel living, pairing localized cultural vernacular with disciplined operational governance and design-led luxury.",
+    since: "Hospitality Platform",
+    summary: "Artoso Hospitality focuses on contemporary hotel management, boutique hospitality concepts, and branded residences that harmonize cultural character with design-led distinction.",
     capabilities: [
-      "Full-scope hotel management and operational positioning for independent luxury assets",
-      "Concept creation and architectural brief formulation for boutique hotel developments",
-      "Branded luxury residences advisory and high-end residential integration",
-      "Owner representation and strategic operator alignment with global hospitality brands"
+      "Boutique hotel management and operational positioning",
+      "Hospitality concept development and creative brief direction",
+      "Branded luxury residences advisory and lifestyle integration",
+      "Aligning architectural character with modern hospitality standards"
     ],
-    highlight: "Bridging the gap between regional architectural character and sustainable commercial longevity.",
+    highlight: "Pairing regional cultural vernacular with thoughtful hospitality design.",
     image: hotelImg,
   },
   {
     id: "strategic-investments",
-    name: "Strategic Investments",
-    descriptor: "Selected Business & Investment Interests",
-    role: "Principal Investor & Strategic Ally",
-    since: "Active Portfolio",
-    summary: "Sushill’s investment philosophy aligns capital with visionaries transforming hospitality, experiential platforms, and modern lifestyle ventures. In accordance with client discretion, specific investment details are published only when mutually approved.",
-    capabilities: [
-      "Selective co-investments in signature boutique hospitality and retreat developments",
-      "Seed and growth backing for experiential hospitality tech and specialized platforms",
-      "Advisory equity in cultural content platforms and destination celebration forums",
-      "Synergistic partnerships accelerating residential hospitality and lifestyle ventures"
-    ],
-    highlight: "Disciplined capital deployment guided by decades of operational industry insight.",
+    name: "Selected Business & Investment Interests",
+    descriptor: "Investments & Advisory",
+    since: "Active Interests",
+    summary: "Sushill Waddhwa maintains selected business and investment interests across hospitality, experiential platforms, and modern lifestyle ventures. Specific investment details are shared only where approved.",
     image: investmentImg,
   },
   {
@@ -58,14 +50,14 @@ export const businessEntities = [
     descriptor: "Media, Film & Entertainment Initiatives",
     role: "Founder & Producer",
     since: "Media Division",
-    summary: "Platinum World Pictures merges cinematic artistry with the allure of global destinations, producing high-concept brand films, cultural documentaries, and visual narratives.",
+    summary: "Platinum World Pictures serves as the creative platform for media, film, and destination storytelling initiatives connecting global culture and visual narrative.",
     capabilities: [
-      "Bespoke destination showcase films in partnership with global tourism authorities",
-      "Cinematic brand campaigns for heritage watchmakers, luxury automotive, and iconic hotels",
-      "Documentary storytelling spotlighting international culinary and architectural heritage",
-      "Cross-platform visual content connecting discerning global audiences with luxury brands"
+      "Destination showcase films in collaboration with tourism authorities and cultural partners",
+      "Cinematic brand films and visual storytelling for luxury and hospitality platforms",
+      "Documentary narratives celebrating architectural heritage and artisan traditions",
+      "Creative media exploring the intersection of culture, destinations, and storytelling"
     ],
-    highlight: "Transforming brand narratives into emotionally resonant cinematic experiences.",
+    highlight: "Capturing the architectural texture and cultural essence of global destinations.",
     image: cinemaImg,
   },
 ];

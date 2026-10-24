@@ -151,15 +151,17 @@ export const Business = () => {
                       {entity.name}
                     </h2>
 
-                    <div className={cn(
-                      "text-xs uppercase tracking-widest font-mono pt-1",
-                      isIvory ? "text-warmgrey" : "text-ivory/70"
-                    )}>
-                      Role: <span className={cn(
-                        "font-sans font-medium",
-                        isIvory ? "text-ink" : "text-ivory"
-                      )}>{entity.role}</span>
-                    </div>
+                    {entity.role && (
+                      <div className={cn(
+                        "text-xs uppercase tracking-widest font-mono pt-1",
+                        isIvory ? "text-warmgrey" : "text-ivory/70"
+                      )}>
+                        Role: <span className={cn(
+                          "font-sans font-medium",
+                          isIvory ? "text-ink" : "text-ivory"
+                        )}>{entity.role}</span>
+                      </div>
+                    )}
                   </motion.div>
 
                   <motion.p
@@ -176,38 +178,40 @@ export const Business = () => {
                   </motion.p>
 
                   {/* Capabilities List */}
-                  <motion.div
-                    variants={fadeIn('up', 0.25)}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    className="space-y-3 pt-2"
-                  >
-                    <span className={cn(
-                      "text-[10px] uppercase tracking-widest font-mono block",
-                      isIvory ? "text-gold font-semibold" : "text-gold"
-                    )}>
-                      Core Scope & Operating Capabilities:
-                    </span>
-                    <ul className="grid grid-cols-1 gap-3">
-                      {entity.capabilities.map((cap, i) => (
-                        <li key={i} className={cn(
-                          "flex items-start gap-3 text-xs sm:text-sm font-light",
-                          isIvory ? "text-ink/90" : "text-ivory/90"
-                        )}>
-                          <span className={cn(
-                            "mt-1 w-4 h-4 rounded-[1px] flex items-center justify-center flex-shrink-0 text-gold",
-                            isIvory
-                              ? "bg-ivory-dim border border-ink/15"
-                              : "bg-obsidian border border-gold/30"
+                  {entity.capabilities && entity.capabilities.length > 0 && (
+                    <motion.div
+                      variants={fadeIn('up', 0.25)}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                      className="space-y-3 pt-2"
+                    >
+                      <span className={cn(
+                        "text-[10px] uppercase tracking-widest font-mono block",
+                        isIvory ? "text-gold font-semibold" : "text-gold"
+                      )}>
+                        Core Scope & Operating Capabilities:
+                      </span>
+                      <ul className="grid grid-cols-1 gap-3">
+                        {entity.capabilities.map((cap, i) => (
+                          <li key={i} className={cn(
+                            "flex items-start gap-3 text-xs sm:text-sm font-light",
+                            isIvory ? "text-ink/90" : "text-ivory/90"
                           )}>
-                            <Check className="w-2.5 h-2.5 stroke-[2.5]" />
-                          </span>
-                          <span>{cap}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                            <span className={cn(
+                              "mt-1 w-4 h-4 rounded-[1px] flex items-center justify-center flex-shrink-0 text-gold",
+                              isIvory
+                                ? "bg-ivory-dim border border-ink/15"
+                                : "bg-obsidian border border-gold/30"
+                            )}>
+                              <Check className="w-2.5 h-2.5 stroke-[2.5]" />
+                            </span>
+                            <span>{cap}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
 
                   {/* Strategic Note & Action */}
                   <motion.div
@@ -220,20 +224,37 @@ export const Business = () => {
                       isIvory ? "border-ink/10" : "border-gold/20"
                     )}
                   >
-                    <div className="max-w-xs">
-                      <span className={cn(
-                        "text-[10px] uppercase tracking-widest font-mono block mb-1",
-                        isIvory ? "text-warmgrey" : "text-gold"
-                      )}>
-                        Strategic Rationale
-                      </span>
-                      <span className={cn(
-                        "text-xs italic font-serif",
-                        isIvory ? "text-ink/85 font-normal" : "text-ivory/85"
-                      )}>
-                        {entity.highlight}
-                      </span>
-                    </div>
+                    {entity.highlight ? (
+                      <div className="max-w-xs">
+                        <span className={cn(
+                          "text-[10px] uppercase tracking-widest font-mono block mb-1",
+                          isIvory ? "text-warmgrey" : "text-gold"
+                        )}>
+                          Strategic Focus
+                        </span>
+                        <span className={cn(
+                          "text-xs italic font-serif",
+                          isIvory ? "text-ink/85 font-normal" : "text-ivory/85"
+                        )}>
+                          {entity.highlight}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="max-w-xs">
+                        <span className={cn(
+                          "text-[10px] uppercase tracking-widest font-mono block mb-1",
+                          isIvory ? "text-warmgrey" : "text-gold"
+                        )}>
+                          Executive Discretion
+                        </span>
+                        <span className={cn(
+                          "text-xs italic font-serif",
+                          isIvory ? "text-ink/85 font-normal" : "text-ivory/85"
+                        )}>
+                          Specific investment details are shared only where approved.
+                        </span>
+                      </div>
+                    )}
 
                     <Button
                       to={`/contact?interest=${encodeURIComponent(entity.name)}`}
