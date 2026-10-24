@@ -4,7 +4,7 @@ import { fadeIn } from '@/lib/motion';
 
 export const PullQuote = () => {
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory relative overflow-hidden border-t border-b border-gold/15">
+    <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory relative overflow-hidden border-t border-b border-gold/15 stacked-panel stacked-panel-charcoal z-30">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
         <motion.div
           variants={fadeIn('up', 0.1)}

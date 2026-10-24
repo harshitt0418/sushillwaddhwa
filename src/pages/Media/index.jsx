@@ -16,7 +16,7 @@ export const Media = () => {
       className="w-full"
     >
       {/* 01. Media Hero - Obsidian Black Editorial Atmosphere */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -72,7 +72,7 @@ export const Media = () => {
       </section>
 
       {/* 02. Media Domains Grid - Warm Ivory Editorial Archival Ledger */}
-      <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-champagne/40 relative overflow-hidden">
+      <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-champagne/40 relative overflow-hidden stacked-panel stacked-panel-ivory z-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {mediaFeatures.map((item, idx) => {
@@ -137,7 +137,7 @@ export const Media = () => {
       </section>
 
       {/* 03. Dedicated AI-Storytelling Area - Soft Charcoal Contrast Box */}
-      <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory relative overflow-hidden border-b border-gold/15">
+      <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory relative overflow-hidden border-b border-gold/15 stacked-panel stacked-panel-charcoal z-30">
         <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
           <motion.div
             variants={fadeIn('up', 0.1)}

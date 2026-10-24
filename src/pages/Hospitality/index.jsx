@@ -17,7 +17,7 @@ export const Hospitality = () => {
       className="w-full"
     >
       {/* 01. Hospitality Hero - Full-Scale Editorial Opening */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
@@ -63,11 +63,12 @@ export const Hospitality = () => {
           <section
             key={pillar.id}
             id={pillar.id}
+            style={{ zIndex: 20 + index * 10 }}
             className={cn(
-              "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20",
+              "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20 stacked-panel",
               isIvory
-                ? "bg-ivory text-ink border-b border-ink/10"
-                : "bg-charcoal text-ivory border-b border-gold/15"
+                ? "stacked-panel-ivory border-b border-ink/10"
+                : "stacked-panel-charcoal border-b border-gold/15"
             )}
           >
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -228,7 +229,7 @@ export const Hospitality = () => {
       })}
 
       {/* 03. Global Corridors & Destination Focus - Styled as Luxury World Atlas */}
-      <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15">
+      <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15 stacked-panel stacked-panel-obsidian z-[70]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">

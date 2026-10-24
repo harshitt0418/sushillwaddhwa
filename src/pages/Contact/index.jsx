@@ -18,7 +18,7 @@ export const Contact = () => {
       <ContactHero />
 
       {/* 02. Form & Coordinates Dossier - Warm Ivory Concierge Desk */}
-      <section className="py-20 sm:py-28 bg-ivory text-ink border-b border-champagne/40">
+      <section className="py-20 sm:py-28 bg-ivory text-ink border-b border-champagne/40 stacked-panel stacked-panel-ivory z-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             

@@ -5,7 +5,7 @@ import { fadeIn } from '@/lib/motion';
 
 export const FocusTimeline = () => {
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 relative overflow-hidden">
+    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 relative overflow-hidden stacked-panel stacked-panel-ivory z-20">
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
         <motion.div

@@ -4,7 +4,7 @@ import { fadeIn } from '@/lib/motion';
 
 export const ContactHero = () => {
   return (
-    <section className="pt-36 sm:pt-48 pb-16 sm:pb-24 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
+    <section className="pt-36 sm:pt-48 pb-16 sm:pb-24 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
