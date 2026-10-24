@@ -14,8 +14,7 @@ import {
   Glasses, 
   HeartPulse, 
   Sparkles,
-  ArrowUpRight,
-  ShieldCheck
+  ArrowUpRight
 } from 'lucide-react';
 
 import campaignImg from '@/assets/images/editorial/sushill-brand-campaign.jpg';
@@ -58,7 +57,7 @@ export const Collaborate = () => {
               >
                 <span className="w-8 sm:w-12 h-[1px] bg-gold" />
                 <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
-                  Selective Brand Alignments & Ambassadorship
+                  Selective Brand Alignments
                 </span>
                 <span className="text-gold/40 text-[10px] font-mono">[ ATELIER ]</span>
               </motion.div>
@@ -94,7 +93,7 @@ export const Collaborate = () => {
                 <div className="relative aspect-[3/4] overflow-hidden bg-obsidian border border-gold/20">
                   <img
                     src={campaignImg}
-                    alt="Sushill Waddhwa - Luxury Brand Campaign Collaboration"
+                    alt="Sushill Waddhwa - Selective Brand Collaborations"
                     className="w-full h-full object-cover filter contrast-[1.03] transition-transform duration-1000 hover:scale-105"
                     fetchPriority="high"
                     decoding="async"
@@ -102,8 +101,8 @@ export const Collaborate = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent pointer-events-none" />
                 </div>
                 <div className="mt-3 flex items-center justify-between text-[10px] tracking-super-wide uppercase font-mono text-warmgrey">
-                  <span>Campaign Case Study</span>
-                  <span className="text-gold font-medium">Bespoke Ambassadorship</span>
+                  <span className="text-gold font-medium">Selective Brand Collaborations</span>
+                  <span className="text-gold/50 font-mono">[ 1989 — 2026 ]</span>
                 </div>
               </div>
             </motion.div>
@@ -202,11 +201,8 @@ export const Collaborate = () => {
           </div>
 
           <div className="mt-14 p-6 sm:p-8 bg-obsidian border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div className="flex items-center gap-3.5">
-              <ShieldCheck className="w-6 h-6 text-gold flex-shrink-0" />
-              <span className="text-xs sm:text-sm text-warmstone font-light leading-relaxed">
-                Strict brand exclusivity and category protection offered for multi-season ambassadorial alignments.
-              </span>
+            <div className="text-xs uppercase tracking-widest text-gold font-mono font-medium">
+              Executive Office Dialogue
             </div>
             <Button to="/contact?interest=Brand%20Collaborations" variant="dark" size="md">
               Submit Collaboration Brief
