@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import { LuxuryPreloader } from '@/components/layout/LuxuryPreloader';
 import { RouteSEO } from '@/components/common/RouteSEO';
+import { StackedScrollController } from '@/components/common/StackedScrollController';
 
 import { Home } from '@/pages/Home';
 import { About } from '@/pages/About';
@@ -91,6 +92,7 @@ export const App = () => {
       <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.032] mix-blend-screen bg-noise" />
       
       <RouteSEO />
+      <StackedScrollController />
       {isPreloaderActive && (
         <LuxuryPreloader onComplete={handlePreloaderComplete} />
       )}
