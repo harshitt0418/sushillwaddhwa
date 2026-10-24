@@ -1,8 +1,8 @@
-import luxuryHotelsImg from '@/assets/images/editorial/editorial-luxury-hotels.jpg';
-import resortBuyoutImg from '@/assets/images/editorial/editorial-resort-buyout.jpg';
-import destinationCelebrationImg from '@/assets/images/editorial/editorial-destination-celebration.jpg';
-import plannerRelationsImg from '@/assets/images/editorial/editorial-planner-relations.jpg';
-import tourismWedtalksImg from '@/assets/images/editorial/editorial-tourism-wedtalks.jpg';
+import luxuryHotelsImg from '@/assets/images/editorial/sushill-palace-portrait.jpg';
+import resortBuyoutImg from '@/assets/images/editorial/sushill-ocean-pavilion.jpg';
+import destinationCelebrationImg from '@/assets/images/editorial/sushill-maldives-villa.jpg';
+import plannerRelationsImg from '@/assets/images/editorial/sushill-framed-portrait.jpg';
+import tourismWedtalksImg from '@/assets/images/editorial/sushill-atrium-portrait.jpg';
 
 export const hospitalityPillars = [
   {

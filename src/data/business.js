@@ -1,7 +1,7 @@
-import buyoutImg from '@/assets/images/editorial/editorial-hospitality-buyout.jpg';
-import hotelImg from '@/assets/images/editorial/editorial-boutique-hotel.jpg';
-import investmentImg from '@/assets/images/editorial/editorial-strategic-investments.jpg';
-import cinemaImg from '@/assets/images/editorial/editorial-destination-cinema.jpg';
+import buyoutImg from '@/assets/images/editorial/sushill-private-jet.jpg';
+import hotelImg from '@/assets/images/editorial/sushill-ocean-pavilion.jpg';
+import investmentImg from '@/assets/images/editorial/sushill-executive-dome.jpg';
+import cinemaImg from '@/assets/images/editorial/sushill-paris-skyline.jpg';
 
 export const businessEntities = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, imageMask } from '@/lib/motion';
-import editorialPortrait from '@/assets/images/sushill-waddhwa-editorial-portrait.png';
+import editorialPortrait from '@/assets/images/editorial/sushill-framed-portrait.jpg';
 
 export const PrincipalHero = () => {
   return (

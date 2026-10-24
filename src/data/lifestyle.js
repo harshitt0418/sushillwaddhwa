@@ -1,9 +1,9 @@
-import travelImg from '@/assets/images/editorial/editorial-lifestyle-travel.jpg';
-import hotelsImg from '@/assets/images/editorial/editorial-lifestyle-hotels.jpg';
+import travelImg from '@/assets/images/editorial/sushill-paris-skyline.jpg';
+import hotelsImg from '@/assets/images/editorial/sushill-palace-portrait.jpg';
 import fitnessImg from '@/assets/images/editorial/editorial-lifestyle-fitness.jpg';
-import styleImg from '@/assets/images/editorial/editorial-lifestyle-style.jpg';
-import cultureImg from '@/assets/images/editorial/editorial-lifestyle-culture.jpg';
-import wellbeingImg from '@/assets/images/editorial/editorial-lifestyle-wellbeing.jpg';
+import styleImg from '@/assets/images/editorial/sushill-yacht-lifestyle.jpg';
+import cultureImg from '@/assets/images/editorial/sushill-ocean-pavilion.jpg';
+import wellbeingImg from '@/assets/images/editorial/sushill-maldives-villa.jpg';
 
 export const lifestylePillars = [
   {

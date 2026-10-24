@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { fadeIn, imageMask } from '@/lib/motion';
-import editorialPortrait from '@/assets/images/sushill-waddhwa-editorial-portrait.png';
+import editorialPortrait from '@/assets/images/editorial/sushill-palace-portrait.jpg';
 
 export const PersonalIntro = () => {
   return (

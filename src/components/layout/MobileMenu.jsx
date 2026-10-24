@@ -38,7 +38,7 @@ export const MobileMenu = ({ isOpen, onClose }) => {
           className="fixed inset-0 z-50 bg-obsidian text-ivory flex flex-col justify-between p-5 sm:p-8 md:p-10 nav:hidden overflow-y-auto"
         >
           {/* Subtle noise and radial background glow */}
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(184,149,79,0.08)_0%,transparent_60%)]" />
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(199,162,74,0.08)_0%,transparent_60%)]" />
 
           {/* Top Bar */}
           <div className="relative z-10 flex items-center justify-between border-b border-gold/20 pb-4">

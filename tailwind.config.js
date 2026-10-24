@@ -10,81 +10,86 @@ export default {
         'nav': '1240px',
       },
       colors: {
-        // Obsidian, Ivory and Antique Gold Luxury Editorial Palette
+        // Obsidian and Gold Maybach Luxury Editorial Palette
         obsidian: {
-          DEFAULT: '#0A0A0B', // Primary dark background - obsidian black
-          deep: '#060607',
-          charcoal: '#151517', // Soft charcoal secondary dark surface
-          surface: '#18181B',
-          midnight: '#101621', // Subtle undertone only
+          DEFAULT: '#08111D', // Primary dark background - obsidian near-black navy
+          deep: '#050B14',
+          charcoal: '#0D1B2A', // Deep midnight navy secondary dark surface
+          surface: '#112236',
+          midnight: '#07111F', // Obsidian undertone
         },
         charcoal: {
-          DEFAULT: '#151517',
-          soft: '#1C1C1F',
-          muted: '#25252A',
+          DEFAULT: '#0D1B2A', // Deep midnight navy
+          soft: '#112236',
+          muted: '#182C44',
         },
         ivory: {
-          DEFAULT: '#F4F0E8', // Warm ivory / porcelain
-          light: '#FAF7F2',
-          dim: '#E6DDCC',    // Light champagne
-          muted: '#DDD4C3',
-          paper: '#F1EBDD',
+          DEFAULT: '#F7F4EE', // Warm ivory / porcelain
+          light: '#FAF8F5',
+          dim: '#EFE9DC',    // Light champagne ivory
+          muted: '#E2DAC9',
+          paper: '#F4EFE6',
         },
         ink: {
-          DEFAULT: '#171613', // Dark ink text for ivory sections
-          soft: '#2A2824',
-          muted: '#4A463F',
-          subtle: '#6A645B',
+          DEFAULT: '#0A111C', // Deep ink text for ivory sections
+          soft: '#182230',
+          muted: '#334155',
+          subtle: '#5A6B82',
         },
         gold: {
-          DEFAULT: '#B8954F', // Antique Gold accent
-          antique: '#B8954F',
-          champagne: '#D6C08D',
-          light: '#E6D7B5',
-          dark: '#8C6F33',
-          hairline: 'rgba(184, 149, 79, 0.22)',
-          subtle: 'rgba(184, 149, 79, 0.12)',
+          DEFAULT: '#C7A24A', // Rich muted gold accent
+          antique: '#C7A24A',
+          champagne: '#E2CC8D', // Soft champagne gold
+          light: '#EFE1B8',
+          dark: '#997A2E',
+          hairline: 'rgba(199, 162, 74, 0.22)',
+          subtle: 'rgba(199, 162, 74, 0.12)',
         },
         warmgrey: {
-          DEFAULT: '#777168', // Secondary warm grey
-          light: '#A39E93',
-          dark: '#4D4842',
-          subtle: 'rgba(119, 113, 104, 0.2)',
+          DEFAULT: '#AEB7C2', // Muted slate secondary text
+          light: '#CCD3DC',
+          dark: '#667484',
+          subtle: 'rgba(174, 183, 194, 0.2)',
+        },
+        slate: {
+          DEFAULT: '#AEB7C2',
+          light: '#CCD3DC',
+          dark: '#667484',
         },
 
         // Backward compatibility mappings
         porcelain: {
-          DEFAULT: '#F4F0E8',
+          DEFAULT: '#F7F4EE',
           pure: '#FFFFFF',
-          dim: '#E6DDCC',
-          muted: '#DDD4C3',
+          dim: '#EFE9DC',
+          muted: '#E2DAC9',
         },
         bone: {
-          DEFAULT: '#F4F0E8',
-          light: '#FAF7F2',
-          dim: '#E6DDCC',
-          muted: '#DDD4C3',
+          DEFAULT: '#F7F4EE',
+          light: '#FAF8F5',
+          dim: '#EFE9DC',
+          muted: '#E2DAC9',
         },
         stone: {
-          DEFAULT: '#777168',
-          light: '#A39E93',
-          dark: '#4D4842',
+          DEFAULT: '#AEB7C2',
+          light: '#CCD3DC',
+          dark: '#667484',
         },
         bronze: {
-          DEFAULT: '#B8954F',
-          light: '#D6C08D',
-          dim: '#8C6F33',
-          subtle: 'rgba(184, 149, 79, 0.15)',
+          DEFAULT: '#C7A24A',
+          light: '#E2CC8D',
+          dim: '#997A2E',
+          subtle: 'rgba(199, 162, 74, 0.15)',
         },
         midnight: {
-          DEFAULT: '#151517', // soft charcoal instead of blue!
-          soft: '#1A1A1E',
-          surface: '#101621',
+          DEFAULT: '#0D1B2A',
+          soft: '#112236',
+          surface: '#07111F',
         },
         sapphire: {
-          DEFAULT: '#151517', // soft charcoal instead of blue!
-          light: '#1C1C1F',
-          surface: '#101621',
+          DEFAULT: '#0D1B2A',
+          light: '#112236',
+          surface: '#07111F',
         },
       },
       fontFamily: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { fadeIn, imageMask } from '@/lib/motion';
-import featureImg from '@/assets/images/editorial/editorial-artoso-feature.jpg';
+import featureImg from '@/assets/images/editorial/sushill-ocean-pavilion.jpg';
 
 export const VentureFeature = () => {
   return (

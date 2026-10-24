@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { fadeIn } from '@/lib/motion';
 
-import businessImg from '@/assets/images/editorial/editorial-hospitality-buyout.jpg';
-import hospitalityImg from '@/assets/images/editorial/editorial-luxury-hotels.jpg';
-import lifestyleImg from '@/assets/images/editorial/editorial-lifestyle-style.jpg';
-import mediaImg from '@/assets/images/editorial/editorial-tourism-wedtalks.jpg';
+import businessImg from '@/assets/images/editorial/sushill-executive-dome.jpg';
+import hospitalityImg from '@/assets/images/editorial/sushill-maldives-villa.jpg';
+import lifestyleImg from '@/assets/images/editorial/sushill-paris-skyline.jpg';
+import mediaImg from '@/assets/images/editorial/sushill-atrium-portrait.jpg';
 
 const editorialPillars = [
   {

@@ -12,7 +12,7 @@ export const EnquiryCTA = ({
   return (
     <section className="bg-gradient-to-b from-charcoal via-obsidian to-obsidian text-ivory py-28 sm:py-36 md:py-44 relative overflow-hidden border-t border-b border-gold/20">
       {/* Background Architectural Grid / Subtle Maybach luxury pinstriping */}
-      <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#B8954F_1px,transparent_1px)] [background-size:28px_28px]" />
+      <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#C7A24A_1px,transparent_1px)] [background-size:28px_28px]" />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
         <motion.div
