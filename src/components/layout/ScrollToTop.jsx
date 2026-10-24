@@ -33,6 +33,7 @@ export const ScrollToTop = () => {
 
       // Sync Lenis smooth scroll instance
       if (window.lenis) {
+        window.lenis.resize();
         window.lenis.scrollTo(0, { immediate: true });
       }
     };

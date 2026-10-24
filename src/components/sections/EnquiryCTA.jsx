@@ -10,7 +10,7 @@ export const EnquiryCTA = ({
   to = "/contact"
 }) => {
   return (
-    <section className="bg-gradient-to-b from-charcoal via-obsidian to-obsidian text-ivory py-24 sm:py-32 lg:py-28 lg:min-h-[80vh] flex flex-col justify-center relative overflow-hidden border-t border-b border-gold/20 stacked-panel stacked-panel-obsidian z-[60]">
+    <section className="bg-gradient-to-b from-charcoal via-obsidian to-obsidian text-ivory py-28 sm:py-36 md:py-44 relative overflow-hidden border-t border-b border-gold/20 stacked-panel stacked-panel-obsidian z-[60]">
       {/* Background Architectural Grid / Subtle Maybach luxury pinstriping */}
       <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#C7A24A_1px,transparent_1px)] [background-size:28px_28px]" />
 

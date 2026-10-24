@@ -15,7 +15,7 @@ export const Lifestyle = () => {
       className="w-full"
     >
       {/* 01. Lifestyle Hero - High-Fashion Magazine Header */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
@@ -76,12 +76,11 @@ export const Lifestyle = () => {
             <section
               key={pillar.id}
               id={pillar.id}
-              style={{ zIndex: 20 + index * 10 }}
               className={cn(
-                "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20 stacked-panel",
+                "py-24 sm:py-36 md:py-44 relative overflow-hidden scroll-mt-20",
                 isIvory
-                  ? "stacked-panel-ivory border-b border-ink/10"
-                  : "stacked-panel-charcoal border-b border-gold/15"
+                  ? "bg-ivory text-ink border-b border-ink/10"
+                  : "bg-charcoal text-ivory border-b border-gold/15"
               )}
             >
               <div className="max-w-7xl mx-auto px-6 md:px-12">

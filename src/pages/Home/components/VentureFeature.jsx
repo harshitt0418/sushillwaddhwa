@@ -6,7 +6,7 @@ import featureImg from '@/assets/images/editorial/sushill-ocean-pavilion.jpg';
 
 export const VentureFeature = () => {
   return (
-    <section className="py-20 sm:py-28 lg:py-24 xl:py-32 lg:min-h-screen flex flex-col justify-center bg-charcoal text-ivory border-b border-gold/15 overflow-hidden relative stacked-panel stacked-panel-charcoal stacked-sticky z-50">
+    <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory border-b border-gold/15 overflow-hidden relative stacked-panel stacked-panel-charcoal z-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           

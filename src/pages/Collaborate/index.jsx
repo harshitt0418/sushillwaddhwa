@@ -40,7 +40,7 @@ export const Collaborate = () => {
       className="w-full"
     >
       {/* 01. Collaborate Hero with Exact Required Master Copy - Editorial Split Grid */}
-      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
+      <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -109,7 +109,7 @@ export const Collaborate = () => {
       </section>
 
       {/* 02. The Eight Specified Collaboration Categories - Warm Ivory Ledger */}
-      <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-champagne/40 relative overflow-hidden stacked-panel stacked-panel-ivory z-20">
+      <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-champagne/40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">
@@ -163,7 +163,7 @@ export const Collaborate = () => {
       </section>
 
       {/* 03. Partnership Models - Soft Charcoal Contrast Section */}
-      <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-panel-charcoal z-30">
+      <section className="py-24 sm:py-36 md:py-44 bg-charcoal text-ivory border-b border-gold/15 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mb-16 sm:mb-20 space-y-4">
             <div className="flex items-center gap-3 font-mono">

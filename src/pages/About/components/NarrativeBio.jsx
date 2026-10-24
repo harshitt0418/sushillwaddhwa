@@ -5,7 +5,7 @@ import { principalBio } from '@/data/timeline';
 
 export const NarrativeBio = () => {
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 relative overflow-hidden stacked-panel stacked-panel-ivory z-20">
+    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-start">
           

@@ -67,7 +67,7 @@ export const EditorialPreviews = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 lg:py-24 xl:py-32 lg:min-h-screen flex flex-col justify-center bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15 stacked-panel stacked-panel-obsidian stacked-sticky z-30">
+    <section className="py-24 sm:py-36 md:py-44 bg-obsidian text-ivory relative overflow-hidden border-b border-gold/15 stacked-panel stacked-panel-obsidian z-30">
       {/* Background ambient charcoal glow */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#F4F0E8_1px,transparent_1px)] [background-size:28px_28px]" />
 

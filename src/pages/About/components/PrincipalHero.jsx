@@ -5,7 +5,7 @@ import editorialPortrait from '@/assets/images/editorial/sushill-framed-portrait
 
 export const PrincipalHero = () => {
   return (
-    <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden stacked-panel stacked-sticky z-10">
+    <section className="pt-36 sm:pt-48 pb-20 sm:pb-32 bg-obsidian text-ivory border-b border-gold/15 relative overflow-hidden">
       {/* Subtle ambient lighting */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
 
