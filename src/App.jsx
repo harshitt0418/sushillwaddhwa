@@ -6,7 +6,6 @@ import Lenis from 'lenis';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
-import { LuxuryPreloader } from '@/components/layout/LuxuryPreloader';
 import { RouteSEO } from '@/components/common/RouteSEO';
 import { StackedScrollController } from '@/components/common/StackedScrollController';
 
@@ -21,33 +20,11 @@ import { Contact } from '@/pages/Contact';
 
 export const App = () => {
   const location = useLocation();
-  const [isPreloaderActive, setIsPreloaderActive] = React.useState(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReducedMotion) return false;
-        const hasPlayed = sessionStorage.getItem('sw_intro_played');
-        return !hasPlayed;
-      }
-    } catch (e) {}
-    return false;
-  });
-
-  const handlePreloaderComplete = React.useCallback(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem('sw_intro_played', 'true');
-      }
-    } catch (e) {}
-    setIsPreloaderActive(false);
-  }, []);
 
   useEffect(() => {
-    // Check user preference for reduced motion
-    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      setIsPreloaderActive(false);
-      return;
+    // Ensure body overflow has no lingering inline locks
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
     }
 
     // Initialize Lenis for luxurious smooth scrolling
@@ -95,9 +72,6 @@ export const App = () => {
       
       <RouteSEO />
       <StackedScrollController />
-      {isPreloaderActive && (
-        <LuxuryPreloader onComplete={handlePreloaderComplete} />
-      )}
       <ScrollToTop />
       <Header />
       
