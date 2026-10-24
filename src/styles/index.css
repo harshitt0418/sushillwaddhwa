@@ -29,14 +29,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 
   body {
     background-color: #08111D;
     color: #F7F4EE;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 
@@ -98,6 +98,61 @@
   .hairline-dark-y {
     border-top: 1px solid rgba(199, 162, 74, 0.16);
     border-bottom: 1px solid rgba(199, 162, 74, 0.16);
+  }
+
+  /* Stacked-Scroll Section Overlap System (Nick Velten Editorial Direction) */
+  .stacked-panel {
+    position: relative;
+    width: 100%;
+    /* Ensure solid, fully opaque background so previous sections never bleed through */
+    background-color: var(--color-obsidian);
+  }
+
+  /* Desktop sticky layering (active on desktop screens >= 1024px) */
+  @media (min-width: 1024px) {
+    .stacked-sticky {
+      position: sticky;
+      top: 0;
+      will-change: transform;
+    }
+  }
+
+  /* Ivory Stacked Panel */
+  .stacked-panel-ivory {
+    position: relative;
+    background-color: #F7F4EE;
+    color: #0A111C;
+    /* Restrained editorial depth shadow */
+    box-shadow: 0 -24px 60px rgba(8, 17, 29, 0.22);
+    border-top: 1px solid rgba(199, 162, 74, 0.32);
+  }
+
+  /* Obsidian Stacked Panel */
+  .stacked-panel-obsidian {
+    position: relative;
+    background-color: #08111D;
+    color: #F7F4EE;
+    /* Deep luxury drop shadow for dark surfaces */
+    box-shadow: 0 -30px 70px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(199, 162, 74, 0.25);
+  }
+
+  /* Charcoal Stacked Panel */
+  .stacked-panel-charcoal {
+    position: relative;
+    background-color: #0D1B2A;
+    color: #F7F4EE;
+    box-shadow: 0 -30px 70px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(199, 162, 74, 0.22);
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .stacked-sticky {
+      position: relative !important;
+      top: auto !important;
+      box-shadow: none !important;
+    }
   }
 
   /* Cinematic SVG Grain / Noise background overlay */

@@ -27,7 +27,7 @@ const verifiedMilestones = [
 
 export const LegacyMilestones = () => {
   return (
-    <section className="py-24 sm:py-36 md:py-44 bg-ivory text-ink border-b border-ink/10 relative overflow-hidden">
+    <section className="py-20 sm:py-28 lg:py-24 xl:py-32 lg:min-h-screen flex flex-col justify-center bg-ivory text-ink border-b border-ink/10 relative overflow-hidden stacked-panel stacked-panel-ivory stacked-sticky z-40">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Eyebrow and intro */}
         <motion.div

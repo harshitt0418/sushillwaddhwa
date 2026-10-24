@@ -7,7 +7,7 @@ import heroPortrait from '@/assets/images/editorial/sushill-atrium-portrait.jpg'
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between bg-obsidian text-ivory overflow-hidden pt-28 sm:pt-36">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between bg-obsidian text-ivory overflow-hidden pt-28 sm:pt-36 stacked-panel stacked-sticky z-10">
       {/* Background Architectural Atmosphere with Near-Black Navy Depth */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[160px]" />

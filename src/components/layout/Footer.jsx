@@ -6,7 +6,7 @@ import { allRoutes } from '@/data/navigation';
 
 export const Footer = () => {
   return (
-    <footer className="bg-ivory text-ink pt-20 pb-12 border-t-2 border-gold/40 overflow-hidden relative">
+    <footer className="bg-ivory text-ink pt-20 pb-12 border-t-2 border-gold/40 overflow-hidden relative z-[70]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Top Tier: Brand Statement & Wordmark */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-champagne/80">
