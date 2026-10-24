@@ -82,8 +82,10 @@ export const App = () => {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     if (window.lenis) {
+      window.lenis.resize();
       window.lenis.scrollTo(0, { immediate: true });
     }
+    window.dispatchEvent(new Event('route-mounted'));
   }, []);
 
   return (

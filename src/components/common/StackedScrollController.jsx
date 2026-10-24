@@ -1,17 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const StackedScrollController = () => {
   const location = useLocation();
+  const resizeObserverRef = useRef(null);
 
   useEffect(() => {
     const updateStickyOffsets = () => {
-      // Find all elements with .stacked-sticky
       const elements = document.querySelectorAll('.stacked-sticky');
       const vh = window.innerHeight;
 
       elements.forEach((el) => {
-        // Measure element's natural rendered height
         const h = el.offsetHeight;
         const diff = vh - h;
         // If element is taller than viewport, offset top so user can scroll to see complete content
@@ -19,36 +18,77 @@ export const StackedScrollController = () => {
         const topOffset = diff < 0 ? diff : 0;
         el.style.setProperty('--sticky-top', `${topOffset}px`);
       });
+
+      if (window.lenis) {
+        window.lenis.resize();
+      }
     };
 
-    // 1. Initial calculation
-    updateStickyOffsets();
+    const attachResizeObservers = () => {
+      if (typeof ResizeObserver === 'undefined') return;
 
-    // 2. Window resize listener
-    window.addEventListener('resize', updateStickyOffsets, { passive: true });
+      if (resizeObserverRef.current) {
+        resizeObserverRef.current.disconnect();
+      }
 
-    // 3. ResizeObserver on each sticky element to catch image and font loads
-    let resizeObserver = null;
-    if (typeof ResizeObserver !== 'undefined') {
-      resizeObserver = new ResizeObserver(() => {
+      resizeObserverRef.current = new ResizeObserver(() => {
         updateStickyOffsets();
       });
 
       const elements = document.querySelectorAll('.stacked-sticky');
-      elements.forEach((el) => resizeObserver.observe(el));
+      elements.forEach((el) => {
+        resizeObserverRef.current.observe(el);
+      });
+    };
+
+    const refreshAll = () => {
+      attachResizeObservers();
+      updateStickyOffsets();
+    };
+
+    // 1. Initial calculation
+    refreshAll();
+
+    // 2. Window resize listener
+    window.addEventListener('resize', refreshAll, { passive: true });
+
+    // 3. Custom route-mounted listener dispatched on page enter
+    window.addEventListener('route-mounted', refreshAll);
+
+    // 4. Document fonts ready listener
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(refreshAll);
     }
 
-    // 4. Staggered timers after route change to handle dynamic layout / render completes
-    const t1 = setTimeout(updateStickyOffsets, 50);
-    const t2 = setTimeout(updateStickyOffsets, 150);
-    const t3 = setTimeout(updateStickyOffsets, 400);
+    // 5. MutationObserver on <main> to detect when new page enters DOM
+    let mutationObserver = null;
+    const mainElement = document.querySelector('main') || document.body;
+    if (typeof MutationObserver !== 'undefined' && mainElement) {
+      mutationObserver = new MutationObserver(() => {
+        refreshAll();
+      });
+
+      mutationObserver.observe(mainElement, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
+    // 6. Staggered timers to ensure sync through Framer Motion exit/enter transitions
+    const timers = [30, 100, 250, 450, 700, 1000].map((delay) =>
+      setTimeout(refreshAll, delay)
+    );
 
     return () => {
-      window.removeEventListener('resize', updateStickyOffsets);
-      if (resizeObserver) resizeObserver.disconnect();
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
+      window.removeEventListener('resize', refreshAll);
+      window.removeEventListener('route-mounted', refreshAll);
+      if (resizeObserverRef.current) {
+        resizeObserverRef.current.disconnect();
+      }
+      if (mutationObserver) {
+        mutationObserver.disconnect();
+      }
+      timers.forEach(clearTimeout);
     };
   }, [location.pathname]);
 

@@ -113,7 +113,6 @@
     .stacked-sticky {
       position: sticky;
       top: var(--sticky-top, 0px);
-      will-change: transform;
     }
   }
 
