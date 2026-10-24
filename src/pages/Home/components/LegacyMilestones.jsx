@@ -9,9 +9,9 @@ const verifiedMilestones = [
     detail: "Embarking on a journey pioneering bespoke event choreography and high-profile group experiences.",
   },
   {
-    label: "35+ Years",
+    label: "Since 1989",
     title: "Industry Leadership",
-    detail: "Over three and a half decades of continuous operation, institutional trust, and international evolution.",
+    detail: "Decades of continuous operation, institutional trust, and international hospitality evolution.",
   },
   {
     label: "Global Reach",

@@ -55,9 +55,9 @@ export const routeSeoData = {
 
   "/about": {
     title: "About Sushill Waddhwa — Founder & CMD, Platinum World Grroup | Since 1989",
-    description: "Discover the 35+ year journey of Sushill Waddhwa: from pioneering experiential gatherings in 1989 to global luxury hotel buyouts, tourism leadership, and hospitality advisory.",
+    description: "Discover the journey of Sushill Waddhwa: from pioneering experiential gatherings in 1989 to global luxury hotel buyouts, tourism leadership, and hospitality advisory.",
     canonical: `${siteBaseUrl}/about`,
-    ogTitle: "About Sushill Waddhwa — 35+ Years in Global Hospitality",
+    ogTitle: "About Sushill Waddhwa — Global Hospitality Leader (Since 1989)",
     ogDescription: "Built on relationships. Defined by vision. The biography and leadership narrative of Sushill Waddhwa.",
     ogImage: defaultOgImage,
     imageAlt: "Sushill Waddhwa Editorial Portrait — Global Hospitality Leader",

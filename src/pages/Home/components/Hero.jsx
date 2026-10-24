@@ -92,7 +92,7 @@ export const Hero = () => {
               className="mt-10 pt-6 border-t border-gold/15 hidden sm:grid grid-cols-3 gap-6 text-[10px] uppercase font-mono tracking-wider text-warmgrey"
             >
               <div>
-                <span className="text-gold font-semibold block text-xs">35+ YEARS</span>
+                <span className="text-gold font-semibold block text-xs">SINCE 1989</span>
                 <span className="text-ivory/70">Legacy of Leadership</span>
               </div>
               <div>

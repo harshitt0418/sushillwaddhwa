@@ -17,7 +17,7 @@ export const siteConfig = {
       name: "Platinum World Grroup",
       role: "Founder & CMD",
       since: "1989",
-      description: "Global hospitality leader orchestrating hotel buyouts, group experiences, luxury incentives, and curated experiential travel.",
+      description: "Global hospitality leader orchestrating hotel buyouts, group bookings, luxury incentives, and curated experiential travel.",
       link: "/business#platinum-world-grroup",
     },
     {
@@ -31,7 +31,7 @@ export const siteConfig = {
       name: "Platinum World Pictures",
       role: "Founder & Producer",
       since: "Media & Film",
-      description: "Cinematic storytelling, brand films, and creative entertainment initiatives connecting destinations and luxury culture.",
+      description: "Media, film and entertainment initiatives connecting destinations, luxury culture, and cinematic visual narratives.",
       link: "/business#platinum-world-pictures",
     },
     {

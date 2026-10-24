@@ -43,13 +43,13 @@ export const PersonalIntro = () => {
               className="space-y-5 text-ink/80 text-sm sm:text-base leading-relaxed-luxury font-light max-w-2xl"
             >
               <p>
-                Sushill Waddhwa is a global hospitality entrepreneur, investor, and luxury lifestyle personality who has spent more than 35 years building enduring relationships across premier luxury hotels, international destinations, and hospitality platforms.
+                Since 1989, Sushill Waddhwa has built his career around people, experiences, hospitality and the world of celebrations. What began in events has evolved into an international journey across hospitality, destinations, hotels, investments, travel, media and lifestyle.
               </p>
               <p>
-                As Founder & CMD of <span className="text-ink font-semibold">Platinum World Grroup</span>, his career began in 1989 pioneering experiential corporate gatherings and bespoke celebration tourism. Over decades, his focus expanded into luxury hotel buyouts, destination weddings, strategic hotel advisory through <span className="text-ink font-semibold">Artoso Hospitality Corp.</span>, and thought leadership forums such as <span className="text-ink font-semibold">WedTalks</span>.
+                As Founder & CMD of <span className="text-ink font-semibold">Platinum World Grroup</span>, his work spans luxury hotel buyouts, destination weddings, strategic hotel advisory through <span className="text-ink font-semibold">Artoso Hospitality Corp.</span>, and thought leadership forums including <span className="text-ink font-semibold">WedTalks</span>.
               </p>
               <p>
-                Grounded in the values of authentic Indian warmth and cosmopolitan sophistication, Sushill operates with quiet confidence, discretion, and an instinctive eye for experiences that endure.
+                Today, he continues to build businesses while exploring the world, staying fit, discovering new destinations and creating new forms of storytelling—grounded in quiet confidence, discretion, and an eye for experiences that endure.
               </p>
             </motion.div>
 

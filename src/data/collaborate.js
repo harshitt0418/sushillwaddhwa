@@ -12,34 +12,39 @@ export const collaborationCategories = [
     icon: "Compass",
   },
   {
-    name: "Travel & Hospitality Experiences",
-    description: "Curated expedition partnerships, luxury rail journeys, and experiential destination travel campaigns.",
+    name: "Travel",
+    description: "Curated expedition partnerships, luxury journeys, and experiential destination campaigns.",
     icon: "Plane",
   },
   {
     name: "Automotive",
-    description: "Grand touring narratives, curated driving expeditions, vehicle unveilings, and lifestyle brand integration.",
+    description: "Grand touring narratives, driving expeditions, vehicle unveilings, and curated brand integration.",
     icon: "Car",
   },
   {
-    name: "Watches & Fine Horology",
-    description: "Haute horlogerie ambassadorial perspectives, collector salons, craftsmanship stories, and editorial brand alignments.",
+    name: "Watches",
+    description: "Horology perspectives, craftsmanship stories, collector dialogues, and editorial alignments.",
     icon: "Watch",
   },
   {
-    name: "Bespoke Fashion & Tailoring",
-    description: "Sartorial ambassadorship, heritage tailoring campaigns, tactile fabrics, and sophisticated capsule alignments.",
+    name: "Fashion",
+    description: "Brand ambassadorship, editorial campaigns, classic craftsmanship, and sophisticated capsule alignments.",
     icon: "Shirt",
   },
   {
-    name: "Artisanal Eyewear",
-    description: "Signature optical & sunwear collaborations celebrating artisanal Japanese and European acetate craftsmanship.",
+    name: "Eyewear",
+    description: "Signature optical and sunwear collaborations celebrating timeless design and artisanal craftsmanship.",
     icon: "Glasses",
   },
   {
-    name: "Wellness & Lifestyle",
-    description: "Longevity retreats, functional vitality platforms, mindful home architecture, and holistic living partnerships.",
+    name: "Wellness",
+    description: "Longevity retreats, functional vitality platforms, mindful balance, and holistic wellbeing partnerships.",
     icon: "HeartPulse",
+  },
+  {
+    name: "Lifestyle",
+    description: "Curated living experiences, architectural spaces, cultural dialogues, and selective brand partnerships.",
+    icon: "Sparkles",
   },
 ];
 

@@ -22,7 +22,7 @@ export const NarrativeBio = () => {
                 The Heritage
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal">
-                35+ Years of Trust & Discretion
+                Since 1989 — Trust & Discretion
               </h3>
             </div>
 

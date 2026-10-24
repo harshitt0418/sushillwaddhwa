@@ -60,6 +60,8 @@ export const Lifestyle = () => {
               <span className="text-gold">·</span>
               <span>Culture</span>
               <span className="text-gold">·</span>
+              <span>Home</span>
+              <span className="text-gold">·</span>
               <span>Wellbeing</span>
             </div>
           </div>
@@ -106,8 +108,11 @@ export const Lifestyle = () => {
                     )}>
                       <img
                         src={pillar.image}
-                        alt={pillar.title}
-                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter contrast-[1.03]"
+                        alt={pillar.alt || pillar.title}
+                        className={cn(
+                          "w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter contrast-[1.03]",
+                          pillar.objectPosition || "object-center"
+                        )}
                         loading="lazy"
                         decoding="async"
                       />

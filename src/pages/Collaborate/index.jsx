@@ -13,6 +13,7 @@ import {
   Shirt, 
   Glasses, 
   HeartPulse, 
+  Sparkles,
   ArrowUpRight,
   ShieldCheck
 } from 'lucide-react';
@@ -28,6 +29,7 @@ const iconMap = {
   Shirt,
   Glasses,
   HeartPulse,
+  Sparkles,
 };
 
 export const Collaborate = () => {
@@ -119,10 +121,10 @@ export const Collaborate = () => {
               <span className="text-[11px] uppercase tracking-super-wide text-gold font-medium">
                 Sectors of Engagement
               </span>
-              <span className="text-gold/40 text-[10px] font-mono">[ 08 DISCIPLINES ]</span>
+              <span className="text-gold/40 text-[10px] font-mono">[ 09 SECTORS ]</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-ink leading-[1.08] tracking-tight">
-              Eight curated categories of alignment.
+              Curated categories of alignment.
             </h2>
           </div>
 

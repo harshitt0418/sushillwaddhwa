@@ -49,7 +49,7 @@ export const Media = () => {
               animate="animate"
               className="text-base sm:text-lg text-warmstone max-w-2xl font-light leading-relaxed-luxury pt-2"
             >
-              Sharing insights honed over 35 years across international hospitality summits, curated dialogues via WedTalks, destination brand films with Platinum World Pictures, and future-facing digital storytelling.
+              Sharing insights honed since 1989 across international hospitality summits, curated dialogues via WedTalks, destination brand films with Platinum World Pictures, and future-facing digital storytelling.
             </motion.p>
 
             <div className="pt-4 flex flex-wrap gap-3 text-xs uppercase tracking-widest font-mono text-warmstone/80">

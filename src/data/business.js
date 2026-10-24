@@ -7,10 +7,10 @@ export const businessEntities = [
   {
     id: "platinum-world-grroup",
     name: "Platinum World Grroup",
-    descriptor: "Global Hospitality · Hotel Buyouts · Curated Experiences",
+    descriptor: "Global Hospitality · Hotel Buyouts · Group Bookings & Experiences",
     role: "Founder & CMD",
     since: "Established 1989",
-    summary: "For over 35 years, Platinum World Grroup has stood as a trusted institution in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across premier destinations worldwide.",
+    summary: "Since 1989, Platinum World Grroup has stood as a trusted institution in luxury travel management, exclusive property privatizations, and high-impact experiential gatherings across premier destinations worldwide.",
     capabilities: [
       "Complete luxury hotel and resort buyouts for landmark celebrations and corporate leadership summits",
       "Bespoke international group travel management and luxury incentive movements",
@@ -23,7 +23,7 @@ export const businessEntities = [
   {
     id: "artoso-hospitality",
     name: "Artoso Hospitality Corp.",
-    descriptor: "Hotel Management · Boutique Concepts · Branded Residences",
+    descriptor: "Hotel Management · Hospitality Concepts · Branded Residences",
     role: "Strategic Concept & Advisory",
     since: "Contemporary Platform",
     summary: "Artoso Hospitality represents the contemporary evolution of boutique hotel living, pairing localized cultural vernacular with disciplined operational governance and design-led luxury.",
@@ -39,23 +39,23 @@ export const businessEntities = [
   {
     id: "strategic-investments",
     name: "Strategic Investments",
-    descriptor: "Hospitality Assets · Experiential Platforms · Lifestyle Innovation",
+    descriptor: "Selected Business & Investment Interests",
     role: "Principal Investor & Strategic Ally",
     since: "Active Portfolio",
-    summary: "Sushill’s investment philosophy aligns capital with visionaries transforming how modern travellers discover, stay, and connect with destinations of distinction.",
+    summary: "Sushill’s investment philosophy aligns capital with visionaries transforming hospitality, experiential platforms, and modern lifestyle ventures. In accordance with client discretion, specific investment details are published only when mutually approved.",
     capabilities: [
-      "Selective co-investments in signature boutique hospitality and eco-luxury retreat developments",
-      "Seed and growth backing for experiential hospitality tech and specialized concierge platforms",
+      "Selective co-investments in signature boutique hospitality and retreat developments",
+      "Seed and growth backing for experiential hospitality tech and specialized platforms",
       "Advisory equity in cultural content platforms and destination celebration forums",
-      "Synergistic partnerships accelerating residential hospitality and branded lifestyle ventures"
+      "Synergistic partnerships accelerating residential hospitality and lifestyle ventures"
     ],
-    highlight: "Disciplined capital deployment guided by 35+ years of operational industry insight.",
+    highlight: "Disciplined capital deployment guided by decades of operational industry insight.",
     image: investmentImg,
   },
   {
     id: "platinum-world-pictures",
     name: "Platinum World Pictures",
-    descriptor: "Cinematic Media · Brand Films · Destination Storytelling",
+    descriptor: "Media, Film & Entertainment Initiatives",
     role: "Founder & Producer",
     since: "Media Division",
     summary: "Platinum World Pictures merges cinematic artistry with the allure of global destinations, producing high-concept brand films, cultural documentaries, and visual narratives.",

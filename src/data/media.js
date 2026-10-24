@@ -7,7 +7,7 @@ export const mediaFeatures = [
       "The Billion-Dollar Destination Wedding Economy: Strategy, Challenges & Returns",
       "From Standard Keys to Total Hotel Buyouts: The Future of High-Yield Hospitality",
       "Building Cross-Border Alliances: How Tourism Boards Win the Luxury Traveler",
-      "35 Years of Entrepreneurship: Sustaining Relationships Across Decades"
+      "Since 1989: Sustaining Relationships Across Decades of Entrepreneurship"
     ],
   },
   {
