@@ -94,6 +94,8 @@ export const Collaborate = () => {
                     src={campaignImg}
                     alt="Sushill Waddhwa - Luxury Brand Campaign Collaboration"
                     className="w-full h-full object-cover filter contrast-[1.03] transition-transform duration-1000 hover:scale-105"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent pointer-events-none" />
                 </div>

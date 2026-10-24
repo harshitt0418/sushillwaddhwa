@@ -92,7 +92,7 @@ export const Lifestyle = () => {
                     variants={imageMask}
                     initial="initial"
                     whileInView="animate"
-                    viewport={{ once: true, margin: '-60px' }}
+                    viewport={{ once: true, amount: 0.1 }}
                     className={cn(
                       "lg:col-span-5 relative",
                       !isIvory ? "lg:order-2" : "lg:order-1"
@@ -109,6 +109,7 @@ export const Lifestyle = () => {
                         alt={pillar.title}
                         className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter contrast-[1.03]"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className={cn(
                         "absolute inset-0 mix-blend-multiply",

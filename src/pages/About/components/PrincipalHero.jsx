@@ -81,6 +81,8 @@ export const PrincipalHero = () => {
                   src={editorialPortrait}
                   alt="Sushill Waddhwa, Global Hospitality Leader and Founder"
                   className="w-full h-full object-cover object-top filter contrast-[1.03] transition-transform duration-1000 hover:scale-105"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
 

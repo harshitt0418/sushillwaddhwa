@@ -76,7 +76,7 @@ export const PersonalIntro = () => {
               variants={imageMask}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true, margin: '-60px' }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative max-w-md mx-auto lg:max-w-none"
             >
               {/* Refined Charcoal Frame with Thin Antique Gold Edge */}
@@ -87,6 +87,7 @@ export const PersonalIntro = () => {
                     alt="Sushill Waddhwa, Global Hospitality Leader and Founder"
                     className="w-full h-full object-cover object-center filter saturate-[0.98] contrast-[1.03] transition-transform duration-1000 ease-out hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   {/* Subtle inner gold accent border */}
                   <div className="absolute inset-0 border border-gold/25 pointer-events-none" />

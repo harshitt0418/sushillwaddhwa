@@ -8,7 +8,7 @@ export const StackedScrollController = () => {
   useEffect(() => {
     const updateStickyOffsets = () => {
       const elements = document.querySelectorAll('.stacked-sticky');
-      const vh = window.innerHeight;
+      const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
       elements.forEach((el) => {
         const h = el.offsetHeight;
@@ -49,8 +49,11 @@ export const StackedScrollController = () => {
     // 1. Initial calculation
     refreshAll();
 
-    // 2. Window resize listener
+    // 2. Window and visualViewport resize listeners for mobile devices
     window.addEventListener('resize', refreshAll, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', refreshAll, { passive: true });
+    }
 
     // 3. Custom route-mounted listener dispatched on page enter
     window.addEventListener('route-mounted', refreshAll);
@@ -81,6 +84,9 @@ export const StackedScrollController = () => {
 
     return () => {
       window.removeEventListener('resize', refreshAll);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', refreshAll);
+      }
       window.removeEventListener('route-mounted', refreshAll);
       if (resizeObserverRef.current) {
         resizeObserverRef.current.disconnect();

@@ -80,6 +80,7 @@ export const VentureFeature = () => {
                 alt="Artoso Hospitality boutique architectural concept"
                 className="w-full h-full object-cover filter brightness-95 contrast-105 transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-obsidian/25 mix-blend-multiply" />
               

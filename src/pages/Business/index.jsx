@@ -80,7 +80,7 @@ export const Business = () => {
                   variants={imageMask}
                   initial="initial"
                   whileInView="animate"
-                  viewport={{ once: true, margin: '-60px' }}
+                  viewport={{ once: true, amount: 0.1 }}
                   className={cn(
                     "lg:col-span-6 relative",
                     !isIvory ? "lg:order-2" : "lg:order-1"
@@ -97,6 +97,7 @@ export const Business = () => {
                       alt={entity.name}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 filter brightness-95 contrast-105"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className={cn(
                       "absolute inset-0 mix-blend-multiply transition-opacity group-hover:opacity-10",

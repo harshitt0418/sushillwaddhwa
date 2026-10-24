@@ -47,12 +47,12 @@ export const staggerContainer = {
 };
 
 export const imageMask = {
-  initial: { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", scale: 1.06 },
+  initial: { opacity: 0, scale: 1.04 },
   animate: {
-    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    opacity: 1,
     scale: 1,
     transition: {
-      duration: 1.25,
+      duration: 0.9,
       ease: transitions.luxuryEase,
     },
   },

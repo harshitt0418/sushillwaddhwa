@@ -120,7 +120,8 @@ export const Hero = () => {
                   src={heroPortrait}
                   alt="Sushill Waddhwa, Global Hospitality Entrepreneur and Investor"
                   className="w-full h-full object-cover object-[center_20%] filter contrast-[1.04] brightness-95 transition-transform duration-1000 ease-out hover:scale-105"
-                  priority="true"
+                  fetchPriority="high"
+                  decoding="async"
                 />
                 {/* Subtle vignette shadow for luxury depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent pointer-events-none" />

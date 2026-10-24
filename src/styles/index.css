@@ -108,12 +108,11 @@
     background-color: var(--color-obsidian);
   }
 
-  /* Desktop sticky layering (active on desktop screens >= 1024px) */
-  @media (min-width: 1024px) {
-    .stacked-sticky {
-      position: sticky;
-      top: var(--sticky-top, 0px);
-    }
+  /* Stacked sticky layering across all device dimensions (mobile, tablet, desktop) */
+  .stacked-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--sticky-top, 0px);
   }
 
   /* Ivory Stacked Panel */
