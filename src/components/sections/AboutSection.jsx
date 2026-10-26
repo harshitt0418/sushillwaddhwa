@@ -4,54 +4,52 @@ import portraitImg from '@/assets/images/editorial/sushill-framed-portrait.jpg';
 import fitnessImg from '@/assets/images/editorial/editorial-lifestyle-fitness.jpg';
 
 export const AboutSection = () => {
-  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
 
   // Subtle parallax on the anchor portrait
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: containerRef,
     offset: ["start end", "end start"],
   });
-  const portraitParallaxY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
+  const portraitParallaxY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
     <section
       id="about"
-      ref={sectionRef}
-      className="relative w-full bg-obsidian text-ivory py-24 md:py-32 border-t border-bronze/25"
+      ref={containerRef}
+      className="relative w-full bg-obsidian text-ivory py-28 sm:py-36 md:py-44 border-t border-bronze/20 z-20"
     >
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 md:px-8 xl:px-12">
+      <div className="max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14">
         
         {/* Chapter Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 sm:mb-20 border-b border-bronze/20 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 sm:mb-28 border-b border-bronze/20 pb-8">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-subheading text-[10px] tracking-super-wide text-bronze uppercase font-mono">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-bronze uppercase font-mono">
                 CHAPTER 01
               </span>
               <span className="text-stone/40 font-mono text-xs">//</span>
-              <span className="font-subheading text-[10px] tracking-super-wide text-stone uppercase">
-                TRAJECTORY & VISION
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-stone uppercase">
+                PRINCIPAL NARRATIVE
               </span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-ivory font-normal tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory font-normal tracking-tight">
               About Sushill Waddhwa
             </h2>
           </div>
-          <div className="font-subheading text-xs text-stone tracking-widest uppercase font-mono">
+          <div className="font-subheading text-xs text-stone tracking-[0.2em] uppercase font-mono text-right">
             Mumbai • Dubai • Sri Lanka • Europe
           </div>
         </div>
 
-        {/* Asymmetrical Editorial Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20 sm:mb-28">
+        {/* Magazine Profile Spread: Asymmetrical Editorial Composition */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-24 sm:mb-32">
           
-          {/* Left Column: Anchor Visual with Secondary Inset Moment */}
-          <div className="lg:col-span-5 relative">
-            
-            {/* Primary Anchor Portrait */}
+          {/* Large Anchor Portrait with Subtle Parallax */}
+          <div className="lg:col-span-6 relative">
             <motion.div
               style={{ y: portraitParallaxY }}
-              className="relative aspect-[3/4] w-full overflow-hidden bg-navy border border-bronze/35 shadow-[0_25px_70px_rgba(0,0,0,0.7)]"
+              className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-navy border border-bronze/30 shadow-[0_30px_90px_rgba(0,0,0,0.8)]"
             >
               <img
                 src={portraitImg}
@@ -63,50 +61,31 @@ export const AboutSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-transparent to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-4 left-4 right-4 p-3 bg-obsidian/90 backdrop-blur-sm border border-bronze/20">
-                <span className="font-subheading text-[9px] uppercase tracking-super-wide text-bronze block font-mono font-medium">
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-obsidian/80 backdrop-blur-md border border-bronze/20">
+                <span className="font-subheading text-[10px] uppercase tracking-[0.2em] text-bronze block font-mono font-medium">
                   Sushill Waddhwa
                 </span>
-                <span className="font-sans text-xs text-ivory/80 font-light">
-                  Founder & CMD, Platinum World Grroup
+                <span className="font-sans text-xs sm:text-sm text-ivory/80 font-light">
+                  Founder & CMD, Platinum World Grroup • Global Hospitality Entrepreneur & Investor
                 </span>
               </div>
             </motion.div>
-
-            {/* Secondary Visual Moment: Integrated Fitness Image (Editorial Inset) */}
-            <div className="hidden sm:block absolute -bottom-10 -right-6 lg:-right-8 w-44 md:w-52 aspect-[3/4] overflow-hidden bg-obsidian border-2 border-bronze/40 shadow-2xl z-20">
-              <img
-                src={fitnessImg}
-                alt="Sushill Waddhwa during a fitness and wellbeing moment"
-                style={{ objectPosition: "center 20%" }}
-                className="w-full h-full object-cover filter contrast-[1.02]"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-2 left-2 right-2 text-center">
-                <span className="font-subheading text-[8px] uppercase tracking-widest text-bronze bg-obsidian/90 px-2 py-0.5 border border-bronze/25 font-mono">
-                  Fitness & Vitality
-                </span>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right Column: Editorial Narrative & Typographic Hierarchy */}
-          <div className="lg:col-span-7 space-y-8 lg:pl-6">
+          {/* Long-Form Editorial Column */}
+          <div className="lg:col-span-6 space-y-10 lg:pt-4">
             
             <div className="space-y-4">
-              <span className="font-subheading text-[10px] tracking-super-wide uppercase text-bronze font-mono">
-                Global Track Record
+              <span className="font-subheading text-[10px] tracking-[0.24em] uppercase text-bronze font-mono">
+                Trajectory & Vision
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-ivory font-normal leading-snug">
                 An international career spanning events, weddings, celebrations, hospitality, luxury hotels, destinations and travel.
               </h3>
             </div>
 
-            {/* Approved Revised Brief Text */}
-            <div className="space-y-5 font-sans text-sm sm:text-base text-ivory/85 leading-relaxed font-light">
+            {/* Approved Narrative Text from Brief */}
+            <div className="space-y-6 font-sans text-base sm:text-lg text-ivory/85 leading-relaxed font-light">
               <p>
                 Sushill Waddhwa is a Global Hospitality Entrepreneur, Investor and Founder & CMD of Platinum World Grroup. He divides his time between Mumbai, Dubai, Sri Lanka and Europe.
               </p>
@@ -118,50 +97,13 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            {/* Mobile Fitness Inset for small screens */}
-            <div className="sm:hidden block pt-4">
-              <div className="relative aspect-[4/5] max-w-[240px] mx-auto overflow-hidden bg-obsidian border border-bronze/30 shadow-lg">
-                <img
-                  src={fitnessImg}
-                  alt="Sushill Waddhwa during a fitness and wellbeing moment"
-                  style={{ objectPosition: "center 20%" }}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute bottom-2 left-2 right-2 text-center">
-                  <span className="font-subheading text-[8px] uppercase tracking-widest text-bronze bg-obsidian/90 px-2 py-0.5 border border-bronze/20 font-mono">
-                    Fitness & Vitality
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Fields of Focus from Brief */}
-            <div className="pt-6 border-t border-bronze/20 space-y-4">
-              <div>
-                <h4 className="font-subheading text-[11px] uppercase tracking-wider text-bronze font-semibold mb-1 font-mono">
-                  Entrepreneurial Interests
-                </h4>
-                <p className="font-sans text-xs sm:text-sm text-stone leading-relaxed font-light">
-                  Events and wedding tourism, hospitality, investments, lifestyle experiences, media and entertainment.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-subheading text-[11px] uppercase tracking-wider text-bronze font-semibold mb-1 font-mono">
-                  Personal Passions
-                </h4>
-                <p className="font-sans text-xs sm:text-sm text-stone leading-relaxed font-light">
-                  Beyond business, he is passionate about travel, fitness, style, hotels, astrology, numerology and discovering new experiences. He continues to explore new ventures, creative storytelling and emerging technologies.
-                </p>
-              </div>
-            </div>
-
-            {/* MANDATORY Closing Line */}
-            <div className="pt-4">
-              <p className="font-serif italic text-xl sm:text-2xl text-bronze-champagne">
-                “Celebrating Life with Sushill Waddhwa”
+            {/* Entrepreneurial Focus */}
+            <div className="pt-6 border-t border-bronze/20 space-y-2">
+              <h4 className="font-subheading text-xs uppercase tracking-[0.18em] text-bronze font-medium font-mono">
+                Entrepreneurial Interests
+              </h4>
+              <p className="font-sans text-sm sm:text-base text-stone leading-relaxed font-light">
+                Events and wedding tourism, hospitality, investments, lifestyle experiences, media, and entertainment.
               </p>
             </div>
 
@@ -169,59 +111,102 @@ export const AboutSection = () => {
 
         </div>
 
-        {/* Refined Typographic Milestone Strip */}
-        <div className="w-full bg-navy border border-bronze/30 p-6 sm:p-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-bronze/20">
+        {/* REFINED TYPOGRAPHIC MILESTONE STRIP (Cinematic, not small cards) */}
+        <div className="w-full border-y border-bronze/30 py-12 sm:py-16 mb-24 sm:mb-32">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             
-            <div className="pt-4 sm:pt-0 sm:px-4 first:pl-0">
-              <span className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory block font-normal tracking-tight">
+            <div className="space-y-2 border-l border-bronze/30 pl-6">
+              <span className="font-serif text-4xl sm:text-6xl md:text-7xl text-ivory block font-normal tracking-tight">
                 1989
               </span>
-              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-wider text-bronze block mt-1 font-mono">
-                First Event Organized
+              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-[0.2em] text-bronze block font-mono">
+                First Event
               </span>
-              <p className="font-sans text-[11px] text-stone mt-1 font-light">
+              <p className="font-sans text-xs text-stone font-light">
                 During 1st year of Hotel Management
               </p>
             </div>
 
-            <div className="pt-4 sm:pt-0 sm:px-6">
-              <span className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory block font-normal tracking-tight">
+            <div className="space-y-2 border-l border-bronze/30 pl-6">
+              <span className="font-serif text-4xl sm:text-6xl md:text-7xl text-ivory block font-normal tracking-tight">
                 82
               </span>
-              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-wider text-bronze block mt-1 font-mono">
-                Countries Experienced
+              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-[0.2em] text-bronze block font-mono">
+                Countries
               </span>
-              <p className="font-sans text-[11px] text-stone mt-1 font-light">
-                Global footprint & relationships
+              <p className="font-sans text-xs text-stone font-light">
+                Explored across international hospitality
               </p>
             </div>
 
-            <div className="pt-4 sm:pt-0 sm:px-6">
-              <span className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory block font-normal tracking-tight">
+            <div className="space-y-2 border-l border-bronze/30 pl-6">
+              <span className="font-serif text-4xl sm:text-6xl md:text-7xl text-ivory block font-normal tracking-tight">
                 2,040+
               </span>
-              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-wider text-bronze block mt-1 font-mono">
+              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-[0.2em] text-bronze block font-mono">
                 Luxury Hotels
               </span>
-              <p className="font-sans text-[11px] text-stone mt-1 font-light">
-                Explored & evaluated worldwide
+              <p className="font-sans text-xs text-stone font-light">
+                Evaluated for buyouts & celebrations
               </p>
             </div>
 
-            <div className="pt-4 sm:pt-0 sm:px-6">
-              <span className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory block font-normal tracking-tight">
+            <div className="space-y-2 border-l border-bronze/30 pl-6">
+              <span className="font-serif text-4xl sm:text-6xl md:text-7xl text-ivory block font-normal tracking-tight">
                 4 Hubs
               </span>
-              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-wider text-bronze block mt-1 font-mono">
-                Bases of Operation
+              <span className="font-subheading text-[10px] sm:text-xs uppercase tracking-[0.2em] text-bronze block font-mono">
+                Global Bases
               </span>
-              <p className="font-sans text-[11px] text-stone mt-1 font-light">
+              <p className="font-sans text-xs text-stone font-light">
                 Mumbai • Dubai • Sri Lanka • Europe
               </p>
             </div>
 
           </div>
+        </div>
+
+        {/* PERSONAL VISUAL INTERLUDE: Fitness & Emerging Passions */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20 sm:mb-28">
+          
+          <div className="lg:col-span-5 order-2 lg:order-1">
+            <div className="relative aspect-[3/4] max-w-md mx-auto lg:max-w-none overflow-hidden bg-navy border border-bronze/30 shadow-2xl">
+              <img
+                src={fitnessImg}
+                alt="Sushill Waddhwa during a fitness and wellbeing moment"
+                style={{ objectPosition: "center 20%" }}
+                className="w-full h-full object-cover filter contrast-[1.02]"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/75 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 text-center">
+                <span className="font-subheading text-[9px] uppercase tracking-[0.2em] text-bronze bg-obsidian/90 px-3 py-1 border border-bronze/20 font-mono">
+                  Personal Interlude • Fitness & Wellbeing
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
+            <span className="font-subheading text-[10px] tracking-[0.24em] text-bronze uppercase font-mono">
+              Beyond Enterprise
+            </span>
+            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-ivory font-normal leading-snug">
+              Passionate about travel, fitness, style, hotels, astrology, numerology, and discovering new experiences.
+            </h3>
+            <p className="font-sans text-sm sm:text-base text-stone leading-relaxed font-light">
+              He continues to explore new ventures, creative storytelling, and emerging technologies—continually seeking out landmark hotels and undiscovered destinations to promote for world-class destination weddings, private celebrations, and luxury travel.
+            </p>
+          </div>
+
+        </div>
+
+        {/* MANDATORY CLOSING LINE: Art-Directed Typography */}
+        <div className="text-center border-t border-bronze/20 pt-16 sm:pt-20">
+          <p className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-bronze-champagne font-normal tracking-tight">
+            “Celebrating Life with Sushill Waddhwa”
+          </p>
         </div>
 
       </div>

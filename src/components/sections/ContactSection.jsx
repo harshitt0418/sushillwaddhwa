@@ -15,9 +15,9 @@ export const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    const subject = encodeURIComponent(`Executive Inquiry: ${formData.interest} - ${formData.name}`);
+    const subject = encodeURIComponent(`Executive Correspondence: ${formData.interest} - ${formData.name}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nOrganization: ${formData.organization}\nEmail: ${formData.email}\nInquiry Focus: ${formData.interest}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nOrganization: ${formData.organization}\nEmail: ${formData.email}\nTopic: ${formData.interest}\n\nMessage:\n${formData.message}`
     );
     window.location.href = `mailto:info@platinumworld.net?subject=${subject}&body=${body}`;
   };
@@ -25,61 +25,65 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative w-full bg-obsidian text-ivory py-24 md:py-32 border-t border-bronze/25"
+      className="relative w-full bg-obsidian text-ivory py-28 sm:py-36 md:py-44 border-t border-bronze/20 z-50"
     >
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 md:px-8 xl:px-12">
+      <div className="max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14">
         
         {/* Chapter Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 sm:mb-20 border-b border-bronze/20 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 sm:mb-28 border-b border-bronze/20 pb-8">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-subheading text-[10px] tracking-super-wide text-bronze uppercase font-mono">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-bronze uppercase font-mono">
                 CHAPTER 05
               </span>
               <span className="text-stone/40 font-mono text-xs">//</span>
-              <span className="font-subheading text-[10px] tracking-super-wide text-stone uppercase">
-                EXECUTIVE COMMUNICATIONS
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-stone uppercase">
+                EXECUTIVE COORDINATES
               </span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-ivory font-normal tracking-tight">
-              Direct Coordinates
+            <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory font-normal tracking-tight">
+              Initiate Dialogue
             </h2>
           </div>
-          <div className="font-subheading text-xs text-stone tracking-widest uppercase font-mono">
-            info@platinumworld.net
+          <div className="font-subheading text-xs text-stone tracking-[0.2em] uppercase font-mono text-right">
+            Direct Executive Channel
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
-          {/* Left Column: Official Contact Card */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Left Column: Direct Coordinates */}
+          <div className="lg:col-span-5 space-y-10">
             <div>
-              <span className="font-subheading text-[10px] uppercase tracking-widest text-bronze font-mono block mb-1">
-                Executive Desk
+              <span className="font-mono text-xs text-bronze uppercase tracking-widest block mb-2">
+                EXECUTIVE OFFICE
               </span>
-              <h3 className="font-serif text-3xl sm:text-4xl text-ivory font-normal mb-2">
+              <h3 className="font-serif text-4xl sm:text-5xl text-ivory font-normal tracking-tight mb-2">
                 Sushill Waddhwa
               </h3>
-              <p className="font-subheading text-xs uppercase tracking-wider text-bronze-light font-medium">
+              <p className="font-subheading text-sm uppercase tracking-[0.18em] text-bronze-light font-medium">
                 Founder & CMD, Platinum World Grroup
               </p>
             </div>
 
+            <p className="font-sans text-base sm:text-lg text-stone font-light leading-relaxed">
+              Inquiries regarding hotel buyouts, group travel, WedTalks forum, strategic investments, and selective brand collaborations are handled with complete professional discretion.
+            </p>
+
             <div className="space-y-6 pt-6 border-t border-bronze/20">
               
               {/* Email */}
-              <div className="flex items-center gap-4 group">
-                <div className="w-11 h-11 rounded-[1px] bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="font-subheading text-[10px] uppercase tracking-widest text-stone block font-mono">
-                    Email
+                  <span className="font-subheading text-[9px] uppercase tracking-[0.2em] text-stone block font-mono">
+                    Official Email
                   </span>
                   <a
                     href="mailto:info@platinumworld.net"
-                    className="font-sans text-sm sm:text-base text-ivory hover:text-bronze transition-colors font-light"
+                    className="font-sans text-base sm:text-lg text-ivory hover:text-bronze transition-colors font-light"
                   >
                     info@platinumworld.net
                   </a>
@@ -87,19 +91,19 @@ export const ContactSection = () => {
               </div>
 
               {/* Instagram */}
-              <div className="flex items-center gap-4 group">
-                <div className="w-11 h-11 rounded-[1px] bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
                   <Instagram className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="font-subheading text-[10px] uppercase tracking-widest text-stone block font-mono">
-                    Instagram
+                  <span className="font-subheading text-[9px] uppercase tracking-[0.2em] text-stone block font-mono">
+                    Instagram Profile
                   </span>
                   <a
                     href="https://www.instagram.com/sushillwaddhwa/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-sm sm:text-base text-ivory hover:text-bronze transition-colors font-light"
+                    className="font-sans text-base sm:text-lg text-ivory hover:text-bronze transition-colors font-light"
                   >
                     @sushillwaddhwa
                   </a>
@@ -107,19 +111,19 @@ export const ContactSection = () => {
               </div>
 
               {/* LinkedIn */}
-              <div className="flex items-center gap-4 group">
-                <div className="w-11 h-11 rounded-[1px] bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
+              <div className="flex items-center gap-5 group">
+                <div className="w-12 h-12 bg-navy border border-bronze/30 flex items-center justify-center flex-shrink-0 text-bronze group-hover:border-bronze transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="font-subheading text-[10px] uppercase tracking-widest text-stone block font-mono">
-                    LinkedIn
+                  <span className="font-subheading text-[9px] uppercase tracking-[0.2em] text-stone block font-mono">
+                    LinkedIn Network
                   </span>
                   <a
                     href="https://www.linkedin.com/in/sushillwaddhwa/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-sm sm:text-base text-ivory hover:text-bronze transition-colors font-light"
+                    className="font-sans text-base sm:text-lg text-ivory hover:text-bronze transition-colors font-light"
                   >
                     Sushill Waddhwa
                   </a>
@@ -127,66 +131,65 @@ export const ContactSection = () => {
               </div>
 
             </div>
-
-            <div className="p-6 bg-navy/60 border border-bronze/20 text-xs text-stone font-light leading-relaxed">
-              Inquiries regarding hotel buyouts, group travel, WedTalks forum, strategic investments, and selective brand collaborations are handled with professional discretion by the executive office.
-            </div>
           </div>
 
-          {/* Right Column: Minimalist Premium Enquiry Form */}
+          {/* Right Column: Minimalist Editorial Correspondence Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-12 bg-navy border border-bronze/30 shadow-2xl">
-              <span className="font-subheading text-[10px] uppercase tracking-widest text-bronze block mb-2 font-mono">
-                Bespoke Correspondence
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-normal mb-8">
-                Initiate a Conversation
-              </h3>
+            <div className="border border-bronze/25 bg-navy/40 p-8 sm:p-14">
+              
+              <div className="mb-10">
+                <span className="font-subheading text-[10px] uppercase tracking-[0.2em] text-bronze block mb-2 font-mono">
+                  Bespoke Communication
+                </span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-ivory font-normal">
+                  Send an Inquiry
+                </h3>
+              </div>
 
               {submitted ? (
-                <div className="p-10 bg-obsidian border border-bronze/40 text-center space-y-4">
-                  <div className="w-12 h-12 mx-auto rounded-full bg-bronze/20 text-bronze flex items-center justify-center">
-                    <Check className="w-6 h-6" />
+                <div className="py-16 text-center space-y-4">
+                  <div className="w-14 h-14 mx-auto rounded-full bg-bronze/20 text-bronze flex items-center justify-center">
+                    <Check className="w-7 h-7" />
                   </div>
-                  <h4 className="font-serif text-2xl text-ivory font-normal">Inquiry Initiated</h4>
-                  <p className="font-sans text-xs sm:text-sm text-stone max-w-md mx-auto font-light leading-relaxed">
-                    Your inquiry has been formulated. If your mail client did not open automatically, please send your proposal directly to <a href="mailto:info@platinumworld.net" className="text-bronze underline">info@platinumworld.net</a>.
+                  <h4 className="font-serif text-3xl text-ivory font-normal">Inquiry Initiated</h4>
+                  <p className="font-sans text-sm sm:text-base text-stone max-w-md mx-auto font-light leading-relaxed">
+                    Your correspondence has been prepared. If your email application did not launch automatically, please send your note directly to <a href="mailto:info@platinumworld.net" className="text-bronze underline">info@platinumworld.net</a>.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="font-subheading block text-[10px] uppercase tracking-widest text-stone mb-2 font-medium">
-                        Your Full Name *
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="relative">
+                      <label className="font-subheading block text-[10px] uppercase tracking-[0.2em] text-stone mb-2 font-medium">
+                        Full Name *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-obsidian border border-bronze/25 px-4 py-3 text-xs sm:text-sm text-ivory placeholder-stone/40 focus:border-bronze focus:outline-none transition-colors rounded-[1px]"
-                        placeholder="e.g. Julian Vance"
+                        className="w-full bg-transparent border-b border-bronze/30 focus:border-bronze py-2.5 text-base text-ivory placeholder-stone/30 focus:outline-none transition-colors"
+                        placeholder="Your name"
                       />
                     </div>
-                    <div>
-                      <label className="font-subheading block text-[10px] uppercase tracking-widest text-stone mb-2 font-medium">
+                    <div className="relative">
+                      <label className="font-subheading block text-[10px] uppercase tracking-[0.2em] text-stone mb-2 font-medium">
                         Organization / Brand
                       </label>
                       <input
                         type="text"
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                        className="w-full bg-obsidian border border-bronze/25 px-4 py-3 text-xs sm:text-sm text-ivory placeholder-stone/40 focus:border-bronze focus:outline-none transition-colors rounded-[1px]"
-                        placeholder="Company, Group or Label"
+                        className="w-full bg-transparent border-b border-bronze/30 focus:border-bronze py-2.5 text-base text-ivory placeholder-stone/30 focus:outline-none transition-colors"
+                        placeholder="Organization"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="font-subheading block text-[10px] uppercase tracking-widest text-stone mb-2 font-medium">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="relative">
+                      <label className="font-subheading block text-[10px] uppercase tracking-[0.2em] text-stone mb-2 font-medium">
                         Corporate Email *
                       </label>
                       <input
@@ -194,18 +197,18 @@ export const ContactSection = () => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-obsidian border border-bronze/25 px-4 py-3 text-xs sm:text-sm text-ivory placeholder-stone/40 focus:border-bronze focus:outline-none transition-colors rounded-[1px]"
+                        className="w-full bg-transparent border-b border-bronze/30 focus:border-bronze py-2.5 text-base text-ivory placeholder-stone/30 focus:outline-none transition-colors"
                         placeholder="name@organization.com"
                       />
                     </div>
-                    <div>
-                      <label className="font-subheading block text-[10px] uppercase tracking-widest text-stone mb-2 font-medium">
-                        Discussion Area
+                    <div className="relative">
+                      <label className="font-subheading block text-[10px] uppercase tracking-[0.2em] text-stone mb-2 font-medium">
+                        Focus Area
                       </label>
                       <select
                         value={formData.interest}
                         onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                        className="w-full bg-obsidian border border-bronze/25 px-4 py-3 text-xs sm:text-sm text-ivory focus:border-bronze focus:outline-none transition-colors rounded-[1px]"
+                        className="w-full bg-navy border-b border-bronze/30 focus:border-bronze py-2.5 text-sm sm:text-base text-ivory focus:outline-none transition-colors"
                       >
                         <option value="Hospitality & Hotel Buyouts">Hospitality & Hotel Buyouts</option>
                         <option value="Selective Brand Collaboration">Selective Brand Collaboration</option>
@@ -217,29 +220,30 @@ export const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="font-subheading block text-[10px] uppercase tracking-widest text-stone mb-2 font-medium">
-                      Brief Proposal / Scope *
+                  <div className="relative">
+                    <label className="font-subheading block text-[10px] uppercase tracking-[0.2em] text-stone mb-2 font-medium">
+                      Inquiry Narrative *
                     </label>
                     <textarea
                       rows={4}
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-obsidian border border-bronze/25 px-4 py-3 text-xs sm:text-sm text-ivory placeholder-stone/40 focus:border-bronze focus:outline-none transition-colors rounded-[1px] resize-none"
-                      placeholder="Outline the nature of your inquiry or proposed collaboration..."
+                      className="w-full bg-transparent border-b border-bronze/30 focus:border-bronze py-2.5 text-base text-ivory placeholder-stone/30 focus:outline-none transition-colors resize-none"
+                      placeholder="Outline your proposal or discussion focus..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="font-subheading w-full inline-flex items-center justify-center gap-2 px-6 py-4 text-xs tracking-widest uppercase bg-bronze text-ink hover:bg-bronze-light transition-colors font-semibold rounded-[1px] shadow-lg"
+                    className="font-subheading w-full inline-flex items-center justify-center gap-3 py-4 text-xs tracking-[0.24em] uppercase bg-bronze text-ink hover:bg-bronze-light transition-colors font-semibold shadow-xl"
                   >
-                    <span>Transmit Correspondence</span>
+                    <span>Transmit Message to Executive Office</span>
                     <Send className="w-3.5 h-3.5 text-ink" />
                   </button>
                 </form>
               )}
+
             </div>
           </div>
 

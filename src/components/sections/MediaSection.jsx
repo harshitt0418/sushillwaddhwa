@@ -5,86 +5,78 @@ export const MediaSection = () => {
   return (
     <section
       id="media"
-      className="relative w-full bg-obsidian-deep text-ivory py-24 md:py-32 border-t border-bronze/25"
+      className="relative w-full bg-obsidian-deep text-ivory py-28 sm:py-36 md:py-44 border-t border-bronze/20 z-40"
     >
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 md:px-8 xl:px-12">
+      <div className="max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14">
         
         {/* Chapter Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 sm:mb-20 border-b border-bronze/20 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 sm:mb-28 border-b border-bronze/20 pb-8">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-subheading text-[10px] tracking-super-wide text-bronze uppercase font-mono">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-bronze uppercase font-mono">
                 CHAPTER 04
               </span>
               <span className="text-stone/40 font-mono text-xs">//</span>
-              <span className="font-subheading text-[10px] tracking-super-wide text-stone uppercase">
+              <span className="font-subheading text-[10px] tracking-[0.24em] text-stone uppercase">
                 EDITORIAL RECORD
               </span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-ivory font-normal tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory font-normal tracking-tight">
               Press • Interviews • Articles
             </h2>
           </div>
-          <div className="font-subheading text-xs text-stone tracking-widest uppercase font-mono">
+          <div className="font-subheading text-xs text-stone tracking-[0.2em] uppercase font-mono text-right">
             Curated Coverage
           </div>
         </div>
 
         {/* Mandatory Copy from Brief */}
-        <div className="max-w-3xl mb-14">
-          <p className="font-sans text-base sm:text-lg text-ivory/90 font-light leading-relaxed">
+        <div className="max-w-4xl mb-20 sm:mb-24">
+          <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-ivory/90 font-light leading-relaxed">
             A curated selection of press coverage, interviews and articles featuring Sushill Waddhwa.
           </p>
         </div>
 
-        {/* Minimal, Clean & Honest Editorial Presentation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Minimal, Clean, Truthful Editorial Spread (Zero fake logos or articles) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 border-t border-bronze/25 pt-12">
           
-          <div className="p-8 sm:p-12 bg-navy border border-bronze/25 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between text-stone font-mono text-[10px]">
-                <span className="text-bronze uppercase tracking-widest">[ ARCHIVE & DOSSIER ]</span>
-                <span>PRESS INQUIRIES</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-normal">
-                Accredited Media & Interviews
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-stone leading-relaxed font-light">
-                Official press archive, high-resolution photography, and executive commentary regarding global hospitality, luxury hotel buyouts, and destination tourism are available upon request to accredited publications.
-              </p>
-            </div>
-
-            <div className="pt-8 border-t border-bronze/15 mt-8">
+          <div className="space-y-6">
+            <span className="font-mono text-xs text-bronze uppercase tracking-widest block">
+              [ 01 ] — ACCREDITED MEDIA & PRESS INQUIRIES
+            </span>
+            <h3 className="font-serif text-3xl sm:text-4xl text-ivory font-normal">
+              Official Press Archive & Executive Statements
+            </h3>
+            <p className="font-sans text-sm sm:text-base text-stone leading-relaxed font-light">
+              Official press dossiers, high-resolution portraiture, and executive commentary regarding global hospitality, luxury hotel buyouts, and destination tourism are coordinated directly through the executive office for accredited publications and media partners.
+            </p>
+            <div className="pt-4">
               <a
                 href="mailto:info@platinumworld.net?subject=Media%20and%20Press%20Inquiry%20-%20Sushill%20Waddhwa"
-                className="font-subheading inline-flex items-center gap-2 text-xs tracking-wider uppercase text-bronze hover:text-bronze-light transition-colors font-medium"
+                className="font-subheading inline-flex items-center gap-2.5 text-xs tracking-[0.2em] uppercase text-bronze hover:text-bronze-light transition-colors font-medium"
               >
-                <span>Request Press Materials</span>
+                <span>Request Media Dossier</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-bronze" />
               </a>
             </div>
           </div>
 
-          <div className="p-8 sm:p-12 bg-navy border border-bronze/25 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between text-stone font-mono text-[10px]">
-                <span className="text-bronze uppercase tracking-widest">[ DIALOGUE FORUMS ]</span>
-                <span>KEYNOTES & SPEAKING</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-normal">
-                WedTalks & Industry Keynotes
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-stone leading-relaxed font-light">
-                Sushill Waddhwa actively curates intellectual forums including the WedTalks Forum, bringing together tourism boards, hoteliers, and international planners.
-              </p>
-            </div>
-
-            <div className="pt-8 border-t border-bronze/15 mt-8">
+          <div className="space-y-6">
+            <span className="font-mono text-xs text-bronze uppercase tracking-widest block">
+              [ 02 ] — KEYNOTES & FORUM DIALOGUES
+            </span>
+            <h3 className="font-serif text-3xl sm:text-4xl text-ivory font-normal">
+              WedTalks & Industry Summits
+            </h3>
+            <p className="font-sans text-sm sm:text-base text-stone leading-relaxed font-light">
+              Sushill Waddhwa curates international forums including the WedTalks Forum, bringing together tourism boards, hoteliers, and international planners to discuss destination tourism and hotel buyouts across key global corridors.
+            </p>
+            <div className="pt-4">
               <a
                 href="#contact"
-                className="font-subheading inline-flex items-center gap-2 text-xs tracking-wider uppercase text-bronze hover:text-bronze-light transition-colors font-medium"
+                className="font-subheading inline-flex items-center gap-2.5 text-xs tracking-[0.2em] uppercase text-bronze hover:text-bronze-light transition-colors font-medium"
               >
-                <span>Speaking Dialogue</span>
+                <span>Speaking Inquiries</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-bronze" />
               </a>
             </div>
