@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 
 // 6 Full-Bleed Authentic Client Photographs for the Hero
@@ -11,41 +11,54 @@ import jetSeatedImg from '@/assets/images/editorial/sushill-private-jet-seated.j
 import campaignImg from '@/assets/images/editorial/sushill-brand-campaign.jpg';
 import yachtImg from '@/assets/images/editorial/sushill-yacht-lifestyle.jpg';
 
+// Perfectly framed zoom and focal coordinates per photograph
 const HERO_SLIDES = [
   {
     image: jetStandingImg,
     attribute: "GLOBAL",
-    position: "center 20%",
+    position: "center 28%",
+    scale: 1.38,
+    origin: "center 28%",
     alt: "Sushill Waddhwa — Global Hospitality Entrepreneur aboard private aviation",
   },
   {
     image: atriumImg,
     attribute: "SOPHISTICATED",
-    position: "center 22%",
+    position: "center 34%",
+    scale: 1.45,
+    origin: "center 34%",
     alt: "Sushill Waddhwa — Sophisticated hospitality leader at luxury hotel atrium",
   },
   {
     image: palaceImg,
     attribute: "TRUSTWORTHY",
-    position: "center 18%",
+    position: "center 22%",
+    scale: 1.32,
+    origin: "center 22%",
     alt: "Sushill Waddhwa — Trustworthy Founder & CMD, Platinum World Grroup",
   },
   {
     image: jetSeatedImg,
     attribute: "CHARISMATIC",
-    position: "center 20%",
-    alt: "Sushill Waddhwa — Charismatic international investor",
+    position: "60% 48%",
+    scale: 1.55,
+    origin: "60% 48%",
+    alt: "Sushill Waddhwa — Charismatic international investor seated in private jet",
   },
   {
     image: campaignImg,
     attribute: "DISCERNING",
-    position: "center 22%",
+    position: "center 24%",
+    scale: 1.32,
+    origin: "center 24%",
     alt: "Sushill Waddhwa — Discerning style and brand alignments",
   },
   {
     image: yachtImg,
     attribute: "ADVENTUROUS",
-    position: "center 25%",
+    position: "center 28%",
+    scale: 1.38,
+    origin: "center 28%",
     alt: "Sushill Waddhwa — Adventurous explorer across international waters",
   },
 ];
@@ -80,21 +93,27 @@ export const HeroSection = () => {
       id="home"
       className="relative w-full h-screen min-h-[700px] overflow-hidden flex flex-col justify-between text-ivory z-10"
     >
-      {/* 1. FULL-BLEED IMMERSIVE BACKGROUND SLIDESHOW (Edge-to-Edge, Zero Margins) */}
+      {/* 1. FULL-BLEED IMMERSIVE BACKGROUND SLIDESHOW (Edge-to-Edge, Zero Margins, Perfect Subject Fit) */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <AnimatePresence mode="sync">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, scale: 1.025 }}
-            animate={{ opacity: 1, scale: 1.0 }}
-            exit={{ opacity: 0, scale: 0.995 }}
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 w-full h-full overflow-hidden"
           >
-            <img
+            <motion.img
               src={activeSlide.image}
               alt={activeSlide.alt}
-              style={{ objectPosition: activeSlide.position }}
+              initial={{ scale: activeSlide.scale * 1.03 }}
+              animate={{ scale: activeSlide.scale }}
+              transition={{ duration: 5, ease: "linear" }}
+              style={{
+                objectPosition: activeSlide.position,
+                transformOrigin: activeSlide.origin,
+              }}
               className="w-full h-full object-cover filter contrast-[1.03] brightness-[0.93]"
               fetchPriority="high"
               decoding="async"
@@ -103,8 +122,8 @@ export const HeroSection = () => {
         </AnimatePresence>
 
         {/* Subtle, refined obsidian vignette for pristine readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/25 to-obsidian/30 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/70 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-obsidian/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-transparent to-transparent pointer-events-none" />
       </div>
 
       {/* Top Spacer for Masthead */}
