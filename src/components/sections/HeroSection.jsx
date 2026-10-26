@@ -3,62 +3,140 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 
-// 6 Full-Bleed Authentic Client Photographs for the Hero
-import jetStandingImg from '@/assets/images/editorial/sushill-private-jet-standing.jpg';
-import atriumImg from '@/assets/images/editorial/sushill-atrium-portrait.jpg';
-import palaceImg from '@/assets/images/editorial/sushill-palace-portrait.jpg';
-import jetSeatedImg from '@/assets/images/editorial/sushill-private-jet-seated.jpg';
-import campaignImg from '@/assets/images/editorial/sushill-brand-campaign.jpg';
-import yachtImg from '@/assets/images/editorial/sushill-yacht-lifestyle.jpg';
+// High-Resolution Responsive Client Hero Assets (WebP + JPEG Fallback)
+import globalDesktop from '@/assets/images/hero/hero-01-global-desktop.webp';
+import globalMobile from '@/assets/images/hero/hero-01-global-mobile.webp';
+import globalJpg from '@/assets/images/hero/hero-01-global.jpg';
 
-// Perfectly calibrated framing and focal coordinates per photograph
+import sophisticatedDesktop from '@/assets/images/hero/hero-02-sophisticated-desktop.webp';
+import sophisticatedMobile from '@/assets/images/hero/hero-02-sophisticated-mobile.webp';
+import sophisticatedJpg from '@/assets/images/hero/hero-02-sophisticated.jpg';
+
+import trustworthyDesktop from '@/assets/images/hero/hero-03-trustworthy-desktop.webp';
+import trustworthyMobile from '@/assets/images/hero/hero-03-trustworthy-mobile.webp';
+import trustworthyJpg from '@/assets/images/hero/hero-03-trustworthy.jpg';
+
+import charismaticDesktop from '@/assets/images/hero/hero-04-charismatic-desktop.webp';
+import charismaticMobile from '@/assets/images/hero/hero-04-charismatic-mobile.webp';
+import charismaticJpg from '@/assets/images/hero/hero-04-charismatic.jpg';
+
+import discerningDesktop from '@/assets/images/hero/hero-05-discerning-desktop.webp';
+import discerningMobile from '@/assets/images/hero/hero-05-discerning-mobile.webp';
+import discerningJpg from '@/assets/images/hero/hero-05-discerning.jpg';
+
+import adventurousDesktop from '@/assets/images/hero/hero-06-adventurous-desktop.webp';
+import adventurousMobile from '@/assets/images/hero/hero-06-adventurous-mobile.webp';
+import adventurousJpg from '@/assets/images/hero/hero-06-adventurous.jpg';
+
+// Dedicated calibrated framing and focal coordinates per photograph across screen sizes
 const HERO_SLIDES = [
   {
-    image: jetStandingImg,
     attribute: "GLOBAL",
-    position: "center 18%",
-    origin: "center 18%",
+    desktopWebp: globalDesktop,
+    mobileWebp: globalMobile,
+    fallbackJpg: globalJpg,
+    desktopPosition: "48% 20%",
+    tabletPosition: "48% 22%",
+    mobilePosition: "48% 22%",
+    origin: "48% 20%",
     alt: "Sushill Waddhwa — Global Hospitality Entrepreneur aboard private aviation",
   },
   {
-    image: atriumImg,
     attribute: "SOPHISTICATED",
-    position: "center 22%",
-    origin: "center 22%",
+    desktopWebp: sophisticatedDesktop,
+    mobileWebp: sophisticatedMobile,
+    fallbackJpg: sophisticatedJpg,
+    desktopPosition: "50% 55%",
+    tabletPosition: "50% 50%",
+    mobilePosition: "50% 45%",
+    origin: "50% 55%",
     alt: "Sushill Waddhwa — Sophisticated hospitality leader at luxury hotel atrium",
   },
   {
-    image: palaceImg,
     attribute: "TRUSTWORTHY",
-    position: "center 18%",
-    origin: "center 18%",
+    desktopWebp: trustworthyDesktop,
+    mobileWebp: trustworthyMobile,
+    fallbackJpg: trustworthyJpg,
+    desktopPosition: "56% 58%",
+    tabletPosition: "56% 52%",
+    mobilePosition: "56% 46%",
+    origin: "56% 58%",
     alt: "Sushill Waddhwa — Trustworthy Founder & CMD, Platinum World Grroup",
   },
   {
-    image: jetSeatedImg,
     attribute: "CHARISMATIC",
-    position: "center 24%",
-    origin: "center 24%",
+    desktopWebp: charismaticDesktop,
+    mobileWebp: charismaticMobile,
+    fallbackJpg: charismaticJpg,
+    desktopPosition: "50% 57%",
+    tabletPosition: "50% 52%",
+    mobilePosition: "50% 47%",
+    origin: "50% 57%",
     alt: "Sushill Waddhwa — Charismatic international investor seated in private jet",
   },
   {
-    image: campaignImg,
     attribute: "DISCERNING",
-    position: "65% 20%",
-    origin: "65% 20%",
-    alt: "Sushill Waddhwa — Discerning style and brand alignments",
+    desktopWebp: discerningDesktop,
+    mobileWebp: discerningMobile,
+    fallbackJpg: discerningJpg,
+    desktopPosition: "75% 38%",
+    tabletPosition: "74% 35%",
+    mobilePosition: "72% 33%",
+    origin: "75% 38%",
+    alt: "Sushill Waddhwa — Discerning style and bespoke brand alignments",
   },
   {
-    image: yachtImg,
     attribute: "ADVENTUROUS",
-    position: "center 18%",
-    origin: "center 18%",
+    desktopWebp: adventurousDesktop,
+    mobileWebp: adventurousMobile,
+    fallbackJpg: adventurousJpg,
+    desktopPosition: "55% 37%",
+    tabletPosition: "55% 35%",
+    mobilePosition: "55% 33%",
+    origin: "55% 37%",
     alt: "Sushill Waddhwa — Adventurous explorer across international waters",
   },
 ];
 
 export const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [viewport, setViewport] = useState('desktop');
+
+  // Track responsive viewport for exact object-position framing
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setViewport('mobile');
+      } else if (width < 1024) {
+        setViewport('tablet');
+      } else {
+        setViewport('desktop');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Preload all slides in background to eliminate transition latency, flicker, or blank frames
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    HERO_SLIDES.forEach((slide) => {
+      const img = new Image();
+      img.src = isMobile ? slide.mobileWebp : slide.desktopWebp;
+    });
+  }, []);
+
+  // Preload next slide actively on slide change
+  useEffect(() => {
+    const nextIdx = (currentSlide + 1) % HERO_SLIDES.length;
+    const nextSlide = HERO_SLIDES[nextIdx];
+    const isMobile = window.innerWidth < 768;
+    const img = new Image();
+    img.src = isMobile ? nextSlide.mobileWebp : nextSlide.desktopWebp;
+  }, [currentSlide]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -82,42 +160,53 @@ export const HeroSection = () => {
 
   const activeSlide = HERO_SLIDES[currentSlide];
 
+  const currentPosition =
+    viewport === 'mobile'
+      ? activeSlide.mobilePosition
+      : viewport === 'tablet'
+      ? activeSlide.tabletPosition
+      : activeSlide.desktopPosition;
+
   return (
     <section
       id="home"
-      className="relative w-full h-screen min-h-[700px] overflow-hidden flex flex-col justify-between text-ivory z-10"
+      className="relative w-full h-screen min-h-[700px] overflow-hidden flex flex-col justify-between text-ivory z-10 bg-obsidian"
     >
       {/* 1. FULL-BLEED IMMERSIVE BACKGROUND SLIDESHOW (Edge-to-Edge, Zero Margins, Perfect Subject Fit) */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-obsidian">
         <AnimatePresence mode="sync">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full overflow-hidden"
           >
-            <motion.img
-              src={activeSlide.image}
-              alt={activeSlide.alt}
-              initial={{ scale: 1.025 }}
-              animate={{ scale: 1.0 }}
-              transition={{ duration: 5, ease: "easeOut" }}
-              style={{
-                objectPosition: activeSlide.position,
-                transformOrigin: activeSlide.origin,
-              }}
-              className="w-full h-full object-cover filter contrast-[1.03] brightness-[0.93]"
-              fetchPriority="high"
-              decoding="async"
-            />
+            <picture className="w-full h-full block">
+              <source media="(max-width: 767px)" srcSet={activeSlide.mobileWebp} type="image/webp" />
+              <source media="(min-width: 768px)" srcSet={activeSlide.desktopWebp} type="image/webp" />
+              <motion.img
+                src={activeSlide.fallbackJpg}
+                alt={activeSlide.alt}
+                initial={{ scale: 1.025 }}
+                animate={{ scale: 1.0 }}
+                transition={{ duration: 5, ease: "easeOut" }}
+                style={{
+                  objectPosition: currentPosition,
+                  transformOrigin: activeSlide.origin,
+                }}
+                className="w-full h-full object-cover filter contrast-[1.02]"
+                fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                decoding="async"
+              />
+            </picture>
           </motion.div>
         </AnimatePresence>
 
-        {/* Subtle, refined obsidian vignette for pristine readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-obsidian/30 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-transparent to-transparent pointer-events-none" />
+        {/* Subtle, transparent obsidian gradient solely for text contrast while preserving photo luminosity */}
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-obsidian/20 to-transparent pointer-events-none hidden sm:block" />
       </div>
 
       {/* Top Spacer for Masthead */}
