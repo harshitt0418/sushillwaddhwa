@@ -11,54 +11,48 @@ import jetSeatedImg from '@/assets/images/editorial/sushill-private-jet-seated.j
 import campaignImg from '@/assets/images/editorial/sushill-brand-campaign.jpg';
 import yachtImg from '@/assets/images/editorial/sushill-yacht-lifestyle.jpg';
 
-// Perfectly framed zoom and focal coordinates per photograph
+// Perfectly calibrated framing and focal coordinates per photograph
 const HERO_SLIDES = [
   {
     image: jetStandingImg,
     attribute: "GLOBAL",
-    position: "center 28%",
-    scale: 1.38,
-    origin: "center 28%",
+    position: "center 18%",
+    origin: "center 18%",
     alt: "Sushill Waddhwa — Global Hospitality Entrepreneur aboard private aviation",
   },
   {
     image: atriumImg,
     attribute: "SOPHISTICATED",
-    position: "center 34%",
-    scale: 1.45,
-    origin: "center 34%",
+    position: "center 22%",
+    origin: "center 22%",
     alt: "Sushill Waddhwa — Sophisticated hospitality leader at luxury hotel atrium",
   },
   {
     image: palaceImg,
     attribute: "TRUSTWORTHY",
-    position: "center 22%",
-    scale: 1.32,
-    origin: "center 22%",
+    position: "center 18%",
+    origin: "center 18%",
     alt: "Sushill Waddhwa — Trustworthy Founder & CMD, Platinum World Grroup",
   },
   {
     image: jetSeatedImg,
     attribute: "CHARISMATIC",
-    position: "60% 48%",
-    scale: 1.55,
-    origin: "60% 48%",
+    position: "center 24%",
+    origin: "center 24%",
     alt: "Sushill Waddhwa — Charismatic international investor seated in private jet",
   },
   {
     image: campaignImg,
     attribute: "DISCERNING",
-    position: "center 24%",
-    scale: 1.32,
-    origin: "center 24%",
+    position: "65% 20%",
+    origin: "65% 20%",
     alt: "Sushill Waddhwa — Discerning style and brand alignments",
   },
   {
     image: yachtImg,
     attribute: "ADVENTUROUS",
-    position: "center 28%",
-    scale: 1.38,
-    origin: "center 28%",
+    position: "center 18%",
+    origin: "center 18%",
     alt: "Sushill Waddhwa — Adventurous explorer across international waters",
   },
 ];
@@ -107,9 +101,9 @@ export const HeroSection = () => {
             <motion.img
               src={activeSlide.image}
               alt={activeSlide.alt}
-              initial={{ scale: activeSlide.scale * 1.03 }}
-              animate={{ scale: activeSlide.scale }}
-              transition={{ duration: 5, ease: "linear" }}
+              initial={{ scale: 1.025 }}
+              animate={{ scale: 1.0 }}
+              transition={{ duration: 5, ease: "easeOut" }}
               style={{
                 objectPosition: activeSlide.position,
                 transformOrigin: activeSlide.origin,
