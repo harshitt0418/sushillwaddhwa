@@ -1,22 +1,12 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import { RouteSEO } from '@/components/common/RouteSEO';
-import { StackedScrollController } from '@/components/common/StackedScrollController';
-
 import { Home } from '@/pages/Home';
-import { About } from '@/pages/About';
-import { Business } from '@/pages/Business';
-import { Hospitality } from '@/pages/Hospitality';
-import { Lifestyle } from '@/pages/Lifestyle';
-import { Media } from '@/pages/Media';
-import { Collaborate } from '@/pages/Collaborate';
-import { Contact } from '@/pages/Contact';
 
 export const App = () => {
   const location = useLocation();
@@ -29,7 +19,7 @@ export const App = () => {
 
     // Initialize Lenis for luxurious smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
@@ -47,6 +37,16 @@ export const App = () => {
 
     const rafId = requestAnimationFrame(raf);
 
+    // If initial landing has hash, scroll to it
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          lenis.scrollTo(target, { offset: -70 });
+        }, 200);
+      }
+    }
+
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
@@ -54,42 +54,28 @@ export const App = () => {
     };
   }, []);
 
-  const handleExitComplete = React.useCallback(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    if (window.lenis) {
-      window.lenis.resize();
-      window.lenis.scrollTo(0, { immediate: true });
-    }
-    window.dispatchEvent(new Event('route-mounted'));
-  }, []);
-
   return (
-    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-gold selection:text-obsidian font-sans relative overflow-x-clip w-full">
-      {/* Cinematic Editorial Film Grain Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.032] mix-blend-screen bg-noise" />
+    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-bronze selection:text-ink font-sans relative overflow-x-clip w-full">
+      {/* Subtle Editorial Film Grain Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.025] mix-blend-screen bg-noise" />
       
       <RouteSEO />
-      <StackedScrollController />
       <ScrollToTop />
       <Header />
       
-      <main className="flex-grow min-h-screen">
-        <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/business" element={<Business />} />
-            <Route path="/hospitality" element={<Hospitality />} />
-            <Route path="/lifestyle" element={<Lifestyle />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/collaborate" element={<Collaborate />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/private-access" element={<Navigate to="/hospitality" replace />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </AnimatePresence>
+      <main className="flex-grow min-h-screen w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* Legacy route redirects to section anchors on the single-page site */}
+          <Route path="/about" element={<Navigate to="/#about" replace />} />
+          <Route path="/business" element={<Navigate to="/#business" replace />} />
+          <Route path="/hospitality" element={<Navigate to="/#business" replace />} />
+          <Route path="/lifestyle" element={<Navigate to="/#about" replace />} />
+          <Route path="/collaborate" element={<Navigate to="/#collaborations" replace />} />
+          <Route path="/media" element={<Navigate to="/#media" replace />} />
+          <Route path="/contact" element={<Navigate to="/#contact" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       <Footer />

@@ -1,19 +1,13 @@
 export const navigationLinks = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Business", path: "/business" },
-  { label: "Hospitality", path: "/hospitality" },
-  { label: "Lifestyle", path: "/lifestyle" },
-  { label: "Media", path: "/media" },
-  { label: "Collaborate", path: "/collaborate" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Business", href: "#business" },
+  { label: "Brand Collaborations", href: "#collaborations" },
+  { label: "Media", href: "#media" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const headerCTA = {
   label: "Contact",
-  path: "/contact",
+  href: "#contact",
 };
-
-export const allRoutes = [
-  ...navigationLinks,
-  { label: "Contact", path: "/contact" },
-];

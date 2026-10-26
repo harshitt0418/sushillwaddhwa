@@ -1,55 +1,89 @@
 export const siteConfig = {
   name: "Sushill Waddhwa",
-  role: "Global Hospitality Entrepreneur · Investor · Luxury Lifestyle Personality",
+  role: "Global Hospitality Entrepreneur • Investor",
   title: "Founder & CMD, Platinum World Grroup",
   since: "Since 1989",
-  masterTagline: "Building a world worth experiencing.",
   
-  bioSummary: "Sushill Waddhwa connects exceptional hospitality, destination vision, global investments, and cultural lifestyle — shaping moments that endure.",
+  attributes: [
+    "GLOBAL",
+    "SOPHISTICATED",
+    "TRUSTWORTHY",
+    "CHARISMATIC",
+    "DISCERNING",
+    "ADVENTUROUS"
+  ],
+  attributesLine: "GLOBAL • SOPHISTICATED • TRUSTWORTHY • CHARISMATIC • DISCERNING • ADVENTUROUS",
 
-  personality: {
-    traits: ["Experienced", "Globally Connected", "Sophisticated", "Warm", "Curious", "Confident", "Approachable"],
-    ethos: "Successful without being boastful; luxurious but never flashy; fit but not a fitness influencer; international but strongly connected to India.",
-  },
+  closingLine: "Celebrating Life with Sushill Waddhwa",
+
+  bioSummary: "Sushill Waddhwa is a Global Hospitality Entrepreneur, Investor and Founder & CMD of Platinum World Grroup. He divides his time between Mumbai, Dubai, Sri Lanka and Europe.",
 
   ventures: [
     {
       name: "Platinum World Grroup",
-      role: "Founder & CMD",
-      since: "1989",
-      description: "Global hospitality, hotel buyouts, group bookings and experiences.",
-      link: "/business#platinum-world-grroup",
+      tagline: "500+ Destinations | 100+ Countries | One Call Away",
+      description: "Global B2B company serving events, wedding, celebration and travel planners through luxury hotel buyouts, group bookings, destination services and experiences across India, Sri Lanka, Asia, Dubai, Middle East, Monaco, Europe, the UK and beyond.",
+      details: "PWG specialises in hotel buyouts and group deals for destination weddings, celebrations and MICE groups, working closely with hotels, destinations and tourism boards. Its intellectual properties include WedTalks Forum, launched in Colombo and expanding internationally, and the forthcoming Global Wedding Festival.",
+      url: "https://platinumworld.net",
     },
     {
-      name: "Artoso Hospitality Corp.",
-      role: "Strategic Concept & Advisory",
-      since: "Contemporary",
-      description: "Hotel management, hospitality concepts and branded residences.",
-      link: "/business#artoso-hospitality",
+      name: "Artoso Hospitality Corp",
+      tagline: "Global Footprint. Local Flair. Luxury Boutique Hotels Worldwide.",
+      description: "An AI-powered lifestyle company focused on redefining luxury hospitality through innovative boutique hotels and resorts in key destinations worldwide, creating distinctive experiences beyond conventional hospitality.",
     },
     {
       name: "Platinum World Pictures",
-      role: "Founder & Producer",
-      since: "Media & Film",
-      description: "Media, film and entertainment initiatives.",
-      link: "/business#platinum-world-pictures",
+      tagline: "Creating content that drives business",
+      description: "A media, film and entertainment venture producing premium content and AI-powered videos for luxury brands, hotels, tourism boards and event companies. Services include brand campaigns, destination films, wedding films, social media content and digital marketing assets. Vertical-format micro web series are also in development.",
     },
     {
-      name: "WedTalks",
-      role: "Founder & Curator",
-      since: "Knowledge Platform",
-      description: "The intellectual forum connecting tourism boards, destination creators, luxury hoteliers, and elite event designers.",
-      link: "/hospitality#wedtalks",
+      name: "Platinum World Lifestyle",
+      tagline: "Advisory for Lifestyle solutions.",
+      description: "A discreet UHNW lifestyle advisory service connecting ultra-high-net-worth individuals with trusted specialists for private aviation, superyachts, luxury real estate, citizenship and residency advisory, and bespoke lifestyle concierge services.",
+    },
+    {
+      name: "Investments",
+      tagline: "Real Estate, Equities, Start-ups",
+      description: "An active portfolio of real estate holdings and investments across hospitality, energy, technology, AI, finance and other sectors, with an ongoing interest in new investment opportunities.",
     },
   ],
 
-  socials: {
-    instagram: "https://www.instagram.com/sushillwaddhwa/",
-    linkedin: "https://www.linkedin.com/in/sushillwaddhwa/",
+  collaborations: {
+    title: "Selected Brand Collaborations",
+    copy: "Sushill Waddhwa collaborates selectively with luxury, hospitality, travel and lifestyle brands on destination campaigns, editorial content, brand films, ambassadorial partnerships and curated experiences.",
+    categories: [
+      "Luxury hotels and resorts",
+      "Tourism boards and destinations",
+      "Travel",
+      "Automotive",
+      "Watches",
+      "Fashion",
+      "Eyewear",
+      "Wellness",
+      "Lifestyle",
+    ],
+    campaigns: [
+      { name: "One&Only One Za’abeel", location: "Dubai" },
+      { name: "Six Senses Zighy Bay", location: "Oman" },
+      { name: "Cinnamon Bentota Beach", location: "Sri Lanka" },
+      { name: "Cinnamon Life at City of Dreams", location: "Colombo" },
+      { name: "ITC Ratnadipa", location: "Colombo" },
+      { name: "Kahanda Kanda", location: "Sri Lanka" },
+    ],
+  },
+
+  media: {
+    title: "Press • Interviews • Articles",
+    copy: "A curated selection of press coverage, interviews and articles featuring Sushill Waddhwa.",
   },
 
   contact: {
-    executiveDesk: "office@sushillwaddhwa.com",
-    confidentialityClause: "All enquiries and collaboration proposals are received directly by the executive office and treated under professional discretion.",
+    name: "Sushill Waddhwa",
+    title: "Founder & CMD, Platinum World Grroup",
+    email: "info@platinumworld.net",
+    instagram: "@sushillwaddhwa",
+    instagramUrl: "https://www.instagram.com/sushillwaddhwa/",
+    linkedin: "Sushill Waddhwa",
+    linkedinUrl: "https://www.linkedin.com/in/sushillwaddhwa/",
   },
 };

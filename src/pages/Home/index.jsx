@@ -1,49 +1,49 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { pageTransitionVariants } from '@/lib/motion';
-import { Hero } from './components/Hero';
-import { Manifesto } from './components/Manifesto';
-import { PersonalIntro } from './components/PersonalIntro';
-import { EditorialPreviews } from './components/EditorialPreviews';
-import { LegacyMilestones } from './components/LegacyMilestones';
-import { VentureFeature } from './components/VentureFeature';
-import { EnquiryCTA } from '@/components/sections/EnquiryCTA';
+import React, { useEffect } from 'react';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { AboutSection } from '@/components/sections/AboutSection';
+import { BusinessSection } from '@/components/sections/BusinessSection';
+import { CollaborationsSection } from '@/components/sections/CollaborationsSection';
+import { MediaSection } from '@/components/sections/MediaSection';
+import { ContactSection } from '@/components/sections/ContactSection';
 
 export const Home = () => {
+  useEffect(() => {
+    // Check if there is an anchor hash in URL on initial load or navigation
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          if (window.lenis) {
+            window.lenis.scrollTo(el, { offset: -70 });
+          } else {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 150);
+    }
+  }, []);
+
   return (
-    <motion.div
-      variants={pageTransitionVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="w-full"
-    >
-      {/* 01. Cinematic Hero */}
-      <Hero />
+    <div className="w-full">
+      {/* 01. HOME: Hero Slideshow with 6 synced attribute words & intro */}
+      <HeroSection />
 
-      {/* 02. Typographic Manifesto */}
-      <Manifesto />
+      {/* 02. ABOUT: Verified career narrative, 1989, 82 countries, 2,040+ hotels */}
+      <AboutSection />
 
-      {/* 03. Personal Introduction with Editorial Portrait */}
-      <PersonalIntro />
+      {/* 03. BUSINESS: 5 Exact Venture Blocks */}
+      <BusinessSection />
 
-      {/* 04. Editorial Previews for Business, Hospitality, Lifestyle & Media */}
-      <EditorialPreviews />
+      {/* 04. BRAND COLLABORATIONS: Selected campaigns & verified categories */}
+      <CollaborationsSection />
 
-      {/* 05. Legacy & Milestones Since 1989 */}
-      <LegacyMilestones />
+      {/* 05. MEDIA: Press, Interviews, Articles */}
+      <MediaSection />
 
-      {/* 06. Featured Venture Spotlight */}
-      <VentureFeature />
-
-      {/* 07. Full-width Closing Invitation */}
-      <EnquiryCTA
-        headline="Building a world worth experiencing."
-        subtext="Sushill Waddhwa collaborates with global hotel groups, tourism authorities, investment partners, and luxury brands on landmark hospitality and lifestyle initiatives."
-        buttonText="Begin a Conversation"
-        to="/contact"
-      />
-    </motion.div>
+      {/* 06. CONTACT: Direct coordinates & executive enquiry */}
+      <ContactSection />
+    </div>
   );
 };
 

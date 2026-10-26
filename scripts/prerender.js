@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { routeSeoData } from '../src/data/seoData.js';
+import { routeSeoData, siteBaseUrl } from '../src/data/seoData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,55 +15,53 @@ if (!fs.existsSync(distDir)) {
 const templatePath = path.join(distDir, 'index.html');
 const baseTemplate = fs.readFileSync(templatePath, 'utf-8');
 
-console.log('--- Generating Route-Specific Prerendered HTML for Social & Search Crawlers ---');
+console.log('--- Generating Prerendered HTML for Single-Page Website ---');
 
-Object.entries(routeSeoData).forEach(([route, seo]) => {
-  let html = baseTemplate;
+const seo = routeSeoData['/'];
+let html = baseTemplate;
 
-  // 1. Replace <title>
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${seo.title}</title>`);
+html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${seo.title}</title>`);
+html = html.replace(/<meta\s+name="title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="title" content="${seo.title}" />`);
+html = html.replace(/<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="description" content="${seo.description}" />`);
+html = html.replace(/<link\s+rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link rel="canonical" href="${seo.canonical}" />`);
+html = html.replace(/<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:url" content="${seo.canonical}" />`);
+html = html.replace(/<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:title" content="${seo.ogTitle}" />`);
+html = html.replace(/<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:description" content="${seo.ogDescription}" />`);
+html = html.replace(/<meta\s+property="og:image"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:image" content="${seo.ogImage}" />`);
+html = html.replace(/<meta\s+property="og:image:alt"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:image:alt" content="${seo.imageAlt}" />`);
+html = html.replace(/<meta\s+(?:name|property)="twitter:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:url" content="${seo.canonical}" />`);
+html = html.replace(/<meta\s+(?:name|property)="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:title" content="${seo.ogTitle}" />`);
+html = html.replace(/<meta\s+(?:name|property)="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:description" content="${seo.ogDescription}" />`);
+html = html.replace(/<meta\s+(?:name|property)="twitter:image"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:image" content="${seo.ogImage}" />`);
+html = html.replace(/<meta\s+(?:name|property)="twitter:image:alt"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:image:alt" content="${seo.imageAlt}" />`);
 
-  // 2. Replace primary meta tags
-  html = html.replace(/<meta\s+name="title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="title" content="${seo.title}" />`);
-  html = html.replace(/<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="description" content="${seo.description}" />`);
-  html = html.replace(/<link\s+rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link rel="canonical" href="${seo.canonical}" />`);
+const jsonLdScript = `<script type="application/ld+json" id="route-jsonld">\n${JSON.stringify(seo.jsonLd, null, 2)}\n    </script>`;
+if (html.includes('<script type="application/ld+json">')) {
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/i, jsonLdScript);
+} else {
+  html = html.replace('</head>', `    ${jsonLdScript}\n  </head>`);
+}
 
-  // 3. Replace Open Graph tags
-  html = html.replace(/<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:url" content="${seo.canonical}" />`);
-  html = html.replace(/<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:title" content="${seo.ogTitle || seo.title}" />`);
-  html = html.replace(/<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:description" content="${seo.ogDescription || seo.description}" />`);
-  html = html.replace(/<meta\s+property="og:image"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:image" content="${seo.ogImage}" />`);
-  html = html.replace(/<meta\s+property="og:image:alt"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:image:alt" content="${seo.imageAlt}" />`);
+fs.writeFileSync(templatePath, html, 'utf-8');
+console.log('✓ Prerendered HTML: / -> dist/index.html');
 
-  // 4. Replace Twitter Card tags (using name="twitter:...")
-  html = html.replace(/<meta\s+(?:name|property)="twitter:card"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:card" content="summary_large_image" />`);
-  html = html.replace(/<meta\s+(?:name|property)="twitter:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:url" content="${seo.canonical}" />`);
-  html = html.replace(/<meta\s+(?:name|property)="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:title" content="${seo.ogTitle || seo.title}" />`);
-  html = html.replace(/<meta\s+(?:name|property)="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:description" content="${seo.ogDescription || seo.description}" />`);
-  html = html.replace(/<meta\s+(?:name|property)="twitter:image"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:image" content="${seo.ogImage}" />`);
-  html = html.replace(/<meta\s+(?:name|property)="twitter:image:alt"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:image:alt" content="${seo.imageAlt}" />`);
+// Create redirect stubs for legacy routes to prevent 404s
+const legacyRoutes = {
+  'about': '/#about',
+  'business': '/#business',
+  'collaborate': '/#collaborations',
+  'media': '/#media',
+  'contact': '/#contact',
+  'hospitality': '/#business',
+  'lifestyle': '/#about'
+};
 
-  // 5. Replace / Inject JSON-LD
-  const jsonLdScript = `<script type="application/ld+json" id="route-jsonld">\n${JSON.stringify(seo.jsonLd, null, 2)}\n    </script>`;
-  if (html.includes('<script type="application/ld+json">')) {
-    html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/i, jsonLdScript);
-  } else if (html.includes('id="route-jsonld"')) {
-    html = html.replace(/<script type="application\/ld\+json" id="route-jsonld">[\s\S]*?<\/script>/i, jsonLdScript);
-  } else {
-    html = html.replace('</head>', `    ${jsonLdScript}\n  </head>`);
-  }
-
-  // 6. Write to destination file
-  if (route === '/') {
-    fs.writeFileSync(templatePath, html, 'utf-8');
-    console.log(`✓ Prerendered HTML: / -> dist/index.html`);
-  } else {
-    const routeDir = path.join(distDir, route.replace(/^\//, ''));
-    fs.mkdirSync(routeDir, { recursive: true });
-    const targetFile = path.join(routeDir, 'index.html');
-    fs.writeFileSync(targetFile, html, 'utf-8');
-    console.log(`✓ Prerendered HTML: ${route} -> dist/${route.replace(/^\//, '')}/index.html`);
-  }
+Object.entries(legacyRoutes).forEach(([route, target]) => {
+  const routeDir = path.join(distDir, route);
+  fs.mkdirSync(routeDir, { recursive: true });
+  const redirectHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Redirecting...</title><link rel="canonical" href="${siteBaseUrl}${target}"><meta http-equiv="refresh" content="0; url=${target}"></head><body><script>window.location.href = "${target}";</script></body></html>`;
+  fs.writeFileSync(path.join(routeDir, 'index.html'), redirectHtml, 'utf-8');
+  console.log(`✓ Legacy Redirect Created: /${route} -> ${target}`);
 });
 
-console.log('--- All 8 routes successfully prerendered with crawlable HTML ---');
+console.log('--- Prerender build complete ---');
