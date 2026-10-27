@@ -21,28 +21,30 @@
   }
 
   /*
-   * A panel owns one viewport beneath the fixed header. Its content scrolls
-   * inside that pinned viewport; after its final content is reached, normal
-   * wheel/touch scroll naturally carries the document to the next panel.
-   * This is what prevents an incoming panel from covering unread content.
+   * Root-scroll stacking: each stage has enough page height to reveal all of
+   * its content. The viewport is sticky and clips only the moving layer, so
+   * there is no nested scrollbar, jump, or premature collision.
    */
+  .stack-stage {
+    position: relative;
+    min-height: calc(100svh - 4rem + 5rem);
+  }
   .stack-panel {
     position: sticky;
     top: 4rem;
     height: calc(100svh - 4rem);
-    overflow-y: auto;
-    overscroll-behavior-y: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow: hidden;
     isolation: isolate;
-    box-shadow: 0 -16px 32px rgba(17, 17, 17, 0.1);
+    background: #F5F1E8;
+    box-shadow: 0 -14px 32px rgba(17, 17, 17, 0.09);
+    will-change: transform;
   }
-  .stack-panel::-webkit-scrollbar {
-    display: none;
+  .stack-panel-content {
+    will-change: transform;
+    transform: translateZ(0);
   }
-  .stack-panel > section {
-    min-height: 100%;
+  .stack-panel > .stack-panel-content > section {
+    min-height: calc(100svh - 4rem);
     border-top: 1px solid rgba(185, 138, 74, 0.18);
   }
 
@@ -50,10 +52,16 @@
     section[id] {
       scroll-margin-top: 3.5rem;
     }
+    .stack-stage {
+      min-height: calc(100svh - 3.5rem + 3rem);
+    }
     .stack-panel {
       top: 3.5rem;
       height: calc(100svh - 3.5rem);
       box-shadow: 0 -10px 24px rgba(17, 17, 17, 0.08);
+    }
+    .stack-panel > .stack-panel-content > section {
+      min-height: calc(100svh - 3.5rem);
     }
   }
 
