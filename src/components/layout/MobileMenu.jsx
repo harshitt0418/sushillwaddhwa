@@ -1,137 +1,41 @@
-import React, { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowUpRight, Instagram, Linkedin } from 'lucide-react';
-import { navigationLinks } from '@/data/navigation';
-import { siteConfig } from '@/data/siteConfig';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { X } from 'lucide-react';
 
-export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, onClose]);
-
-  const handleLinkClick = (e, href) => {
-    onClose();
-    if (onNavClick) {
-      onNavClick(e, href);
-    }
-  };
-
+export default function MobileMenu({ nav, onClose, onNav }) {
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-          animate={{ opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-          exit={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-[#FAF7F2] text-[#111111] flex flex-col justify-between p-6 sm:p-8 nav:hidden overflow-y-auto"
-        >
-          {/* Top Bar */}
-          <div className="relative z-10 flex items-center justify-between border-b border-[#111111]/10 pb-4">
-            <div>
-              <div className="font-serif tracking-[0.16em] text-lg text-[#111111] uppercase font-medium">
-                Sushill Waddhwa
-              </div>
-              <div className="font-subheading text-[8px] sm:text-[9px] tracking-super-wide text-bronze uppercase font-medium">
-                Founder & CMD, Platinum World Grroup
-              </div>
-            </div>
-            <button
-              onClick={onClose}
-              className="min-w-[44px] min-h-[44px] -mr-2 flex items-center justify-center text-[#111111] hover:text-bronze transition-colors duration-300"
-              aria-label="Close navigation menu"
-            >
-              <X className="w-6 h-6 stroke-[1.5]" />
-            </button>
-          </div>
-
-          {/* Exactly 6 Links: HOME | ABOUT | BUSINESS | BRAND COLLABORATIONS | MEDIA | CONTACT */}
-          <div className="relative z-10 py-8 flex flex-col gap-3 my-auto">
-            {navigationLinks.map((link, idx) => {
-              const targetId = link.href.replace('#', '');
-              const isActive = activeSection === targetId;
-
-              return (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.35, delay: 0.05 + idx * 0.04 }}
-                >
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className={`group flex items-baseline justify-between py-2 border-b border-[#111111]/8 transition-all duration-300 ${
-                      isActive ? 'text-bronze font-semibold' : 'text-[#111111] hover:text-bronze'
-                    }`}
-                  >
-                    <span className="font-serif text-2xl sm:text-3xl font-normal tracking-wide flex items-baseline gap-4">
-                      <span className="font-subheading text-xs tracking-widest text-bronze">
-                        0{idx + 1}
-                      </span>
-                      <span>{link.label}</span>
-                    </span>
-                    <ArrowUpRight className={`w-4 h-4 transition-opacity ${isActive ? 'opacity-100 text-bronze' : 'opacity-0 group-hover:opacity-100 text-bronze'}`} />
-                  </a>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Bottom Area */}
-          <div className="relative z-10 pt-6 border-t border-[#111111]/10 space-y-4">
-            <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, '#contact')}
-              className="font-subheading block w-full py-3.5 text-center bg-[#111111] text-[#F5F1E8] hover:bg-bronze hover:text-[#111111] uppercase tracking-[0.2em] text-xs font-semibold transition-all rounded-[1px]"
-            >
-              Contact Executive Office
-            </a>
-
-            <div className="flex items-center justify-between text-xs text-stone font-subheading">
-              <span className="text-[10px] tracking-widest uppercase text-stone-dark">Est. 1989 • Global Hospitality</span>
-              <div className="flex items-center gap-4">
-                <a
-                  href={siteConfig.contact.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="min-w-[36px] min-h-[36px] flex items-center justify-center hover:text-bronze transition-colors"
-                  aria-label="Instagram Profile"
-                >
-                  <Instagram className="w-4 h-4 text-bronze" />
-                </a>
-                <a
-                  href={siteConfig.contact.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="min-w-[36px] min-h-[36px] flex items-center justify-center hover:text-bronze transition-colors"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-4 h-4 text-bronze" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <motion.div
+      initial={{ opacity: 0, x: '100%' }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: '100%' }}
+      transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="fixed inset-0 z-[60] bg-[#F5F1E8] flex flex-col"
+    >
+      <div className="flex justify-end p-6">
+        <button onClick={onClose} className="p-2 text-[#111111]" aria-label="Close menu">
+          <X size={20} />
+        </button>
+      </div>
+      <nav className="flex flex-col items-center justify-center flex-1 gap-8">
+        {nav.map((link, i) => (
+          <motion.a
+            key={link.label}
+            href={link.href}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.07, duration: 0.4 }}
+            onClick={(e) => onNav(e, link.href)}
+            className="font-cormorant text-3xl font-light text-[#111111] hover:text-[#B98A4A] transition-colors duration-300"
+          >
+            {link.label}
+          </motion.a>
+        ))}
+      </nav>
+      <div className="p-8 text-center">
+        <p className="font-manrope text-[10px] tracking-[0.2em] text-[#8C8A85] uppercase">
+          info@platinumworld.net
+        </p>
+      </div>
+    </motion.div>
   );
-};
-
-export default MobileMenu;
+}
