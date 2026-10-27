@@ -19,28 +19,33 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
+
   /*
-   * Editorial stacked-scroll treatment: each incoming section rises over the
-   * preceding one. It deliberately moves only whole panels, never text inside
-   * a panel, so readability stays intact.
+   * True stacked-scroll interaction. Each incoming panel sticks beneath the
+   * fixed header, then is physically covered by the following panel.
    */
   .stack-panel {
+    position: sticky;
+    top: 4rem;
     margin-top: clamp(-7rem, -8vw, -3rem);
-    box-shadow: 0 -18px 40px rgba(17, 17, 17, 0.12);
     isolation: isolate;
+    box-shadow: 0 -18px 40px rgba(17, 17, 17, 0.12);
   }
   .stack-panel > section {
     border-top: 1px solid rgba(185, 138, 74, 0.18);
   }
+
   @media (max-width: 767px) {
     section[id] {
       scroll-margin-top: 3.5rem;
     }
     .stack-panel {
+      top: 3.5rem;
       margin-top: -3rem;
       box-shadow: 0 -12px 28px rgba(17, 17, 17, 0.1);
     }
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 300;
