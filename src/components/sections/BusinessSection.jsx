@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/data/siteConfig';
 import resortImg from '@/assets/images/editorial/editorial-resort-buyout.jpg';
+import ParallaxImage from '@/components/ui/ParallaxImage';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -20,12 +21,11 @@ export default function BusinessSection() {
   return (
     <section id="business" className="bg-[#111111]">
       <div className="relative overflow-hidden" style={{ height: '380px' }}>
-        <img
+        <ParallaxImage
           src={resortImg}
           alt="Platinum World Grroup — Luxury hospitality"
-          className="w-full h-full"
-          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
-          loading="lazy"
+          className="absolute inset-0 h-full w-full"
+          position="center 40%"
         />
         <div
           className="absolute inset-0"
