@@ -6,23 +6,25 @@
   :root {
     --color-obsidian: #08111D;
     --color-midnight: #0D1B2A;
-    --color-ivory: #F7F4EE;
-    --color-bronze: #C7A24A;
-    --color-champagne: #E2CC8D;
-    --color-stone: #AEB7C2;
-    --color-ink: #0A111C;
+    --color-ivory: #F5F1E8;
+    --color-ivory-warm: #EDE8DD;
+    --color-ivory-light: #FAF7F2;
+    --color-bronze: #B98A4A;
+    --color-champagne: #D4AA6A;
+    --color-stone: #8C8A85;
+    --color-ink: #111111;
 
     /* Legacy mapping helpers */
     --color-charcoal: #0D1B2A;
-    --color-gold: #C7A24A;
-    --color-warmgrey: #AEB7C2;
-    --color-bone: #F7F4EE;
+    --color-gold: #B98A4A;
+    --color-warmgrey: #8C8A85;
+    --color-bone: #F5F1E8;
   }
 
   html {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #F7F4EE;
-    background-color: #08111D;
+    color: #111111;
+    background-color: #F5F1E8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -32,16 +34,16 @@
   }
 
   body {
-    background-color: #08111D;
-    color: #F7F4EE;
+    background-color: #F5F1E8;
+    color: #111111;
     font-family: 'Inter', sans-serif;
     overflow-x: clip;
     width: 100%;
   }
 
-  /* Headings: DM Serif Display */
+  /* Headings: Cormorant Garamond */
   h1, h2, h3, h4, .font-serif, .font-heading, .font-editorial {
-    font-family: 'DM Serif Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-feature-settings: "liga" 1;
     letter-spacing: -0.01em;
   }
@@ -56,34 +58,34 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Custom Luxury Scrollbar */
+  /* Custom Luxury Scrollbar - Warm Ivory Friendly */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #08111D;
+    background: #EDE8DD;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C7A24A;
+    background: #B98A4A;
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #E2CC8D;
+    background: #8C6734;
   }
 }
 
 @layer utilities {
   /* Hairline borders in Champagne Bronze */
   .hairline-b {
-    border-bottom: 1px solid rgba(199, 162, 74, 0.22);
+    border-bottom: 1px solid rgba(185, 138, 74, 0.22);
   }
   .hairline-t {
-    border-top: 1px solid rgba(199, 162, 74, 0.22);
+    border-top: 1px solid rgba(185, 138, 74, 0.22);
   }
   .hairline-y {
-    border-top: 1px solid rgba(199, 162, 74, 0.22);
-    border-bottom: 1px solid rgba(199, 162, 74, 0.22);
+    border-top: 1px solid rgba(185, 138, 74, 0.22);
+    border-bottom: 1px solid rgba(185, 138, 74, 0.22);
   }
 
   /* Subtle noise background */

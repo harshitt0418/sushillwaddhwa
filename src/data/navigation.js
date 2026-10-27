@@ -1,13 +1,13 @@
 export const navigationLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Business", href: "#business" },
-  { label: "Brand Collaborations", href: "#collaborations" },
-  { label: "Media", href: "#media" },
-  { label: "Contact", href: "#contact" },
+  { label: 'HOME', href: '#home' },
+  { label: 'ABOUT', href: '#about' },
+  { label: 'BUSINESS', href: '#business' },
+  { label: 'BRAND COLLABORATIONS', href: '#collaborations' },
+  { label: 'MEDIA', href: '#media' },
+  { label: 'CONTACT', href: '#contact' },
 ];
 
 export const headerCTA = {
-  label: "Contact",
-  href: "#contact",
+  label: 'GET IN TOUCH',
+  href: '#contact',
 };

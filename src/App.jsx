@@ -55,9 +55,9 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-obsidian text-ivory selection:bg-bronze selection:text-ink font-sans relative overflow-x-clip w-full">
+    <div className="min-h-screen flex flex-col bg-ivory text-ink selection:bg-bronze selection:text-ivory font-sans relative overflow-x-clip w-full">
       {/* Subtle Editorial Film Grain Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.025] mix-blend-screen bg-noise" />
+      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.02] mix-blend-multiply bg-noise" />
       
       <RouteSEO />
       <ScrollToTop />

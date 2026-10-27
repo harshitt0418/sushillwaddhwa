@@ -26,52 +26,53 @@ export default {
           soft: '#1B314B',
         },
         ivory: {
-          DEFAULT: '#F7F4EE', // Warm Ivory
-          light: '#FAF8F5',
-          dim: '#EFE9DC',
-          muted: '#E2DAC9',
+          DEFAULT: '#F5F1E8', // Warm Ivory
+          warm: '#EDE8DD',
+          light: '#FAF7F2',
+          muted: '#E2D9CA',
+          dim: '#EDE8DD',
         },
         bronze: {
-          DEFAULT: '#C7A24A', // Champagne Bronze
-          light: '#E2CC8D',
-          champagne: '#E2CC8D',
-          dark: '#997A2E',
-          hairline: 'rgba(199, 162, 74, 0.22)',
-          subtle: 'rgba(199, 162, 74, 0.12)',
+          DEFAULT: '#B98A4A', // Champagne Bronze
+          light: '#D4AA6A',
+          champagne: '#D4AA6A',
+          dark: '#8C6734',
+          hairline: 'rgba(185, 138, 74, 0.22)',
+          subtle: 'rgba(185, 138, 74, 0.12)',
         },
         gold: {
-          DEFAULT: '#C7A24A', // Mapped to Champagne Bronze
-          champagne: '#E2CC8D',
-          light: '#EFE1B8',
-          dark: '#997A2E',
-          hairline: 'rgba(199, 162, 74, 0.22)',
-          subtle: 'rgba(199, 162, 74, 0.12)',
+          DEFAULT: '#B98A4A', // Mapped to Champagne Bronze
+          champagne: '#D4AA6A',
+          light: '#D4AA6A',
+          dark: '#8C6734',
+          hairline: 'rgba(185, 138, 74, 0.22)',
+          subtle: 'rgba(185, 138, 74, 0.12)',
         },
         stone: {
-          DEFAULT: '#AEB7C2', // Stone Grey
-          light: '#CCD3DC',
-          dark: '#667484',
-          subtle: 'rgba(174, 183, 194, 0.2)',
+          DEFAULT: '#8C8A85', // Brighter Stone
+          light: '#A8A6A1',
+          dark: '#6B6966',
+          subtle: 'rgba(140, 138, 133, 0.2)',
         },
         warmgrey: {
-          DEFAULT: '#AEB7C2', // Stone Grey
-          light: '#CCD3DC',
-          dark: '#667484',
+          DEFAULT: '#8C8A85',
+          light: '#A8A6A1',
+          dark: '#6B6966',
         },
         ink: {
-          DEFAULT: '#0A111C', // Contrast text for light panels
-          soft: '#182230',
-          muted: '#334155',
+          DEFAULT: '#111111', // Contrast text for light panels
+          soft: '#222222',
+          muted: '#444444',
         },
         porcelain: {
-          DEFAULT: '#F7F4EE',
+          DEFAULT: '#FAF7F2',
         },
       },
       fontFamily: {
         // EXACTLY 3 FONT FAMILIES ONLY
-        // Headings: DM Serif Display
-        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
-        heading: ['"DM Serif Display"', 'Georgia', 'serif'],
+        // Headings: Cormorant Garamond
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         
         // Descriptive / Body text: Inter
         sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],

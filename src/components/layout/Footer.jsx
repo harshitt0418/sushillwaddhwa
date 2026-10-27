@@ -26,17 +26,17 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-obsidian-deep text-ivory py-16 sm:py-20 border-t border-bronze/20 z-50 relative">
+    <footer className="bg-[#111111] text-[#F5F1E8] py-16 sm:py-20 border-t border-bronze/25 z-50 relative">
       <div className="max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14">
         
         {/* Top Minimalist Editorial Row */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-12 border-b border-bronze/15">
           
           <div className="space-y-3">
-            <span className="font-serif text-2xl sm:text-3xl text-ivory font-normal tracking-wide uppercase">
+            <span className="font-serif text-2xl sm:text-3xl text-[#F5F1E8] font-normal tracking-wide uppercase">
               {siteConfig.name}
             </span>
-            <p className="font-subheading text-[10px] tracking-[0.22em] text-bronze uppercase">
+            <p className="font-subheading text-[10px] tracking-[0.22em] text-bronze uppercase font-medium">
               Global Hospitality Entrepreneur • Investor • Founder & CMD, Platinum World Grroup
             </p>
           </div>
@@ -48,7 +48,7 @@ export const Footer = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="font-subheading text-xs tracking-[0.18em] uppercase text-stone/80 hover:text-ivory transition-colors"
+                className="font-subheading text-xs tracking-[0.18em] uppercase text-stone/80 hover:text-[#F5F1E8] transition-colors"
               >
                 {link.label}
               </a>

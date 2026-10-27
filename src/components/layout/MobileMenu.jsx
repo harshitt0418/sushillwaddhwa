@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight, Instagram, Linkedin } from 'lucide-react';
-import { navigationLinks, headerCTA } from '@/data/navigation';
+import { navigationLinks } from '@/data/navigation';
 import { siteConfig } from '@/data/siteConfig';
 
 export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
@@ -39,13 +39,13 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
           initial={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
           animate={{ opacity: 1, clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           exit={{ opacity: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-obsidian text-ivory flex flex-col justify-between p-6 sm:p-8 nav:hidden overflow-y-auto"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-50 bg-[#FAF7F2] text-[#111111] flex flex-col justify-between p-6 sm:p-8 nav:hidden overflow-y-auto"
         >
           {/* Top Bar */}
-          <div className="relative z-10 flex items-center justify-between border-b border-bronze/25 pb-4">
+          <div className="relative z-10 flex items-center justify-between border-b border-[#111111]/10 pb-4">
             <div>
-              <div className="font-serif tracking-[0.16em] text-lg text-ivory uppercase">
+              <div className="font-serif tracking-[0.16em] text-lg text-[#111111] uppercase font-medium">
                 Sushill Waddhwa
               </div>
               <div className="font-subheading text-[8px] sm:text-[9px] tracking-super-wide text-bronze uppercase font-medium">
@@ -54,7 +54,7 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
             </div>
             <button
               onClick={onClose}
-              className="min-w-[44px] min-h-[44px] -mr-2 flex items-center justify-center text-stone hover:text-bronze transition-colors duration-300"
+              className="min-w-[44px] min-h-[44px] -mr-2 flex items-center justify-center text-[#111111] hover:text-bronze transition-colors duration-300"
               aria-label="Close navigation menu"
             >
               <X className="w-6 h-6 stroke-[1.5]" />
@@ -77,17 +77,17 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className={`group flex items-baseline justify-between py-2 border-b border-white/5 transition-all duration-300 ${
-                      isActive ? 'text-bronze' : 'text-ivory hover:text-bronze'
+                    className={`group flex items-baseline justify-between py-2 border-b border-[#111111]/8 transition-all duration-300 ${
+                      isActive ? 'text-bronze font-semibold' : 'text-[#111111] hover:text-bronze'
                     }`}
                   >
                     <span className="font-serif text-2xl sm:text-3xl font-normal tracking-wide flex items-baseline gap-4">
-                      <span className="font-subheading text-xs tracking-widest text-bronze/60">
+                      <span className="font-subheading text-xs tracking-widest text-bronze">
                         0{idx + 1}
                       </span>
                       <span>{link.label}</span>
                     </span>
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-bronze" />
+                    <ArrowUpRight className={`w-4 h-4 transition-opacity ${isActive ? 'opacity-100 text-bronze' : 'opacity-0 group-hover:opacity-100 text-bronze'}`} />
                   </a>
                 </motion.div>
               );
@@ -95,17 +95,17 @@ export const MobileMenu = ({ isOpen, onClose, activeSection, onNavClick }) => {
           </div>
 
           {/* Bottom Area */}
-          <div className="relative z-10 pt-6 border-t border-bronze/25 space-y-4">
+          <div className="relative z-10 pt-6 border-t border-[#111111]/10 space-y-4">
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="font-subheading block w-full py-3.5 text-center bg-ivory text-ink hover:bg-bronze hover:text-ink uppercase tracking-[0.2em] text-xs font-semibold transition-all rounded-[1px]"
+              className="font-subheading block w-full py-3.5 text-center bg-[#111111] text-[#F5F1E8] hover:bg-bronze hover:text-[#111111] uppercase tracking-[0.2em] text-xs font-semibold transition-all rounded-[1px]"
             >
               Contact Executive Office
             </a>
 
             <div className="flex items-center justify-between text-xs text-stone font-subheading">
-              <span className="text-[10px] tracking-widest uppercase">Est. 1989 • Global Hospitality</span>
+              <span className="text-[10px] tracking-widest uppercase text-stone-dark">Est. 1989 • Global Hospitality</span>
               <div className="flex items-center gap-4">
                 <a
                   href={siteConfig.contact.instagramUrl}
