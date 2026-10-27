@@ -21,6 +21,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const handleNav = (e, href) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -39,17 +44,15 @@ export default function Header() {
         }}
       >
         <div className="max-w-screen-xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <a
             href="#home"
             onClick={(e) => handleNav(e, '#home')}
             className="font-cormorant font-light tracking-widest text-[13px] transition-colors duration-300"
-            style={{ color: scrolled ? '#111111' : '#F5F1E8', letterSpacing: '0.15em' }}
+            style={{ color: scrolled ? '#111111' : '#F5F1E8', letterSpacing: '0.15em', textShadow: scrolled ? 'none' : '0 1px 12px rgba(0,0,0,0.55)' }}
           >
             SUSHILL WADDHWA
           </a>
 
-          {/* Desktop Nav */}
           <nav className="hidden nav:flex items-center gap-8">
             {NAV.map((link) => (
               <a
@@ -60,25 +63,14 @@ export default function Header() {
                 style={{ color: scrolled ? '#111111' : 'rgba(245,241,232,0.85)' }}
               >
                 {link.label}
-                <span
-                  className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B98A4A] transition-all duration-300 group-hover:w-full"
-                />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B98A4A] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            className="nav:hidden flex flex-col gap-[5px] p-2"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
-          >
+          <button className="nav:hidden flex flex-col gap-[5px] p-2" onClick={() => setMenuOpen(true)} aria-label="Open menu">
             {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className="block w-5 h-px transition-colors duration-300"
-                style={{ backgroundColor: scrolled ? '#111111' : '#F5F1E8' }}
-              />
+              <span key={i} className="block w-5 h-px transition-colors duration-300" style={{ backgroundColor: scrolled ? '#111111' : '#F5F1E8' }} />
             ))}
           </button>
         </div>
