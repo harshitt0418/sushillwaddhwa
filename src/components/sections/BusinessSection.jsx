@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { siteConfig } from '@/data/siteConfig';
 import resortImg from '@/assets/images/editorial/editorial-resort-buyout.jpg';
 
@@ -17,11 +17,8 @@ const fadeUp = {
 };
 
 export default function BusinessSection() {
-  const [hovered, setHovered] = useState(null);
-
   return (
     <section id="business" className="bg-[#111111]">
-      {/* Full-bleed image header */}
       <div className="relative overflow-hidden" style={{ height: '380px' }}>
         <img
           src={resortImg}
@@ -62,7 +59,6 @@ export default function BusinessSection() {
         </div>
       </div>
 
-      {/* Ventures list */}
       <div className="max-w-screen-xl mx-auto px-6 md:px-10 py-16 md:py-24">
         {siteConfig.ventures.map((venture, i) => (
           <motion.div
@@ -72,16 +68,12 @@ export default function BusinessSection() {
             viewport={{ once: true }}
             variants={fadeUp}
             custom={i}
-            className="relative border-t border-[rgba(185,138,74,0.12)] py-8 md:py-10 cursor-default"
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
+            className="relative border-t border-[rgba(185,138,74,0.16)] py-8 md:py-10"
           >
             <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12">
-              {/* Number */}
               <span className="font-manrope text-[10px] tracking-[0.2em] text-[#8C8A85] md:w-10 shrink-0 pt-1">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              {/* Content */}
               <div className="flex-1">
                 <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-2">
                   {venture.url ? (
@@ -106,34 +98,21 @@ export default function BusinessSection() {
                     {venture.tagline}
                   </span>
                 </div>
-                <AnimatePresence>
-                  {hovered === i && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.35, ease: 'easeOut' }}
-                      className="font-inter text-[14px] leading-[1.8] text-[#8C8A85] mt-3 overflow-hidden"
-                    >
-                      {venture.description}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+                <p className="mt-4 max-w-3xl font-inter text-[14px] leading-[1.8] text-[#D5D0C7] md:text-[15px]">
+                  {venture.description}
+                </p>
               </div>
             </div>
           </motion.div>
         ))}
-        {/* Final divider */}
         <div className="border-t border-[rgba(185,138,74,0.12)]" />
-
-        {/* Sub note */}
         <motion.p
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
           custom={6}
-          className="font-inter text-[13px] leading-[1.7] text-[#8C8A85] mt-12 max-w-xl"
+          className="font-inter text-[13px] leading-[1.7] text-[#D5D0C7] mt-12 max-w-xl"
         >
           Sushill Waddhwa maintains selected business and investment interests across hospitality, experiential platforms, and modern lifestyle ventures. Specific investment details are shared only where approved.
         </motion.p>
