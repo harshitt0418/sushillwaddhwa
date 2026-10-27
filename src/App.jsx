@@ -14,11 +14,11 @@ export default function App() {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
-        <BusinessSection />
-        <CollaborationsSection />
-        <MediaSection />
-        <ContactSection />
+        <div className="stack-panel relative z-10"><AboutSection /></div>
+        <div className="stack-panel relative z-20"><BusinessSection /></div>
+        <div className="stack-panel relative z-30"><CollaborationsSection /></div>
+        <div className="stack-panel relative z-40"><MediaSection /></div>
+        <div className="stack-panel relative z-50"><ContactSection /></div>
       </main>
       <Footer />
     </div>
