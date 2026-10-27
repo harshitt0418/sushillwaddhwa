@@ -21,17 +21,28 @@
   }
 
   /*
-   * Panels remain in their natural document order until all of the current
-   * panel is visible. Only then does the incoming panel reach the header and
-   * cover it. No negative margins: those were making content collide early.
+   * A panel owns one viewport beneath the fixed header. Its content scrolls
+   * inside that pinned viewport; after its final content is reached, normal
+   * wheel/touch scroll naturally carries the document to the next panel.
+   * This is what prevents an incoming panel from covering unread content.
    */
   .stack-panel {
     position: sticky;
     top: 4rem;
+    height: calc(100svh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     isolation: isolate;
     box-shadow: 0 -16px 32px rgba(17, 17, 17, 0.1);
   }
+  .stack-panel::-webkit-scrollbar {
+    display: none;
+  }
   .stack-panel > section {
+    min-height: 100%;
     border-top: 1px solid rgba(185, 138, 74, 0.18);
   }
 
@@ -41,6 +52,7 @@
     }
     .stack-panel {
       top: 3.5rem;
+      height: calc(100svh - 3.5rem);
       box-shadow: 0 -10px 24px rgba(17, 17, 17, 0.08);
     }
   }
