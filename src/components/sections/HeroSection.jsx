@@ -45,31 +45,28 @@ export default function HeroSection() {
   }, []);
 
   const next = useCallback(() => goTo((current + 1) % SLIDES.length), [current, goTo]);
-  const prev = useCallback(() => goTo((current - 1 + SLIDES.length) % SLIDES.length), [current, goTo]);
+  const prev = useCallback(() => goTo((current - 1 + SLIDES.length) % SLIDES.length, [current, goTo]));
 
   useEffect(() => {
-    const img0 = new Image();
-    img0.src = SLIDES[0].desktopWebp;
+    const img = new Image();
+    img.src = SLIDES[0].desktopWebp;
   }, []);
 
   useEffect(() => {
-    const nextIdx = (current + 1) % SLIDES.length;
     const img = new Image();
-    img.src = SLIDES[nextIdx].desktopWebp;
+    img.src = SLIDES[(current + 1) % SLIDES.length].desktopWebp;
   }, [current]);
 
   useEffect(() => {
     startTimeRef.current = performance.now();
     cancelAnimationFrame(progressRef.current);
-
     const tick = (ts) => {
-      const elapsed = ts - startTimeRef.current;
-      const pct = Math.min(elapsed / DURATION, 1);
+      const pct = Math.min((ts - startTimeRef.current) / DURATION, 1);
       setProgress(pct);
       if (pct < 1) {
         progressRef.current = requestAnimationFrame(tick);
       } else {
-        setCurrent((c) => (c + 1) % SLIDES.length);
+        setCurrent((value) => (value + 1) % SLIDES.length);
         startTimeRef.current = performance.now();
         setProgress(0);
         progressRef.current = requestAnimationFrame(tick);
@@ -83,25 +80,23 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative">
-      {/* Full-screen hero image area */}
-      <div className="relative w-full overflow-hidden" style={{ height: '100svh', minHeight: '600px' }}>
-        {/* Slide images */}
+      <div className="relative w-full overflow-hidden" style={{ height: 'min(100svh, 900px)', minHeight: '560px' }}>
         <AnimatePresence mode="sync">
           <motion.div
             key={current}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            transition={{ duration: 1.1, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
-            <picture className="absolute inset-0 w-full h-full">
+            <picture className="absolute inset-0 h-full w-full">
               <source media="(max-width: 768px)" srcSet={slide.mobileWebp} type="image/webp" />
               <source srcSet={slide.desktopWebp} type="image/webp" />
               <img
                 src={slide.fallback}
                 alt={slide.alt}
-                className="hero-slide-img w-full h-full"
+                className="hero-slide-img h-full w-full"
                 style={{
                   objectFit: 'cover',
                   animation: 'heroKenBurns 5.5s ease-out forwards',
@@ -111,123 +106,60 @@ export default function HeroSection() {
                 loading={current === 0 ? 'eager' : 'lazy'}
               />
             </picture>
-            {/* Bottom gradient for text readability only */}
             <div
               className="absolute inset-x-0 bottom-0 pointer-events-none"
-              style={{
-                height: '55%',
-                background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 40%, transparent 100%)',
-              }}
+              style={{ height: '58%', background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.24) 48%, transparent 100%)' }}
             />
           </motion.div>
         </AnimatePresence>
 
-        {/* Hero text — bottom center, never over the face */}
-        <div className="absolute inset-x-0 bottom-20 md:bottom-24 z-10 flex flex-col items-center text-center px-6">
-          <p
-            className="font-manrope uppercase tracking-[0.22em] text-[9px] md:text-[10px] mb-4"
-            style={{ color: 'rgba(185,138,74,0.9)' }}
-          >
+        <div className="absolute inset-x-0 bottom-16 z-10 flex flex-col items-center px-6 text-center md:bottom-24">
+          <p className="mb-4 font-manrope text-[9px] uppercase tracking-[0.22em] md:text-[10px]" style={{ color: 'rgba(213,170,106,0.96)' }}>
             SINCE 1989 · GLOBAL HOSPITALITY & ADVISORY
           </p>
           <h1
-            className="font-cormorant font-light leading-none tracking-wide mb-3"
-            style={{
-              fontSize: 'clamp(44px, 8vw, 96px)',
-              color: '#F5F1E8',
-              letterSpacing: '0.06em',
-            }}
+            className="mb-3 font-cormorant font-light leading-none"
+            style={{ fontSize: 'clamp(36px, 8vw, 92px)', color: '#F5F1E8', letterSpacing: '0.035em', maxWidth: 'min(92vw, 900px)', textWrap: 'balance' }}
           >
             SUSHILL WADDHWA
           </h1>
-          <p
-            className="font-manrope tracking-[0.14em] uppercase text-[10px] md:text-[11px] mb-1"
-            style={{ color: 'rgba(245,241,232,0.75)' }}
-          >
+          <p className="mb-1 font-manrope text-[10px] uppercase tracking-[0.14em] md:text-[11px]" style={{ color: 'rgba(245,241,232,0.9)' }}>
             Global Hospitality Entrepreneur · Investor
           </p>
-          <p
-            className="font-inter font-light text-[11px] md:text-[12px]"
-            style={{ color: 'rgba(140,138,133,0.8)' }}
-          >
+          <p className="font-inter text-[11px] font-light md:text-[12px]" style={{ color: 'rgba(245,241,232,0.82)' }}>
             Founder & CMD, Platinum World Grroup
           </p>
         </div>
 
-        {/* Minimal arrow controls — overlaid at sides, very discreet */}
-        <button
-          onClick={prev}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 p-3 text-ivory/40 hover:text-ivory transition-colors duration-300"
-          aria-label="Previous slide"
-        >
+        <button onClick={prev} className="absolute left-4 top-1/2 z-10 -translate-y-1/2 p-3 text-ivory/60 transition-colors duration-300 hover:text-ivory md:left-8" aria-label="Previous slide">
           <ChevronLeft size={18} />
         </button>
-        <button
-          onClick={next}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-3 text-ivory/40 hover:text-ivory transition-colors duration-300"
-          aria-label="Next slide"
-        >
+        <button onClick={next} className="absolute right-4 top-1/2 z-10 -translate-y-1/2 p-3 text-ivory/60 transition-colors duration-300 hover:text-ivory md:right-8" aria-label="Next slide">
           <ChevronRight size={18} />
         </button>
       </div>
 
-      {/* Sub-bar: attribute label + progress BELOW the image */}
-      <div
-        className="w-full px-6 md:px-10 flex items-center justify-between gap-4"
-        style={{
-          backgroundColor: '#111111',
-          height: '48px',
-          borderTop: '1px solid rgba(185,138,74,0.15)',
-        }}
-      >
+      <div className="flex min-h-[52px] w-full items-center justify-between gap-4 bg-[#111111] px-6 md:px-10" style={{ borderTop: '1px solid rgba(185,138,74,0.15)' }}>
         <div className="flex items-center gap-4">
-          <span
-            className="font-manrope uppercase tracking-[0.25em] text-[9px]"
-            style={{ color: '#B98A4A' }}
-          >
-            {slide.attribute}
-          </span>
-          <span
-            className="font-manrope text-[9px] tracking-[0.1em]"
-            style={{ color: 'rgba(140,138,133,0.5)' }}
-          >
+          <span className="font-manrope text-[9px] uppercase tracking-[0.25em]" style={{ color: '#D4AA6A' }}>{slide.attribute}</span>
+          <span className="font-manrope text-[9px] tracking-[0.1em]" style={{ color: 'rgba(245,241,232,0.58)' }}>
             {String(current + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}
           </span>
         </div>
-        {/* Progress bar */}
-        <div className="flex-1 max-w-48 h-px" style={{ backgroundColor: 'rgba(185,138,74,0.15)' }}>
-          <div
-            className="h-full bg-[#B98A4A] transition-none"
-            style={{ width: `${progress * 100}%` }}
-          />
+        <div className="h-px max-w-48 flex-1 bg-[rgba(185,138,74,0.15)]">
+          <div className="h-full bg-[#B98A4A]" style={{ width: progress * 100 + '%' }} />
         </div>
         <div className="flex gap-2">
           {SLIDES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className="w-1 h-1 rounded-full transition-colors duration-300"
-              style={{ backgroundColor: i === current ? '#B98A4A' : 'rgba(140,138,133,0.4)' }}
-              aria-label={`Go to slide ${i + 1}`}
-            />
+            <button key={i} onClick={() => goTo(i)} className="h-1 w-1 rounded-full transition-colors duration-300" style={{ backgroundColor: i === current ? '#D4AA6A' : 'rgba(245,241,232,0.42)' }} aria-label={'Go to slide ' + (i + 1)} />
           ))}
         </div>
       </div>
 
-      {/* Ken Burns keyframe and responsive object-position */}
       <style>{`
-        @keyframes heroKenBurns {
-          from { transform: scale(1.0); }
-          to { transform: scale(1.04); }
-        }
-        .hero-slide-img {
-          object-position: var(--hero-pos-desk, center 22%);
-        }
-        @media (max-width: 768px) {
-          .hero-slide-img {
-            object-position: var(--hero-pos-mob, center 22%);
-          }
-        }
+        @keyframes heroKenBurns { from { transform: scale(1); } to { transform: scale(1.04); } }
+        .hero-slide-img { object-position: var(--hero-pos-desk, center 22%); }
+        @media (max-width: 768px) { .hero-slide-img { object-position: var(--hero-pos-mob, center 22%); } }
       `}</style>
     </section>
   );
