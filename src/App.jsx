@@ -14,7 +14,7 @@ function StackedPanel({ depth, children }) {
 
 export default function App() {
   return (
-    <div className="bg-ivory text-ink overflow-x-hidden">
+    <div className="bg-ivory text-ink">
       <Header />
       <main>
         <HeroSection />
